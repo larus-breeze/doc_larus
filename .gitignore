@@ -6,3 +6,4 @@
 *.EEPROM
 /.idea
 .~lock.*.odt
+flightdata/
