@@ -32,6 +32,22 @@ elements_f107 = ['acc x', 'acc y', 'acc z', 'gyro x', 'gyro y', 'gyro z', 'mag x
                  'gyro_R', 'gyro_D', 'SAT-AHRS-Heading', 'QFF', 'sat fix type', 'avg. Headwind', 'avg. crosswind',
                  'wind_N', 'wind_E', 'inst wind N', 'inst wind E']
 
+elements_f110 = ['acc x', 'acc y', 'acc z', 'gyro x', 'gyro y', 'gyro z', 'mag x', 'mag y', 'mag z', 'pitot',
+                 'static p', 'temp', 'ubatt', 'pos N', 'pos E', 'pos DWN', 'vel N', 'vel E', 'vel DWN', 'acc N',
+                 'acc E', 'acc DWN', 'track GNSS', 'speed GNSS', 'relpos N', 'relpos E', 'relpos D', 'rel HDG',
+                 'speed acc', 'Lat 1', 'Lat 2', 'Long 1', 'Long 2', 'ymdh', 'minsec sat fixtype', 'nano',
+                 'geo_sep dummy', 'IAS', 'TAS', 'vario uncomp', 'vario', 'vario pressure', 'speed comp TAS',
+                 'speed comp INS', 'vario integrator', 'wind N', 'wind E', 'wind D', 'wind avg N', 'wind avg E',
+                 'wind avg D', 'circle mode', 'q0', 'q1', 'q2', 'q3', 'roll', 'nick ', 'yaw', 'acc vertical',
+                 'turn rate', 'slip angle', 'nick angle', 'G_load', 'Pressure-altitude', 'Air Density',
+                 'Magnetic Disturbance', 'nav acc N', 'nav acc E', 'nav acc D', 'nav ind N', 'nav ind E',
+                 'nav ind D', 'nav corr N', 'nav corr E', 'nav corr D', 'gyro corr F', 'gyro corr R',
+                 'gyro corr D', 'nav acc mag N', 'nav acc mag E', 'nav acc mag D', 'nav ind mag N', 'nav ind mag E',
+                 'nav ind mag D', 'roll mag', 'nick mag', 'yaw mag', 'q1mag', 'q2mag', 'q3mag', 'q4mag', 'acc_F',
+                 'acc_R', 'acc_D', 'gyro_F', 'gyro_R', 'gyro_D', 'SAT-AHRS-Heading', 'QFF', 'sat fix type',
+                 'avg. Headwind', 'avg. crosswind', 'wind_N', 'wind_E', 'inst wind N', 'inst wind E', 'speed_comp_1',
+                 'speed_comp_2', 'speed_comp_3']
+
 elements_f120 = ['acc x', 'acc y', 'acc z', 'gyro x', 'gyro y', 'gyro z', 'mag x', 'mag y', 'mag z', 'Lowcost acc x',
                  'Lowcost acc y', 'Lowcost acc z', 'Lowcost gyro x', 'Lowcost gyro y', 'Lowcost gyro z',
                  'Lowcost mag x', 'Lowcost mag y', 'Lowcost mag z', 'pitot', 'static p', 'abs p', 'temp',
@@ -49,12 +65,32 @@ elements_f120 = ['acc x', 'acc y', 'acc z', 'gyro x', 'gyro y', 'gyro z', 'mag x
                  'gyro_R', 'gyro_D', 'SAT-AHRS-Heading', 'QFF', 'sat fix type', 'avg. Headwind', 'avg. crosswind',
                  'wind_N', 'wind_E', 'inst wind N', 'inst wind E']
 
+elements_f123 = ['acc x', 'acc y', 'acc z', 'gyro x', 'gyro y', 'gyro z', 'mag x', 'mag y', 'mag z', 'Lowcost acc x',
+                 'Lowcost acc y', 'Lowcost acc z', 'Lowcost gyro x', 'Lowcost gyro y', 'Lowcost gyro z',
+                 'Lowcost mag x', 'Lowcost mag y', 'Lowcost mag z', 'pitot', 'static p', 'abs p', 'temp', 'abs sens t',
+                 'ubatt', 'OAT', 'Humidity', 'pos N', 'pos E', 'pos DWN', 'vel N', 'vel E', 'vel DWN', 'acc N', 'acc E',
+                 'acc DWN', 'track GNSS', 'speed GNSS', 'relpos N', 'relpos E', 'relpos D', 'rel HDG', 'speed acc',
+                 'Lat 1', 'Lat 2', 'Long 1', 'Long 2', 'ymdh', 'minsec sat fixtype', 'nano', 'geo_sep dummy', 'IAS',
+                 'TAS', 'vario uncomp', 'vario', 'vario pressure', 'speed comp TAS', 'speed comp INS',
+                 'vario integrator', 'wind N', 'wind E', 'wind D', 'wind avg N', 'wind avg E', 'wind avg D',
+                 'circle mode', 'q0', 'q1', 'q2', 'q3', 'roll', 'nick ', 'yaw', 'acc vertical', 'turn rate',
+                 'slip angle', 'nick angle', 'G_load', 'Pressure-altitude', 'Air Density', 'Magnetic Disturbance',
+                 'nav acc N', 'nav acc E', 'nav acc D', 'nav ind N', 'nav ind E', 'nav ind D', 'nav corr N',
+                 'nav corr E', 'nav corr D', 'gyro corr F', 'gyro corr R', 'gyro corr D', 'nav acc mag N',
+                 'nav acc mag E', 'nav acc mag D', 'nav ind mag N', 'nav ind mag E', 'nav ind mag D', 'roll mag',
+                 'nick mag', 'yaw mag', 'q1mag', 'q2mag', 'q3mag', 'q4mag', 'acc_F', 'acc_R', 'acc_D', 'gyro_F',
+                 'gyro_R', 'gyro_D', 'SAT-AHRS-Heading', 'QFF', 'sat fix type', 'avg. Headwind', 'avg. crosswind',
+                 'wind_N', 'wind_E', 'inst wind N', 'inst wind E', 'speed_comp_1', 'speed_comp_2', 'speed_comp_3']
+
+
 
 # Put the file names you want to plot here:
 #files = ["flightdata/1476cdc_20220601_Wind_30.f50.f120", "flightdata/1476cdc_20220724_STGT.f50.f120", "flightdata/1276cdc_20220918120730_hang.f50.f120"]
 #files = ["flightdata/1476cdc_20220724_STGT.f50.f120", "flightdata/1476cdc_20220724_STGT.f50_compass.f120"]
-files = ["flightdata/1476cdc_20230311_flug.f37.f107", "flightdata/92c366_20230311_flug.f37.f107"]
-
+#files = ["flightdata/1476cdc_20230311_flug.f37.f107", "flightdata/92c366_20230311_flug.f37.f107"]
+#files = ["../flightdata/20220714090230.f50.f123", "../flightdata/20220724_STGT.f50.f123"]
+#files = ["../flightdata/20220724_STGT.f50.f123"]
+files = ["../flightdata/230414_085440.f37.f110"]
 
 
 for file in files:
@@ -62,11 +98,17 @@ for file in files:
         elements = elements_f105
     elif file.endswith('.f107'):
         elements = elements_f107
+    elif file.endswith('.f110'):
+        elements = elements_f110
     elif file.endswith('.f120'):
         elements = elements_f120
+    elif file.endswith('.f123'):
+        elements = elements_f123
     else:
         print('Format, not supported')
         exit()
+
+    print(len(elements))
 
     # Create a data description for the raw data file format. Assume 32 bit float for each value.
     description = []
@@ -79,8 +121,7 @@ for file in files:
     df = pd.DataFrame(data)
 
     # Select the timeframe in the data
-    df = df[460000:560000]
-
+    #df = df[460000:560000]
 
     # Prepare the data
     windDirectionAvg = np.arctan2( - df['wind avg E'], - df['wind avg N']) / 2 / np.pi * 360

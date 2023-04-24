@@ -1,4 +1,4 @@
-filename = 'f120format.txt'
+filename = 'log110.txt'
 elementList = []
 
 with open(filename) as file:
