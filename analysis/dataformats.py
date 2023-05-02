@@ -107,16 +107,16 @@ elements_f123 = ['acc x', 'acc y', 'acc z', 'gyro x', 'gyro y', 'gyro z', 'mag x
                  'wind_N', 'wind_E', 'inst wind N', 'inst wind E', 'speed_comp_1', 'speed_comp_2', 'speed_comp_3']
 
 # Format with datatypes
-"""
+
 #Helper for generation
 # dtypes  int32_t  = i4,  int8_t = i1, uint16_t = u2,  f4 = float, f8 = double
-
-data_f37 = '['
-for element in elements_f37:
-    data_f37 += '(\"{}\", \"f4\"), '.format(element)
-data_f37 += ']'
-print(data_f37)
-
+"""
+data = '['
+for element in elements_f123:
+    data += '(\"{}\", \"f4\"), '.format(element)
+data += ']'
+print(data)
+exit()
 """
 
 data_f37 = [("acc x", "f4"), ("acc y", "f4"), ("acc z", "f4"), ("gyro x", "f4"), ("gyro y", "f4"), ("gyro z", "f4"),
@@ -138,3 +138,106 @@ data_f37 = [("acc x", "f4"), ("acc y", "f4"), ("acc z", "f4"), ("gyro x", "f4"),
             ("geo separation dm", "i2"),
             ("dummy", "u2")]
 
+data_f50 = [("acc x", "f4"), ("acc y", "f4"), ("acc z", "f4"), ("gyro x", "f4"), ("gyro y", "f4"), ("gyro z", "f4"),
+            ("mag x", "f4"), ("mag y", "f4"), ("mag z", "f4"), ("Lowcost acc x", "f4"), ("Lowcost acc y", "f4"),
+            ("Lowcost acc z", "f4"), ("Lowcost gyro x", "f4"), ("Lowcost gyro y", "f4"), ("Lowcost gyro z", "f4"),
+            ("Lowcost mag x", "f4"), ("Lowcost mag y", "f4"), ("Lowcost mag z", "f4"), ("pitot", "f4"),
+            ("static p", "f4"), ("abs p", "f4"), ("temp", "f4"), ("abs sens t", "f4"), ("ubatt", "f4"),
+            ("", "f4"), ("", "f4"), ("pos N", "f4"), ("pos E", "f4"), ("pos DWN", "f4"), ("vel N", "f4"),
+            ("vel E", "f4"), ("vel DWN", "f4"), ("acc N", "f4"), ("acc E", "f4"), ("acc DWN", "f4"),
+            ("track GNSS", "f4"), ("speed GNSS", "f4"), ("relpos N", "f4"), ("relpos E", "f4"), ("relpos D", "f4"),
+            ("rel HDG", "f4"), ("speed acc", "f4"),
+            ("Lat", "f8"), ("Long", "f8"),
+            ("year", "u1"),
+            ("month", "u1"),
+            ("day", "u1"),
+            ("hour", "u1"),
+            ("minute", "u1"),
+            ("second", "u1"),
+            ("sat number", "u1"),
+            ("sat fix type", "u1"),
+            ("xx", "f4"),
+            ("yy", "f4")]
+
+data_f110 = [("acc x", "f4"), ("acc y", "f4"), ("acc z", "f4"), ("gyro x", "f4"), ("gyro y", "f4"), ("gyro z", "f4"),
+             ("mag x", "f4"), ("mag y", "f4"), ("mag z", "f4"), ("pitot", "f4"), ("static p", "f4"), ("temp", "f4"),
+             ("ubatt", "f4"), ("pos N", "f4"), ("pos E", "f4"), ("pos DWN", "f4"), ("vel N", "f4"), ("vel E", "f4"),
+             ("vel DWN", "f4"), ("acc N", "f4"), ("acc E", "f4"), ("acc DWN", "f4"), ("track GNSS", "f4"),
+             ("speed GNSS", "f4"), ("relpos N", "f4"), ("relpos E", "f4"), ("relpos D", "f4"), ("rel HDG", "f4"),
+             ("speed acc", "f4"),
+             ("Lat", "f8"), ("Long", "f8"),
+             ("year", "u1"),
+             ("month", "u1"),
+             ("day", "u1"),
+             ("hour", "u1"),
+             ("minute", "u1"),
+             ("second", "u1"),
+             ("sat number", "u1"),
+             ("sat fix type", "u1"),
+             ("nanoseconds", "u4"),
+             ("geo separation dm", "i2"),
+             ("dummy", "u2"),
+             ("IAS", "f4"), ("TAS", "f4"), ("vario uncomp", "f4"), ("vario", "f4"), ("vario pressure", "f4"),
+             ("speed comp TAS", "f4"), ("speed comp INS", "f4"), ("vario integrator", "f4"), ("wind N", "f4"),
+             ("wind E", "f4"), ("wind D", "f4"), ("wind avg N", "f4"), ("wind avg E", "f4"), ("wind avg D", "f4"),
+             ("circle mode", "u4"),
+             ("q0", "f4"), ("q1", "f4"), ("q2", "f4"), ("q3", "f4"),
+             ("roll", "f4"), ("nick ", "f4"), ("yaw", "f4"),
+             ("acc vertical", "f4"), ("turn rate", "f4"), ("slip angle", "f4"), ("nick angle", "f4"),
+             ("G_load", "f4"), ("Pressure-altitude", "f4"), ("Air Density", "f4"), ("Magnetic Disturbance", "f4"),
+             ("nav acc N", "f4"), ("nav acc E", "f4"), ("nav acc D", "f4"), ("nav ind N", "f4"),
+             ("nav ind E", "f4"), ("nav ind D", "f4"), ("nav corr N", "f4"), ("nav corr E", "f4"),
+             ("nav corr D", "f4"), ("gyro corr F", "f4"), ("gyro corr R", "f4"), ("gyro corr D", "f4"),
+             ("nav acc mag N", "f4"), ("nav acc mag E", "f4"), ("nav acc mag D", "f4"), ("nav ind mag N", "f4"),
+             ("nav ind mag E", "f4"), ("nav ind mag D", "f4"),
+             ("roll mag", "f4"), ("nick mag", "f4"), ("yaw mag", "f4"),
+             ("q1mag", "f4"), ("q2mag", "f4"), ("q3mag", "f4"), ("q4mag", "f4"),
+             ("acc_F", "f4"), ("acc_R", "f4"), ("acc_D", "f4"),
+             ("gyro_F", "f4"), ("gyro_R", "f4"), ("gyro_D", "f4"),
+             ("SAT-AHRS-Heading", "f4"), ("QFF", "f4"), ("sat fix type f", "f4"),
+             ("avg. Headwind", "f4"), ("avg. crosswind", "f4"),
+             ("wind_N", "f4"), ("wind_E", "f4"),
+             ("inst wind N", "f4"), ("inst wind E", "f4"),
+             ("speed_comp_1", "f4"),
+             ("speed_comp_2", "f4"),
+             ("speed_comp_3", "f4")]
+
+data_f123 = [("acc x", "f4"), ("acc y", "f4"), ("acc z", "f4"), ("gyro x", "f4"), ("gyro y", "f4"), ("gyro z", "f4"),
+             ("mag x", "f4"), ("mag y", "f4"), ("mag z", "f4"), ("Lowcost acc x", "f4"), ("Lowcost acc y", "f4"),
+             ("Lowcost acc z", "f4"), ("Lowcost gyro x", "f4"), ("Lowcost gyro y", "f4"), ("Lowcost gyro z", "f4"),
+             ("Lowcost mag x", "f4"), ("Lowcost mag y", "f4"), ("Lowcost mag z", "f4"), ("pitot", "f4"),
+             ("static p", "f4"), ("abs p", "f4"), ("temp", "f4"), ("abs sens t", "f4"), ("ubatt", "f4"),
+             ("OAT", "f4"), ("Humidity", "f4"), ("pos N", "f4"), ("pos E", "f4"), ("pos DWN", "f4"), ("vel N", "f4"),
+             ("vel E", "f4"), ("vel DWN", "f4"), ("acc N", "f4"), ("acc E", "f4"), ("acc DWN", "f4"),
+             ("track GNSS", "f4"), ("speed GNSS", "f4"), ("relpos N", "f4"), ("relpos E", "f4"), ("relpos D", "f4"),
+             ("rel HDG", "f4"), ("speed acc", "f4"),
+             ("Lat", "f8"), ("Long", "f8"),
+             ("year", "u1"),
+             ("month", "u1"),
+             ("day", "u1"),
+             ("hour", "u1"),
+             ("minute", "u1"),
+             ("second", "u1"),
+             ("sat number", "u1"),
+             ("sat fix type", "u1"),
+             ("nanoseconds", "u4"),
+             ("geo separation dm", "i2"),
+             ("dummy", "u2"),
+             ("IAS", "f4"), ("TAS", "f4"), ("vario uncomp", "f4"), ("vario", "f4"), ("vario pressure", "f4"),
+             ("speed comp TAS", "f4"), ("speed comp INS", "f4"), ("vario integrator", "f4"), ("wind N", "f4"),
+             ("wind E", "f4"), ("wind D", "f4"), ("wind avg N", "f4"), ("wind avg E", "f4"), ("wind avg D", "f4"),
+             ("circle mode", "u4"), ("q0", "f4"), ("q1", "f4"), ("q2", "f4"), ("q3", "f4"), ("roll", "f4"),
+             ("nick ", "f4"), ("yaw", "f4"), ("acc vertical", "f4"), ("turn rate", "f4"), ("slip angle", "f4"),
+             ("nick angle", "f4"), ("G_load", "f4"), ("Pressure-altitude", "f4"), ("Air Density", "f4"),
+             ("Magnetic Disturbance", "f4"), ("nav acc N", "f4"), ("nav acc E", "f4"), ("nav acc D", "f4"),
+             ("nav ind N", "f4"), ("nav ind E", "f4"), ("nav ind D", "f4"),
+             ("nav corr N", "f4"), ("nav corr E", "f4"), ("nav corr D", "f4"),
+             ("gyro corr F", "f4"), ("gyro corr R", "f4"), ("gyro corr D", "f4"), ("nav acc mag N", "f4"),
+             ("nav acc mag E", "f4"), ("nav acc mag D", "f4"), ("nav ind mag N", "f4"), ("nav ind mag E", "f4"),
+             ("nav ind mag D", "f4"), ("roll mag", "f4"), ("nick mag", "f4"), ("yaw mag", "f4"),
+             ("q1mag", "f4"), ("q2mag", "f4"), ("q3mag", "f4"), ("q4mag", "f4"),
+             ("acc_F", "f4"), ("acc_R", "f4"), ("acc_D", "f4"),
+             ("gyro_F", "f4"), ("gyro_R", "f4"), ("gyro_D", "f4"), ("SAT-AHRS-Heading", "f4"),
+             ("QFF", "f4"), ("sat fix type f", "f4"), ("avg. Headwind", "f4"), ("avg. crosswind", "f4"),
+             ("wind_N", "f4"), ("wind_E", "f4"), ("inst wind N", "f4"), ("inst wind E", "f4"), ("speed_comp_1", "f4"),
+             ("speed_comp_2", "f4"), ("speed_comp_3", "f4")]

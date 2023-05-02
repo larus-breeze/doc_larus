@@ -1,38 +1,18 @@
 #!/user/bin/env python3
-from dataformats import *
+from load_to_df import LoadLarus2Df
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import sys
 
-# Put the file names you want to plot here:
-files = ["../flightdata/20220714090230.f50.f123"]
+# Howto execute:
+# python3 plot_binary_data.py ../flightdata/230414_085440.f37.f110
+file = sys.argv[1]
+files = [file]
 
 for file in files:
-    if file.endswith('.f105'):
-        elements = elements_f105
-    elif file.endswith('.f107'):
-        elements = elements_f107
-    elif file.endswith('.f110'):
-        elements = elements_f110
-    elif file.endswith('.f120'):
-        elements = elements_f120
-    elif file.endswith('.f123'):
-        elements = elements_f123
-    else:
-        print('Format, not supported')
-        exit()
-
-    print(len(elements))
-
-    # Create a data description for the raw data file format. Assume 32 bit float for each value.
-    description = []
-    for i in range(0, len(elements)):
-        description.append((elements[i], 'f4'))
-
-    # Create a pandas dataframe
-    dt = np.dtype(description)
-    data = np.fromfile(file, dtype=dt, sep="")
-    df = pd.DataFrame(data)
+    data = LoadLarus2Df(file)
+    df = data.df
 
     # Select the timeframe in the data
     #df = df[460000:560000]

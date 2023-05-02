@@ -2,22 +2,25 @@
 import numpy as np
 import pandas as pd
 from dataformats import *
-import matplotlib.pyplot as plt
-#from docutils.nodes import description
+import sys
 
+# Howto execute:
+# python3 ../flightdata/230430_090724.f37
+#
+# Process only the first 5000 values
+# python3 ../flightdata/230430_090724.f37 5000
 
-# Put the file name you want to convert here:
-file = "../flightdata/230430_090724.f37"
-#file = "../flightdata/20220724_STGT.f50"
+file = sys.argv[1]
+limit = None
+if len(sys.argv) > 2:
+    limit = int(sys.argv[2])
 
-if '.f92' in file:
-    elements = elements_f92
-elif '.f37' in file:
+if file.endswith('.f37'):
     elements = data_f37
-elif '.f50' in file:
-    elements = elements_f50
+elif file.endswith('.f50'):
+    elements = data_f50
 else:
-    print('Error, not supported')
+    print('Error, file format not supported')
     exit()
 
 # Create a data description for the raw data file format. Assume 32 bit float for each value.
@@ -32,6 +35,9 @@ df = pd.DataFrame(data)
 print(df)
 
 # Export as CSV file:
-#df.loc[0:500000].to_csv(file+'data.csv')
-df.to_csv(file+'data.csv')
+if limit:
+    # Export only the first lines until the given limit
+    df.loc[0:limit].to_csv(file+'data.csv')
+else:
+    df.to_csv(file+'data.csv')
 
