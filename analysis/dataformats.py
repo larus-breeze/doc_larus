@@ -1,4 +1,7 @@
 #!/user/bin/env python3
+"""
+This describes the different and some outdated Larus log file formats.
+"""
 
 # Measurement logfiles
 elements_f37 = ["acc x","acc y","acc z","gyro x","gyro y","gyro z","mag x","mag y","mag z","pitot","static p","temp",
