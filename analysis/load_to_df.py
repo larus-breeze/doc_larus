@@ -17,6 +17,8 @@ class LoadLarus2Df:
             dataformat = data_f50
         elif file.endswith('.f123'):
             dataformat = data_f123
+        elif file.endswith('.f120'):
+            dataformat = data_f120
         elif file.endswith('.f110'):
             dataformat = data_f110
         else:
