@@ -11,36 +11,34 @@ data = LoadLarus2Df(file)
 df = data.df
 
 # Prepare the data
-heading = df['yaw'] / 2 / np.pi * 360
-roll_deg = df['roll'] / 2 / np.pi * 360
+t = df.index / 100.0 / 60.0   # 100Hz ticks to minutes for the time axis
 nav_ind_abs = np.sqrt(np.square(df['nav ind mag N'])*np.square(df['nav ind mag N'] + df['nav ind mag E'])*np.square(df['nav ind mag E']) + df['nav ind mag D'])*np.square(df['nav ind mag D'])
 
+# Plot the data
 figure, axis = plt.subplots()
-figure.suptitle("Magnetic induction from: " + file)
+figure.suptitle("Induction in earth system: " + file)
 plt.autoscale(enable=True, axis='y')
-
-axis.plot(nav_ind_abs, "b", alpha=1.0, linewidth=1)
-axis.legend(["nav ind abs"], loc="lower left")
 axis.grid()
+axis.set_xlabel('t [minutes]')
+
+axis.plot(t, nav_ind_abs, "b", linewidth=1)
+axis.legend(["nav ind abs"], loc="lower left")
 par1 = axis.twinx()
-par1.plot(df['nav ind mag N'], "r-", linewidth=0.5)
-par1.plot(df['nav ind mag E'], "g-", linewidth=0.5)
-par1.plot(df['nav ind mag D'], "y-", linewidth=0.5)
+par1.plot(t, df['nav ind mag N'], "r-", linewidth=0.5)
+par1.plot(t, df['nav ind mag E'], "g-", linewidth=0.5)
+par1.plot(t, df['nav ind mag D'], "y-", linewidth=0.5)
 par1.legend(['nav ind mag N', 'nav ind mag E', 'nav ind mag D'], loc="lower right")
 
 figure, axis = plt.subplots()
-figure.suptitle("Raw magnetic values from: " + file)
+figure.suptitle("Raw magnetic sensor values: " + file)
 plt.autoscale(enable=True, axis='y')
-
-axis.plot(nav_ind_abs, "b", alpha=1.0, linewidth=1)
-axis.legend(["nav ind abs"], loc="lower left")
 axis.grid()
-par1 = axis.twinx()
-par1.plot(df['mag x'], "r-", linewidth=0.5)
-par1.plot(df['mag y'], "g-", linewidth=0.5)
-par1.plot(df['mag z'], "y-", linewidth=0.5)
-par1.legend(['mag x', 'mag y', 'mag z'], loc="lower right")
+axis.set_xlabel('t [minutes]')
 
+axis.plot(t, df['mag x'], "r-", linewidth=0.5)
+axis.plot(t, df['mag y'], "g-", linewidth=0.5)
+axis.plot(t, df['mag z'], "y-", linewidth=0.5)
+axis.legend(['mag x', 'mag y', 'mag z'], loc="lower right")
 plt.show()
 
 
