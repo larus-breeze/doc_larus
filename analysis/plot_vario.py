@@ -23,7 +23,6 @@ host.set_ylim(df["Pressure-altitude"].min(), df["Pressure-altitude"].max())
 ax2.set_ylim(df["vario"].min(), df["vario"].max())
 ax3.set_ylim(15.0, df["TAS"].max() + 100.0)
 
-
 host.set_xlabel("t [minutes]")
 host.set_ylabel("Pressure-altitude")
 ax2.set_ylabel("Vario")
@@ -40,9 +39,6 @@ host.legend(handles=p1 + p2 + p2b + p3, loc='best')
 
 # right, left, top, bottom
 ax3.spines['right'].set_position(('outward', 60))
-
-# no x-ticks
-host.xaxis.set_ticks([])
 
 host.yaxis.label.set_color(p1[0].get_color())
 ax2.yaxis.label.set_color(p2[0].get_color())
