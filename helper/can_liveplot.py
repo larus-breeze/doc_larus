@@ -3,9 +3,7 @@ import threading
 from collections import deque
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
-import numpy as np
 from datetime import datetime
-
 
 
 class CanGet(threading.Thread):
@@ -40,7 +38,6 @@ class CanGet(threading.Thread):
                     print(line, end="")
                     self.file.writelines([line])
                     self.file.flush()
-
 
             if self.stop is True:
                 try:

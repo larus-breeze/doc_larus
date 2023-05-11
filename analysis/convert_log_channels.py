@@ -1,4 +1,6 @@
-filename = 'f120format.txt'
+# Just a helper to convert a txt listing to a python list
+
+filename = 'f50.txt'
 elementList = []
 
 with open(filename) as file:

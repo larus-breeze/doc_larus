@@ -1,7 +1,7 @@
 # Overview
 System documentation and helper scripts to process the flight log data.
 
-# Components
+# System Components Overview
 ## Main Sensor
 - Processing of all sensor signals, computation of vario signals, computation of AHRS and wind
 - https://github.com/larus-breeze/hw_sensor
@@ -9,7 +9,7 @@ System documentation and helper scripts to process the flight log data.
 
 
 ## Frontend Display
-- TODO: desribe frontend display system
+- TODO: describe frontend display system
 
 
 ## Utility Board 
@@ -17,7 +17,7 @@ System documentation and helper scripts to process the flight log data.
 - https://github.com/larus-breeze/hw_utility
 - https://github.com/larus-breeze/sw_utility
 
-# Structure here:
+# Documentation & Utility content here:
 - helper: Scripts e.g. to monitor the live CAN-Bus data.
-- documentation: system design and documentation 
-- analysis: scripts to visualize the with https://github.com/larus-breeze/SIL_flight_sensor_emulator/ processed flight log data.
+- documentation: system design and documentation files 
+- analysis: scripts to visualize and convert flight log data.

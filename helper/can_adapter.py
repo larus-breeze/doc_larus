@@ -1,11 +1,6 @@
 from can.interfaces.seeedstudio.seeedstudio import SeeedBus
 import threading
-from collections import deque
-import matplotlib.pyplot as plt
-import matplotlib.animation as animation
-import numpy as np
 from datetime import datetime
-
 
 
 class CanGet(threading.Thread):
@@ -92,8 +87,6 @@ class CanGet(threading.Thread):
                     self.yaw_rate = (int.from_bytes(rxMessage.data[2:3], 'little', signed="True")) / 1000.0 * 180 / 3.1415
                     self.nick_angle = (int.from_bytes(rxMessage.data[4:5], 'little', signed="True")) / 1000.0 * 180 / 3.1415
 
-                    #print("Slip angle, Yaw rate, nick angle: ", self.slip_angle, self.yaw_rate, self.nick_angle)
-
                 if rxMessage.arbitration_id == 0x112:  # c_CID_KSB_Vdd; // 0x112
                     self.voltage = (int.from_bytes(rxMessage.data[0:1], 'little', signed="False"))/10.0
 
@@ -111,8 +104,6 @@ class CanGet(threading.Thread):
                       " Yaw Rate: ", self.yaw_rate,
                       " Nick Angle: ", self.nick_angle
                       )
-
-                #print("Euler r n y: ", self.euler_r, self.euler_n, self.euler_y)
 
             if self.stop is True:
                 try:
