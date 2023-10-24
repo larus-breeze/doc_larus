@@ -1,4 +1,4 @@
-# LARUS Protocol **Version 0.1.1**
+# LARUS Protocol **Version 0.1.2**
 
 This document describes the LARUS serial port protocol, as realized in [sw_sensor_algorithm 2023-08-18](https://github.com/larus-breeze/sw_sensor_algorithms/blob/17e8b49139d2c820dce6f02208cf5205ff22e62a/Output_Formatter/NMEA_format.cpp).
 
@@ -192,3 +192,34 @@ This sentence fives climb rate (vario), pressure altitude and true air speed (TA
   3) Pressure altitude in m
   4) TAS in kph
   5) Checksum
+
+### $PLARS Settings parameters bidirectional
+
+           1 2 3   4
+           | | |   |
+    $PLARS,a,a,xxx*hh<CR><LF>
+    
+    Examples:
+    $PLARS,L,MC,1.3*1E
+    $PLARS,L,BAL,1.25*6B
+    $PLARS,L,BUGS,15*3B
+    $PLARS,L,QNH,1013.2*74
+
+    $PLARS,H,MC,2.1*1B
+    $PLARS,H,BAL,1.00*68
+    $PLARS,H,BUGS,0*0B
+    $PLARS,H,QNH,1031.4*76
+
+
+The $PLARS record is intended for exchanging setting values between Larus and a host system such as XCSoar. The record can be used in both directions: from host to Larus or from Larus to host.
+
+These records should not be sent cyclically, but only when needed during initialization and when changes are made.
+
+  1) Data source (L: Larus, H: Host)
+  2) Settings parameter
+     - MC MacCready (0.0 - 9.9)
+     - BAL Ballast (1.00 - 1.60)
+     - BUGS Bugs in % (0 - 30)
+     - QNQ QNH in hPa
+  3) Value (format depends on settings parameter, see examples)
+  4) Checksum
