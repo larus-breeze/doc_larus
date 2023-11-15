@@ -220,6 +220,6 @@ These records should not be sent cyclically, but only when needed during initial
      - MC MacCready (0.0 - 9.9)
      - BAL Ballast (1.00 - 1.60)
      - BUGS Bugs in % (0 - 30)
-     - QNQ QNH in hPa
+     - QNH QNH in hPa
   3) Value (format depends on settings parameter, see examples)
   4) Checksum
