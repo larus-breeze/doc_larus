@@ -19,7 +19,7 @@ Each device sends a [heartbeat](object_directory/generic.md#id-0x00-show-who-you
 - Generic range can_id ... can_id + 0x00f
 - Specific range (can_id - 0x400) ... (can_id - 0x400 + 0x00f)
 
-The object_id specifies the available functions and data. All devices are listed in the [object directory](../can_spec#object-directory). The devices now know their potential communication partners and their functions. The Hartbeat telegram alternately contains the hardware version, the firmware version and the unique device ID (UID).
+The object_id specifies the available functions and data. All devices are listed in the [object directory](https://github.com/larus-breeze/doc_larus/blob/master/documentation/can_spec.md#object-directory). The devices now know their potential communication partners and their functions. The Hartbeat telegram alternately contains the hardware version, the firmware version and the unique device ID (UID).
 
 Special situations
 ---
