@@ -64,3 +64,7 @@ def crc(data: bytes) -> int:
             buf = bytearray()
     return crc
 ```
+
+Device Unique ID (UID)
+---
+The UID should be unique in the system so that the devices can be clearly distinguished. It is a 32-bit number that can be created, by generating a CRC using the controller-specific data.
