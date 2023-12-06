@@ -13,25 +13,26 @@ datapoints:
     type: u16
     unit: Enumeration, see CAN Specificatiion
   - name: object_id_generation
-    type: u8
+    type: u16
     unit: Generation of Object Id
-  - name: kind
-    type: u8
-    unit: |
-      Enumeration
-      0: Firmware Version
-      1: Hardware Version
-      2: UID
-  - name: firmware_hardware
+  - name: dev_uid
     type: u8[4]
-    unit: |
-      Specific to kind enumeration
-      0: FwVersion
-      1: HwVersion
-      2: Uid
+    unit: DevUid
+- name: version
+  type: Data Object
+  id: 0x01
+  interval: if required by Remote Frame
+  comment: Hardware and Firmware Version
+  data:
+  - name: hw_version
+    type: HwVersion
+    unit: .
+  - name: fw_version
+    type: FwVersion
+    unit: .
 - name: set_config
   type: Service
-  id: 0x01
+  id: 0x02
   interval: if required
   comment: Set System Wide Config Item
   data:
@@ -55,7 +56,7 @@ datapoints:
       4: qnh:                u8[2] reserved, f32 unit Pa
 - name: request_base_id
   type: Service
-  id: 0x02
+  id: 0x03
   interval: at start-up
   comment: Request a Base ID from the Master
   data:
@@ -73,7 +74,7 @@ datapoints:
     unit: Unique ID of the device
 - name: blob_upload
   type: Service
-  id: 0x03
+  id: 0x04
   interval: if required
   comment: Transfer of Binary Data Blocks
   data:

@@ -15,17 +15,22 @@ Length: 8 Bytes
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
     0   object_id                u16       Enumeration, see CAN Specificatiion          
-    2   object_id_generation     u8        Generation of Object Id                      
-    3   kind                     u8        Enumeration                                  
-                                           0: Firmware Version                          
-                                           1: Hardware Version                          
-                                           2: UID                                       
-    4   firmware_hardware        u8[4]     Specific to kind enumeration                 
-                                           0: FwVersion                                 
-                                           1: HwVersion                                 
-                                           2: Uid                                       
+    2   object_id_generation     u16       Generation of Object Id                      
+    4   dev_uid                  u8[4]     DevUid                                       
 
-ID 0x01 Set System Wide Config Item
+ID 0x01 Hardware and Firmware Version
+---
+Name: version  
+Type: Data Object  
+Interval: if required by Remote Frame  
+Length: 8 Bytes
+
+    No  Datapoint                Type      Unit / Comment                               
+    --------------------------------------------------------------------------------------------
+    0   hw_version               HwVersion .                                            
+    4   fw_version               FwVersion .                                            
+
+ID 0x02 Set System Wide Config Item
 ---
 Name: set_config  
 Type: Service  
@@ -47,7 +52,7 @@ Length: 8 Bytes
                                            3: bugs:               u8[2] reserved, f32 unit factor
                                            4: qnh:                u8[2] reserved, f32 unit Pa
 
-ID 0x02 Request a Base ID from the Master
+ID 0x03 Request a Base ID from the Master
 ---
 Name: request_base_id  
 Type: Service  
@@ -62,7 +67,7 @@ Length: 8 Bytes
     1   reserved                 u8[3]     .                                            
     4   device_uid               u8[4]     Unique ID of the device                      
 
-ID 0x03 Transfer of Binary Data Blocks
+ID 0x04 Transfer of Binary Data Blocks
 ---
 Name: blob_upload  
 Type: Service  
