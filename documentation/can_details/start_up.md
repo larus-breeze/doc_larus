@@ -47,3 +47,5 @@ while True:
 Conflicts can occur when obtaining the base ID because we randomly use CAN bus IDs that could also be used by other devices. The procedure described reduces the probability on the one hand by the random waiting time and on the other hand by the random selection of a base ID for the generically defined base ID request datagram. In the unlikely event of a conflict, the process is repeated.
 
 The devices must constantly monitor that the master is still active. If this is no longer the case, the device reverts to the "unconfigured" state after 3 seconds and will attempt to obtain a base ID again.
+
+![State_Diagram](https://raw.githubusercontent.com/larus-breeze/doc_larus/master/documentation/can_details/assets/configured.png)
