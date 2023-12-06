@@ -1,0 +1,20 @@
+name: Virtual Master Device
+object_id: 0
+comment: System Organizer
+#
+datapoints:
+- name: assign_base_id
+  type: Service
+  id: 0x01
+  interval: if required
+  comment: Response to the Request for a Base ID
+  data:
+  - name: base_id
+    type: u8
+    unit: Base ID, range 1..63
+  - name: reserved
+    type: u8[3]
+    unit: .
+  - name: device_uid
+    type: u8[4]
+    unit: Unique ID of the device

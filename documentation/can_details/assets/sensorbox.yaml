@@ -1,0 +1,138 @@
+name: Larus Sensor Box
+object_id: 2
+comment: Definition of CAN bus datagrams of the Larus Sensor Box
+#
+datapoints:
+- name: roll_nick
+  type: Data Object
+  id: 0x00
+  interval: 100  # ms
+  comment: Roll Angle and Nick Angle (Front-Right-Down System)
+  data:
+  - name: roll_angle
+    type: f32
+    unit: rad
+  - name: nick_angle
+    type: f32
+    unit: rad
+- name: heading
+  type: Data Object
+  id: 0x01
+  interval: 1_000  # ms
+  comment: Heading and Magnetic Declination
+  data:
+  - name: heading
+    type: f32
+    unit: rad
+  - name: magnetic_declination
+    type: f32
+    unit: rad
+- name: airspeed
+  type: Data Object
+  id: 0x02
+  interval: 1_000  # ms
+  comment: TAS (True Airspeed) and IAS (Indicated Airspeed)
+  data:
+  - name: tas
+    type: f32
+    unit: m/s
+  - name: ias
+    type: f32
+    unit: m/s
+- name: vario
+  type: Data Object
+  id: 0x03
+  interval: 100  # ms
+  comment: Vario and Vario Avarage
+  data:
+  - name: vario
+    type: f32
+    unit: m/s
+  - name: vario_avarage
+    type: f32
+    unit: m/s
+- name: wind
+  type: Data Object
+  id: 0x04
+  interval: 1_000  # ms
+  comment: Wind Direction and Wind Speed
+  data:
+  - name: wind_direction
+    type: f32
+    unit: rad
+  - name: wind_speed
+    type: f32
+    unit: m/s
+- name: avarage_wind
+  type: Data Object
+  id: 0x05
+  interval: 1_000  # ms
+  comment: Avarage Wind Direction and Avarage Wind Speed
+  data:
+  - name: avarage_wind_direction
+    type: f32
+    unit: rad
+  - name: avarage_wind_speed
+    type: f32
+    unit: m/s
+- name: atmosphere
+  type: Data Object
+  id: 0x06
+  interval: 1_000  # ms
+  comment: Ambient Pressure and Air Density
+  data:
+  - name: ambient_pressure
+    type: f32
+    unit: Pa
+  - name: air_density
+    type: f32
+    unit: kg/m^3
+- name: acceleration
+  type: Data Object
+  id: 0x07
+  interval: 100  # ms
+  comment: Acceleration Angle Front and Angle Right
+  data:
+  - name: acceleration_front
+    type: f32
+    unit: rad
+  - name: acceleration_right
+    type: f32
+    unit: rad
+- name: turn_rate
+  type: Data Object
+  id: 0x08
+  interval: 1_000  # ms
+  comment: Turnrate and State
+  data:
+  - name: turnrate_to_the_right
+    type: f32
+    unit: rad/s
+  - name: state
+    type: u8
+    unit: |
+      0 STRAIGHT_FLIGHT
+      1 TRANSITION
+      2 CIRCLING
+- name: system_state
+  type: Data Object
+  id: 0x09
+  interval: 1_000  # ms
+  comment: Stystem State and GIT Tag Decimal
+  data:
+  - name: system_state
+    type: u32
+    unit: status
+  - name: git_tag_dec
+    type: u32
+    unit: git tag
+- name: voltage
+  type: Data Object
+  id: 0x0a
+  interval: 1_000  # ms
+  comment: Supply Voltage
+  data:
+  - name: voltage
+    type: f32
+    unit: V
+

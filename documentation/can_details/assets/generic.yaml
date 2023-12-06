@@ -1,0 +1,99 @@
+name: Generic Datapoints and Services
+object_id: .
+comment: Generic CAN bus datagrams, usable for any device
+#
+datapoints:
+- name: heartbeat
+  type: Data Object
+  id: 0x00
+  interval: 1_000  # ms
+  comment: Show who you are, that you live and where you live
+  data:
+  - name: object_id
+    type: u16
+    unit: Enumeration, see CAN Specificatiion
+  - name: object_id_generation
+    type: u8
+    unit: Generation of Object Id
+  - name: kind
+    type: u8
+    unit: |
+      Enumeration
+      0: Firmware Version
+      1: Hardware Version
+      2: UID
+  - name: firmware_hardware
+    type: u8[4]
+    unit: |
+      Specific to kind enumeration
+      0: FwVersion
+      1: HwVersion
+      2: Uid
+- name: set_config
+  type: Service
+  id: 0x01
+  interval: if required
+  comment: Set System Wide Config Item
+  data:
+  - name: config_id
+    type: u16
+    unit: |
+      Enumeration
+      0: volume_vario
+      1: mac_cready
+      2: water_ballast
+      3: bugs
+      4: qnh
+  - name: config_data
+    type: u8[6]
+    unit: |
+      Specific to the item
+      0: volume_vario:       u8 unit db, u8[5] reserved
+      1: mac_cready:         u8[2] reserved, f32 unit m/s
+      2: water_ballast:      u8[2] reserved, f32 unit kg
+      3: bugs:               u8[2] reserved, f32 unit factor
+      4: qnh:                u8[2] reserved, f32 unit Pa
+- name: request_base_id
+  type: Service
+  id: 0x02
+  interval: at start-up
+  comment: Request a Base ID from the Master
+  data:
+  - name: desired_priority
+    type: u8
+    unit: |
+      0 Low
+      1 Medium
+      2 High
+  - name: reserved
+    type: u8[3]
+    unit: .
+  - name: device_uid
+    type: u8[4]
+    unit: Unique ID of the device
+- name: blob_upload
+  type: Service
+  id: 0x03
+  interval: if required
+  comment: Transfer of Binary Data Blocks
+  data:
+  - name: upload_state
+    type: u3
+    unit: |
+      0 length
+      1 crc
+      2 data
+      3 last data
+      4 request package
+  - name: block_count
+    type: u5
+    unit: Overflowing block counter
+  - name: content
+    type: u8[7]
+    unit: |
+      upload_state 0: u8[3] reserved (=0), u32 blob_length
+      upload_state 1: u8[3] reserved (=0), u32 crc
+      upload_state 2: u8[7] blob data
+      upload_state 3: u8[7] blob data
+      upload_state 4: u8[3] reserved (=0), u32 requested_block
+

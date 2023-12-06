@@ -1,0 +1,29 @@
+name: Virtual Config Device
+object_id: 1
+comment: Config and maintain system
+#
+datapoints:
+- name: sw_update
+  type: Service
+  id: 0x00
+  interval: if required
+  comment: Offer Firmware Image
+  data:
+  - name: hw_version
+    type: HwVersion
+    unit: .
+  - name: fw_versin
+    type: FwVersion
+    unit: .
+- name: device_config
+  type: Service
+  id: 0x01
+  interval: if required
+  comment: Offer Configuration Data
+  data:
+  - name: hw_version
+    type: HwVersion
+    unit: .
+  - name: fw_versin
+    type: FwVersion
+    unit: .

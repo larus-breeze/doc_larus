@@ -1,0 +1,79 @@
+name: GPS
+object_id: 3
+comment: Definition of CAN bus datagrams of a GPS Receiver
+datapoints:
+- name: date_time
+  type: Data Object
+  id: 0x00
+  interval: 1_000  # ms
+  comment: Date and Time
+  data:
+  - name: year
+    type: u16
+    unit: year
+  - name: month
+    type: u8
+    unit: month
+  - name: day
+    type: u8
+    unit: day
+  - name: hour
+    type: u8
+    unit: h
+  - name: minute
+    type: u8
+    unit: min
+  - name: second
+    type: u8
+    unit: s
+- name: lat_lon
+  type: Data Object
+  id: 0x01
+  interval: 1_000  # ms
+  comment: Latitude and Longitude
+  data:
+  - name: latitude
+    type: f32
+    unit: rad
+  - name: longitude
+    type: f32
+    unit: rad
+- name: altitude
+  type: Data Object
+  id: 0x02
+  interval: 1_000  # ms
+  comment: MSL Altitude and Geo Separation
+  data:
+  - name: altitude
+    type: f32
+    unit: m
+  - name: geo_separation
+    type: f32
+    unit: m
+- name: track_speed
+  type: Data Object
+  id: 0x03
+  interval: 1_000  # ms
+  comment: Ground Track and Ground Speed
+  data:
+  - name: gnd_track
+    type: f32
+    unit: rad
+  - name: gnd_speed
+    type: f32
+    unit: m/s
+- name: satellites
+  type: Data Object
+  id: 0x04
+  interval: 1_000  # ms
+  comment: Number of Sattelites, Fix valid and Heading valid
+  data:
+  - name: number_of_sats
+    type: u8
+    unit: .
+  - name: sat_fix_valid
+    type: bool
+    unit: .
+  - name: sat_heading_valid
+    type: bool
+    unit: .
