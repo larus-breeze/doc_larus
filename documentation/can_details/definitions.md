@@ -10,10 +10,11 @@ Preferred Standard Data Types
 ---
 The following data types are used as far as possible. 
 
-    Unsigned Integers       u8, u16, u32
-    Signed Integers         i8, i16, i32
+    Unsigned Integers       u8, u16, u32, u64
+    Signed Integers         i8, i16, i32, i64
     Bool                    true, false         u8, true = 1, false = 0
-    Floating Point Numbers  f32                 (f32::NAN = [0, 0, 0xc0, 0x7f])
+    Floating Point Numbers  f32, f64            f32::NAN [0, 0, 0xc0, 0x7f]
+                                                f64::NAN [0, 0, 0, 0, 0, 0, 0xf8, 0x7f]
     Byte Arrays             u8[N]
 
 Defined Data Types
