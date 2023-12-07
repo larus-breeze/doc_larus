@@ -8,6 +8,7 @@ Virtual Config Device
 ID 0x00 Offer Firmware Image
 ---
 Name: sw_update  
+Object-ID Version: 0  
 Type: Service  
 Interval: if required  
 Length: 8 Bytes
@@ -20,6 +21,7 @@ Length: 8 Bytes
 ID 0x01 Offer Configuration Data
 ---
 Name: device_config  
+Object-ID Version: 0  
 Type: Service  
 Interval: if required  
 Length: 8 Bytes

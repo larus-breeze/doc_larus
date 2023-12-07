@@ -5,6 +5,7 @@ comment: Generic CAN bus datagrams, usable for any device
 datapoints:
 - name: heartbeat
   type: Data Object
+  object_id_ver: 0
   id: 0x00
   interval: 1_000  # ms
   comment: Show who you are, that you live and where you live
@@ -20,6 +21,7 @@ datapoints:
     unit: DevUid
 - name: version
   type: Data Object
+  object_id_ver: 0
   id: 0x01
   interval: if required by Remote Frame
   comment: Hardware and Firmware Version
@@ -32,6 +34,7 @@ datapoints:
     unit: .
 - name: set_config
   type: Service
+  object_id_ver: 0
   id: 0x02
   interval: if required
   comment: Set System Wide Config Item
@@ -56,6 +59,7 @@ datapoints:
       4: qnh:                u8[2] reserved, f32 unit Pa
 - name: request_base_id
   type: Service
+  object_id_ver: 0
   id: 0x03
   interval: at start-up
   comment: Request a Base ID from the Master
@@ -74,6 +78,7 @@ datapoints:
     unit: Unique ID of the device
 - name: blob_upload
   type: Service
+  object_id_ver: 0
   id: 0x04
   interval: if required
   comment: Transfer of Binary Data Blocks

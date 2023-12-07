@@ -8,6 +8,7 @@ Larus Sensor Box
 ID 0x00 Roll Angle and Nick Angle (Front-Right-Down System)
 ---
 Name: roll_nick  
+Object-ID Version: 0  
 Type: Data Object  
 Interval: 100 ms  
 Length: 8 Bytes
@@ -20,6 +21,7 @@ Length: 8 Bytes
 ID 0x01 Heading and Magnetic Declination
 ---
 Name: heading  
+Object-ID Version: 0  
 Type: Data Object  
 Interval: 1000 ms  
 Length: 8 Bytes
@@ -32,6 +34,7 @@ Length: 8 Bytes
 ID 0x02 TAS (True Airspeed) and IAS (Indicated Airspeed)
 ---
 Name: airspeed  
+Object-ID Version: 0  
 Type: Data Object  
 Interval: 1000 ms  
 Length: 8 Bytes
@@ -44,6 +47,7 @@ Length: 8 Bytes
 ID 0x03 Vario and Vario Avarage
 ---
 Name: vario  
+Object-ID Version: 0  
 Type: Data Object  
 Interval: 100 ms  
 Length: 8 Bytes
@@ -56,6 +60,7 @@ Length: 8 Bytes
 ID 0x04 Wind Direction and Wind Speed
 ---
 Name: wind  
+Object-ID Version: 0  
 Type: Data Object  
 Interval: 1000 ms  
 Length: 8 Bytes
@@ -68,6 +73,7 @@ Length: 8 Bytes
 ID 0x05 Avarage Wind Direction and Avarage Wind Speed
 ---
 Name: avarage_wind  
+Object-ID Version: 0  
 Type: Data Object  
 Interval: 1000 ms  
 Length: 8 Bytes
@@ -80,6 +86,7 @@ Length: 8 Bytes
 ID 0x06 Ambient Pressure and Air Density
 ---
 Name: atmosphere  
+Object-ID Version: 0  
 Type: Data Object  
 Interval: 1000 ms  
 Length: 8 Bytes
@@ -92,6 +99,7 @@ Length: 8 Bytes
 ID 0x07 Acceleration Angle Front and Angle Right
 ---
 Name: acceleration  
+Object-ID Version: 0  
 Type: Data Object  
 Interval: 100 ms  
 Length: 8 Bytes
@@ -104,6 +112,7 @@ Length: 8 Bytes
 ID 0x08 Turnrate and State
 ---
 Name: turn_rate  
+Object-ID Version: 0  
 Type: Data Object  
 Interval: 1000 ms  
 Length: 5 Bytes
@@ -118,6 +127,7 @@ Length: 5 Bytes
 ID 0x09 Stystem State and GIT Tag Decimal
 ---
 Name: system_state  
+Object-ID Version: 0  
 Type: Data Object  
 Interval: 1000 ms  
 Length: 8 Bytes
@@ -130,6 +140,7 @@ Length: 8 Bytes
 ID 0x0a Supply Voltage
 ---
 Name: voltage  
+Object-ID Version: 0  
 Type: Data Object  
 Interval: 1000 ms  
 Length: 4 Bytes

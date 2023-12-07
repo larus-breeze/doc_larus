@@ -5,6 +5,7 @@ comment: System Organizer
 datapoints:
 - name: assign_base_id
   type: Service
+  object_id_ver: 0
   id: 0x01
   interval: if required
   comment: Response to the Request for a Base ID

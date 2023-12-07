@@ -5,6 +5,7 @@ comment: Definition of CAN bus datagrams of the Larus Sensor Box
 datapoints:
 - name: roll_nick
   type: Data Object
+  object_id_ver: 0
   id: 0x00
   interval: 100  # ms
   comment: Roll Angle and Nick Angle (Front-Right-Down System)
@@ -17,6 +18,7 @@ datapoints:
     unit: rad
 - name: heading
   type: Data Object
+  object_id_ver: 0
   id: 0x01
   interval: 1_000  # ms
   comment: Heading and Magnetic Declination
@@ -29,6 +31,7 @@ datapoints:
     unit: rad
 - name: airspeed
   type: Data Object
+  object_id_ver: 0
   id: 0x02
   interval: 1_000  # ms
   comment: TAS (True Airspeed) and IAS (Indicated Airspeed)
@@ -41,6 +44,7 @@ datapoints:
     unit: m/s
 - name: vario
   type: Data Object
+  object_id_ver: 0
   id: 0x03
   interval: 100  # ms
   comment: Vario and Vario Avarage
@@ -53,6 +57,7 @@ datapoints:
     unit: m/s
 - name: wind
   type: Data Object
+  object_id_ver: 0
   id: 0x04
   interval: 1_000  # ms
   comment: Wind Direction and Wind Speed
@@ -65,6 +70,7 @@ datapoints:
     unit: m/s
 - name: avarage_wind
   type: Data Object
+  object_id_ver: 0
   id: 0x05
   interval: 1_000  # ms
   comment: Avarage Wind Direction and Avarage Wind Speed
@@ -77,6 +83,7 @@ datapoints:
     unit: m/s
 - name: atmosphere
   type: Data Object
+  object_id_ver: 0
   id: 0x06
   interval: 1_000  # ms
   comment: Ambient Pressure and Air Density
@@ -89,6 +96,7 @@ datapoints:
     unit: kg/m^3
 - name: acceleration
   type: Data Object
+  object_id_ver: 0
   id: 0x07
   interval: 100  # ms
   comment: Acceleration Angle Front and Angle Right
@@ -101,6 +109,7 @@ datapoints:
     unit: rad
 - name: turn_rate
   type: Data Object
+  object_id_ver: 0
   id: 0x08
   interval: 1_000  # ms
   comment: Turnrate and State
@@ -116,6 +125,7 @@ datapoints:
       2 CIRCLING
 - name: system_state
   type: Data Object
+  object_id_ver: 0
   id: 0x09
   interval: 1_000  # ms
   comment: Stystem State and GIT Tag Decimal
@@ -128,6 +138,7 @@ datapoints:
     unit: git tag
 - name: voltage
   type: Data Object
+  object_id_ver: 0
   id: 0x0a
   interval: 1_000  # ms
   comment: Supply Voltage

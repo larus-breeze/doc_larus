@@ -8,6 +8,7 @@ Virtual Master Device
 ID 0x01 Response to the Request for a Base ID
 ---
 Name: assign_base_id  
+Object-ID Version: 0  
 Type: Service  
 Interval: if required  
 Length: 8 Bytes

@@ -4,10 +4,13 @@ SIZES = {   # Bit-Sizes
     'u8': 8,
     'u16': 16,
     'u32': 32,
+    'u64': 32,
     'i8': 8,
     'i16': 16,
     'i32': 32,
+    'i64': 32,
     'f32': 32,
+    'f64': 32,
     'bool': 8,
 
     'u3': 3,
@@ -57,12 +60,13 @@ class Item():
         return md
 
 class Datapoint():
-    fmt = "ID 0x{:02x} {}\n---\nName: {}  \nType: {}  \nInterval: {}  \nLength: {} Bytes\n\n"
+    fmt = "ID 0x{:02x} {}\n---\nName: {}  \nObject-ID Version: {}  \nType: {}  \nInterval: {}  \nLength: {} Bytes\n\n"
     def __init__(self, content: dict):
         self.content = content
         self.items = []
         self.id = content['id']
         self.name = content['name']
+        self.object_id_ver = content['object_id_ver']
         self.type = content['type']
         self.comment = content['comment']
         self.interval = content['interval']
@@ -81,7 +85,15 @@ class Datapoint():
         self.items.append(line)
         
     def to_md(self):
-        r = self.fmt.format(self.id, self.comment, self.name, self.type, self.interval, self.length)
+        r = self.fmt.format(
+            self.id, 
+            self.comment, 
+            self.name,
+            self.object_id_ver, 
+            self.type, 
+            self.interval, 
+            self.length
+        )
         r += Item.header()
         for item in self.items:
             r += item.to_md()

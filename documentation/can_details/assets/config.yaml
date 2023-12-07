@@ -5,6 +5,7 @@ comment: Config and maintain system
 datapoints:
 - name: sw_update
   type: Service
+  object_id_ver: 0
   id: 0x00
   interval: if required
   comment: Offer Firmware Image
@@ -17,6 +18,7 @@ datapoints:
     unit: .
 - name: device_config
   type: Service
+  object_id_ver: 0
   id: 0x01
   interval: if required
   comment: Offer Configuration Data

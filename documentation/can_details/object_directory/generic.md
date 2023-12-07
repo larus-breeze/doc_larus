@@ -8,6 +8,7 @@ Generic Datapoints and Services
 ID 0x00 Show who you are, that you live and where you live
 ---
 Name: heartbeat  
+Object-ID Version: 0  
 Type: Data Object  
 Interval: 1000 ms  
 Length: 8 Bytes
@@ -21,6 +22,7 @@ Length: 8 Bytes
 ID 0x01 Hardware and Firmware Version
 ---
 Name: version  
+Object-ID Version: 0  
 Type: Data Object  
 Interval: if required by Remote Frame  
 Length: 8 Bytes
@@ -33,6 +35,7 @@ Length: 8 Bytes
 ID 0x02 Set System Wide Config Item
 ---
 Name: set_config  
+Object-ID Version: 0  
 Type: Service  
 Interval: if required  
 Length: 8 Bytes
@@ -55,6 +58,7 @@ Length: 8 Bytes
 ID 0x03 Request a Base ID from the Master
 ---
 Name: request_base_id  
+Object-ID Version: 0  
 Type: Service  
 Interval: at start-up  
 Length: 8 Bytes
@@ -70,6 +74,7 @@ Length: 8 Bytes
 ID 0x04 Transfer of Binary Data Blocks
 ---
 Name: blob_upload  
+Object-ID Version: 0  
 Type: Service  
 Interval: if required  
 Length: 8 Bytes
