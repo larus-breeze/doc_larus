@@ -8,6 +8,7 @@ GPS
 ID 0x00 Date and Time
 ---
 Name: date_time  
+Object-ID Version: 0  
 Type: Data Object  
 Interval: 1000 ms  
 Length: 7 Bytes
@@ -21,21 +22,34 @@ Length: 7 Bytes
     5   minute                   u8        min                                          
     6   second                   u8        s                                            
 
-ID 0x01 Latitude and Longitude
+ID 0x01 Latitude
 ---
-Name: lat_lon  
+Name: latitude  
+Object-ID Version: 0  
 Type: Data Object  
 Interval: 1000 ms  
-Length: 8 Bytes
+Length: 4 Bytes
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
-    0   latitude                 f32       rad                                          
-    4   longitude                f32       rad                                          
+    0   latitude                 f64       rad                                          
 
-ID 0x02 MSL Altitude and Geo Separation
+ID 0x02 Longitude
+---
+Name: longitude  
+Object-ID Version: 0  
+Type: Data Object  
+Interval: 1000 ms  
+Length: 4 Bytes
+
+    No  Datapoint                Type      Unit / Comment                               
+    --------------------------------------------------------------------------------------------
+    0   longitude                f64       rad                                          
+
+ID 0x03 MSL Altitude and Geo Separation
 ---
 Name: altitude  
+Object-ID Version: 0  
 Type: Data Object  
 Interval: 1000 ms  
 Length: 8 Bytes
@@ -45,9 +59,10 @@ Length: 8 Bytes
     0   altitude                 f32       m                                            
     4   geo_separation           f32       m                                            
 
-ID 0x03 Ground Track and Ground Speed
+ID 0x04 Ground Track and Ground Speed
 ---
 Name: track_speed  
+Object-ID Version: 0  
 Type: Data Object  
 Interval: 1000 ms  
 Length: 8 Bytes
@@ -57,9 +72,10 @@ Length: 8 Bytes
     0   gnd_track                f32       rad                                          
     4   gnd_speed                f32       m/s                                          
 
-ID 0x04 Number of Sattelites, Fix valid and Heading valid
+ID 0x05 Number of Sattelites, Fix valid and Heading valid
 ---
 Name: satellites  
+Object-ID Version: 0  
 Type: Data Object  
 Interval: 1000 ms  
 Length: 3 Bytes

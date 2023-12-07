@@ -4,6 +4,7 @@ comment: Definition of CAN bus datagrams of a GPS Receiver
 datapoints:
 - name: date_time
   type: Data Object
+  object_id_ver: 0
   id: 0x00
   interval: 1_000  # ms
   comment: Date and Time
@@ -26,21 +27,30 @@ datapoints:
   - name: second
     type: u8
     unit: s
-- name: lat_lon
+- name: latitude
   type: Data Object
+  object_id_ver: 0
   id: 0x01
   interval: 1_000  # ms
-  comment: Latitude and Longitude
+  comment: Latitude
   data:
   - name: latitude
-    type: f32
+    type: f64
     unit: rad
+- name: longitude
+  type: Data Object
+  object_id_ver: 0
+  id: 0x02
+  interval: 1_000  # ms
+  comment: Longitude
+  data:
   - name: longitude
-    type: f32
+    type: f64
     unit: rad
 - name: altitude
   type: Data Object
-  id: 0x02
+  object_id_ver: 0
+  id: 0x03
   interval: 1_000  # ms
   comment: MSL Altitude and Geo Separation
   data:
@@ -52,7 +62,8 @@ datapoints:
     unit: m
 - name: track_speed
   type: Data Object
-  id: 0x03
+  object_id_ver: 0
+  id: 0x04
   interval: 1_000  # ms
   comment: Ground Track and Ground Speed
   data:
@@ -64,7 +75,8 @@ datapoints:
     unit: m/s
 - name: satellites
   type: Data Object
-  id: 0x04
+  object_id_ver: 0
+  id: 0x05
   interval: 1_000  # ms
   comment: Number of Sattelites, Fix valid and Heading valid
   data:
