@@ -11,13 +11,14 @@ Name: sound
 Object-ID Version: 0  
 Type: Data Object  
 Interval: 100 ms  
-Length: 5 Bytes
+Length: 6 Bytes
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
     0   frequency                u16       hertz                                        
     2   duty_cycle               u16       oscilations                                  
     4   volume                   u8        db                                           
+    5   continuous               bool      true, false                                  
 
 ID 0x01 Recommended speed between updrafts and Mac Cready value
 ---

@@ -18,6 +18,9 @@ datapoints:
   - name: volume
     type: u8
     unit: db
+  - name: continuous
+    type: bool
+    unit: true, false
 - name: speed_to_fly
   type: Data Object
   object_id_ver: 0
