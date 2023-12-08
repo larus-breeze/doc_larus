@@ -19,3 +19,10 @@ datapoints:
   - name: device_uid
     type: u8[4]
     unit: Unique ID of the device
+- name: can_reset
+  type: Service
+  object_id_ver: 0
+  id: 0x02
+  interval: if required
+  comment: No data, marker; request to reset all filters
+  data:

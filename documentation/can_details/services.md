@@ -37,7 +37,13 @@ A virtual configuration device can offer a new firmware image. If the configurat
 
 It is not part of this specification to make statements about what a firmware image should look like. Specific solutions are possible here, which only need to be known to the device itself and the configuration tool. However, these images should at least contain information on compatibility, versioning and integrity.
 
-The service [offers the image](object_directory/config.md#id-0x01-offer-firmware-image) with a datagram and then uses the [service to transfer binary data](https://github.com/larus-breeze/doc_larus/edit/master/documentation/can_details/services.md#transfer-of-binary-data-blocks).
+The procedure is as follows:
+- [Offer firmware update](object_directory/config.md#id-0x01-offer-firmware-image))
+- Wait 100 ms. During this time, the interested devices confirm with an RTR without data that they are ready to download a firmware image. All other bus participants can block the data trafer can IDs
+- [Service to transfer binary data](https://github.com/larus-breeze/doc_larus/edit/master/documentation/can_details/services.md#transfer-of-binary-data-blocks) is triggered
+- After completion, the [can_reset](object_directory/master.md#id-0x02-no-data-marker-request-to-reset-all-filters) marker of the master is triggered by RTR without data. This is a signal for all bus participants to reset their CAN filter settings to the default.
+
+The service [offers the image] with a datagram and then uses the .
 
 Offer Configuration Data
 ---
@@ -45,4 +51,9 @@ A virtual configuration device can offer configuration data. If the configuratio
 
 It is not part of this specification to make statements about what a configuration definition should look like. This is open to any suitable solutions. Simple text files can be used in the same way as binary data.
 
-The service [offers the configuration data](object_directory/config.md#id-0x02-offer-configuration-data) with a datagram and then uses the [service to transfer binary data](https://github.com/larus-breeze/doc_larus/edit/master/documentation/can_details/services.md#transfer-of-binary-data-blocks).
+The procedure is as follows:
+
+- [Offer the configuration data](object_directory/config.md#id-0x02-offer-configuration-data)
+- Wait 100 ms. During this time, the interested devices confirm with an RTR without data that they are ready to download the configuration data. All other bus participants can block the data trafer can IDs
+- [Service to transfer binary data](https://github.com/larus-breeze/doc_larus/edit/master/documentation/can_details/services.md#transfer-of-binary-data-blocks) is triggered
+- After completion, the [can_reset](object_directory/master.md#id-0x02-no-data-marker-request-to-reset-all-filters) marker of the master is triggered by RTR without data. This is a signal for all bus participants to reset their CAN filter settings to the default.

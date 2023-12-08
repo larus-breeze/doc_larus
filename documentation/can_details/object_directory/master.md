@@ -19,3 +19,14 @@ Length: 8 Bytes
     1   reserved                 u8[3]     .                                            
     4   device_uid               u8[4]     Unique ID of the device                      
 
+ID 0x02 No data, marker; request to reset all filters
+---
+Name: can_reset  
+Object-ID Version: 0  
+Type: Service  
+Interval: if required  
+Length: 0 Bytes
+
+    No  Datapoint                Type      Unit / Comment                               
+    --------------------------------------------------------------------------------------------
+

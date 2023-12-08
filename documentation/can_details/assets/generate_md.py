@@ -73,10 +73,11 @@ class Datapoint():
         if type(self.interval) == int:
             self.interval = f"{self.interval} ms"
         adr = 0
-        for dl in content['data']:
-            item = Item(adr, dl)
-            self.add_item(item)
-            adr += SIZES[item.type]
+        if content['data'] is not None:
+            for dl in content['data']:
+                item = Item(adr, dl)
+                self.add_item(item)
+                adr += SIZES[item.type]
         self.length = adr // 8
         if adr % 8 > 0:
             self.length += 1
