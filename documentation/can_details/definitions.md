@@ -26,10 +26,6 @@ Defined Data Types
         Minor           u8[2]  Hw with same major and minor is firmware compatible
         Patch           u8[3]    
 
-    Manufacturer
-        0       Larus
-        1       Air Avionics
-
     FwVersion
         Major           u8[0]
         Minor           u8[1]     
@@ -69,3 +65,22 @@ def crc(data: bytes) -> int:
 Device Unique ID (UID)
 ---
 The UID should be unique in the system so that the devices can be clearly distinguished. It is a 32-bit number that can be created, by generating a CRC using the controller-specific data.
+
+Manufacturer and Hardware Versions
+---
+    Manufacturer
+
+    1       Larus
+    2       Air Avionics
+
+
+    Hardware Releases
+
+    Manufacturer    Name of Device      HwVersion
+    ---------------------------------------------
+    Larus           Sensorbox MK1       1.1.1.0
+    Larus           Sensorbox MK2       1.1.2.0
+    Larus           Audiobox            1.2.1.0
+    Larus           Frontend 57         1.3.1.0
+    AirAvionics     AD57 v1             2.1.1.0
+    AirAvionics     Ad57 v2             2.1.2.0
