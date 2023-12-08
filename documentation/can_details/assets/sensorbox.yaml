@@ -123,10 +123,20 @@ datapoints:
       0 STRAIGHT_FLIGHT
       1 TRANSITION
       2 CIRCLING
-- name: system_state
+- name: trift_angle
   type: Data Object
   object_id_ver: 0
   id: 0x09
+  interval: 100  # ms
+  comment: Calculated trift angle
+  data:
+  - name: trift_angle
+    type: f32
+    unit: rad, positive if track right of heading
+- name: system_state
+  type: Data Object
+  object_id_ver: 0
+  id: 0x0a
   interval: 1_000  # ms
   comment: Stystem State and GIT Tag Decimal
   data:
@@ -139,7 +149,7 @@ datapoints:
 - name: voltage
   type: Data Object
   object_id_ver: 0
-  id: 0x0a
+  id: 0x0b
   interval: 1_000  # ms
   comment: Supply Voltage
   data:
