@@ -124,7 +124,19 @@ Length: 5 Bytes
                                            1 TRANSITION                                 
                                            2 CIRCLING                                   
 
-ID 0x09 Stystem State and GIT Tag Decimal
+ID 0x09 trift-angle
+---
+Name: trift_angle  
+Object-ID Version: 0  
+Type: Data Object  
+Interval: 100 ms  
+Length: 4 Bytes
+
+    No  Datapoint                Type      Unit / Comment                               
+    --------------------------------------------------------------------------------------------
+    0   trift_angle          f32           rad, positive if track right of heading                                       
+
+ID 0x0a Stystem State and GIT Tag Decimal
 ---
 Name: system_state  
 Object-ID Version: 0  
@@ -137,7 +149,7 @@ Length: 8 Bytes
     0   system_state             u32       status                                       
     4   git_tag_dec              u32       git tag                                      
 
-ID 0x0a Supply Voltage
+ID 0x0b Supply Voltage
 ---
 Name: voltage  
 Object-ID Version: 0  
