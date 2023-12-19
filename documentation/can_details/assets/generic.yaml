@@ -1,14 +1,10 @@
-name: Generic Datapoints and Services
-object_id: .
-comment: Generic CAN bus datagrams, usable for any device
-#
 datapoints:
 - name: heartbeat
   type: Data Object
   object_id_ver: 0
-  id: 0x00
+  id: 0x400
   interval: 1_000  # ms
-  comment: Show who you are, that you live and where you live
+  comment: Heartbeat
   data:
   - name: object_id
     type: u16
@@ -22,7 +18,7 @@ datapoints:
 - name: version
   type: Data Object
   object_id_ver: 0
-  id: 0x01
+  id: 0x401
   interval: if required by Remote Frame
   comment: Hardware and Firmware Version
   data:
@@ -35,7 +31,7 @@ datapoints:
 - name: set_config
   type: Service
   object_id_ver: 0
-  id: 0x02
+  id: 0x402
   interval: if required
   comment: Set System Wide Config Item
   data:
@@ -57,29 +53,10 @@ datapoints:
       2: water_ballast:      u8[2] reserved, f32 unit kg
       3: bugs:               u8[2] reserved, f32 unit factor
       4: qnh:                u8[2] reserved, f32 unit Pa
-- name: request_base_id
-  type: Service
-  object_id_ver: 0
-  id: 0x03
-  interval: at start-up
-  comment: Request a Base ID from the Master
-  data:
-  - name: desired_priority
-    type: u8
-    unit: |
-      0 Low
-      1 Medium
-      2 High
-  - name: reserved
-    type: u8[3]
-    unit: .
-  - name: device_uid
-    type: u8[4]
-    unit: Unique ID of the device
 - name: blob_upload
   type: Service
   object_id_ver: 0
-  id: 0x04
+  id: 0x403
   interval: if required
   comment: Transfer of Binary Data Blocks
   data:

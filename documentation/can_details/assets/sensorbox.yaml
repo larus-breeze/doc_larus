@@ -1,5 +1,6 @@
 name: Larus Sensor Box
 object_id: 2
+preferred_id: 32
 comment: Definition of CAN bus datagrams of the Larus Sensor Box
 #
 datapoints:
@@ -156,4 +157,3 @@ datapoints:
   - name: voltage
     type: f32
     unit: V
-

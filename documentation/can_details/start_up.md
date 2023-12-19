@@ -1,51 +1,71 @@
 Start up CAN bus
 ===
 
-Initially, the system is in an unconfigured state. All devices initialize their hardware and start the respective application. The device that represents the virtual master now starts to send its heartbeat.
+Initially, the system is in an unconfigured state. All devices initialize their hardware and start the respective application. There is no master instance in the system. Up to 62 virtual devices can be used. To be able to participate in shared communication, the device must be assigned a virtual device number (VDN) in the range from 1 to 62. The following scheme is run through to assign the virtual device number.
 
-All other devices wait until they receive the heartbeat from the virtual master. The devices that have not yet been configured ans start to request a base device ID from the master. The procedure is as follows:
-- Wait 0..200 ms (random time with µ-second resolution)
-- Generate a random number P between 0 and 63
-- Calculate the CAN bus ID for the request: can_id = 0x402 + (P << 4)
-- [Request a base ID](object_directory/generic.md#id-0x02-request-a-base-id-from-the-master) from the master 
-- Wait 10 ms
-- [Receive base ID](object_directory/master.md#id-0x01-response-to-the-request-for-a-base-id)? yes: ready, no: start from the beginning 
+1 Create a list of the VDNs used in the background
+---
+The device activates the CAN bus receiver and keeps a list of active virtual devices on the basis of the heartbeats in the background. Based on this list and the knowledge of the VDNs that are still free, the device selects its own VDNs at the end of the startup process.
 
-The process is shown again below as Python pseudo code
+2 Separation of the competing participants
+---
+The CAN bus ID range from 0x7f0 to 0x7ff is reserved for the startup process. A device that wants to secure an ID (or several IDs) during the startup process starts at ID 0x7ff. It sends a remote transmission request (RTR) without data to this address to announce its participation. It will work its way down in the process step by step (CAN bus ID 0x7f0). When it has reached the bottom, it reserves the desired virtual device numbers.
 
+The process is iterative:
+
+    a. Set the current CAN bus ID to 0x01f
+    b. Send an RTR on the current CAN bus ID
+    c. Wait a random time in the range of 34..67 ms
+    d. Check whether other participants have sent an RTR in the two places below. 
+    e. If other participants were found, continue with b.
+    f. If the current CAN bus address == 0x012, end the loop and continue with the overall process
+    g. If no other participants were found, reduce the current CAN bus address by 1 and continue with b.
+
+Below is the same process as pseudo code:
 ```python
 # Start her after initializing hardware and software. We are in unconfigured state. 
 
-# Wait for the heartbeat of the master
-while True:
-    if heartbeat_master_recieved():
-        break
-    delay_us(10_000) # wait 10 ms
+current_can_id = 0x01f
 
-# Get base_id
-while True:
-    # Wait 0..200 ms
-    delay_time = random(0, 200_000)
+while current_can_id > 0x012:
+    # send RTR
+    can_send_rtr(current_can_id)
+
+    # wait 34...67 ms
+    delay_time = random(34_000, 67_000)
     delay_us(delay_time)
 
-    # Generate base-id request
-    p = random(0, 64)
-    can_id = 0x402 + (p << 4)
-    # PRIO_MEDIUM = 1, DEV_UID is calculated from the UID of the stm32 chip
-    can_dg = RequestBaseIdDg(can_id, PRIO_MEDIUM, DEV_UID)
-    can_send(can_dg)
+    # Reduce the current_can_id if no disruptive traffic is observed below
+    if can_receive(id=current_can_id - 1) or can_receive(id=current_can_id - 2):
+        continue
+    else:
+        current_can_id -= 1
 
-    # Receive answer from master and stop waiting, if base_id received
-    delay_us(10_000)
-    can_dg = can_recieve(id=0x001)
-    if (can_dg is not None) and (can_dg.uid() == DEV_UID):
-        base_id = can_dg.base_id()
-        break 
-
-# Continue, we are now in the configured state with base_id and can communicate as required.
+# The separation process is now finished, go on...
 ```
-Conflicts can occur when obtaining the base ID because we randomly use CAN bus IDs that could also be used by other devices. The procedure described reduces the probability on the one hand by the random waiting time and on the other hand by the random selection of a base ID for the generically defined base ID request datagram. In the unlikely event of a conflict, the process is repeated.
 
-The devices must constantly monitor that the master is still active. If this is no longer the case, the device reverts to the "unconfigured" state after 3 seconds and will attempt to obtain a base ID again.
+3 Reserve the required VDNs
+---
+It is now known that it is not the turn of any other device and that exclusive access to VDN resources is therefore possible. The VDNs already used in the system are also known from the list created in the background. This fulfils all the prerequisites for reserving one or more VDNs.
 
-![State_Diagram](https://raw.githubusercontent.com/larus-breeze/doc_larus/master/documentation/can_details/assets/configured.png)
+The device now selects suitable VDNs and sends an RTR to their heartbeat addresses to announce the requirement.
+
+4 Confirm the VDNs and switch to normal operation
+---
+After one second, the device checks once again that no complete heartbeats have been sent on the VDNs used. If no heartbeats have been received on the corresponding VDNs, the VDNs can be used and the device now sends its heartbeats every second.
+
+If the heartbeat of another device was received on a reserved VDN, the entire process must be run through from the beginning.
+
+Remarks
+---
+- The defined process initially leads to a dead time pause of around 800 ms. After this dead time, the virtual device numbers are assigned at intervals of approximately 100 ms. A fully equipped system with 62 subscribers can thus be safely put into operation in less than 10s.
+- Confirmation of the selected VDNs is used for safety. If everything always ran correctly, this step would not be necessary. It will be extremely rare for a VDN that has already been selected to have to be cancelled again.
+- The procedure has been given the highest priority in order to prioritise the start up phase.
+- The process works downwards with increasing priority. This means that in the event of conflicts between the IDs, the lower ones take priority, thus ensuring the separation process.
+- No UID is required to carry out this procedure, so no conflicts can arise between two identical UIDs (very unlikely case).
+- The process is designed to ensure that the devices involved react within 1 ms. This is easily feasible for real-time controller-based solutions. If a device has poorer real-time performance, more than two slots must be kept free:
+  - Real-time capability < 1 ms: Keep two slots free
+  - Real-time capability < 35 ms: Keep three slots free
+  - Real-time capability < 70 ms: Keep four slots free
+  - Real-time capability < 100 ms: Keep five slots free
+- It is possible to mix devices with variable base IDs and fixed IDs. The prerequisite for this is that these devices must not be connected to the bus more than once. A preferred ID range is provided for each profile. The devices with fixed addresses work in accordance to the defined scheme, creating a closed system with a uniform structure. Devices with fixed IDs can be identified on the heartbeat in exactly the same way as those with variable IDs.

@@ -9,6 +9,7 @@ The CAN bus is used by various manufacturers. However, there is no suitable, uni
 
 System description
 ---
+[Requirements](can_details/requirements.md)  
 [Terms and Basics](can_details/terms_and_basics.md)  
 [Start up](can_details/start_up.md)  
 [Normal Operation](can_details/normal_operation.md)  

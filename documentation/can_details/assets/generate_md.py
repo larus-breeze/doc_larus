@@ -60,8 +60,8 @@ class Item():
         return md
 
 class Datapoint():
-    fmt = "ID 0x{:02x} {}\n---\nName: {}  \nObject-ID Version: {}  \nType: {}  \nInterval: {}  \nLength: {} Bytes\n\n"
-    def __init__(self, content: dict):
+    fmt = "ID 0x{:02x} ({}) {}\n---\nName: {}  \nObject-ID Version: {}  \nType: {}  \nInterval: {}  \nLength: {} Bytes\n\n"
+    def __init__(self, preferred_id, content: dict):
         self.content = content
         self.items = []
         self.id = content['id']
@@ -70,6 +70,7 @@ class Datapoint():
         self.type = content['type']
         self.comment = content['comment']
         self.interval = content['interval']
+        self.preferred_id = preferred_id
         if type(self.interval) == int:
             self.interval = f"{self.interval} ms"
         adr = 0
@@ -86,8 +87,13 @@ class Datapoint():
         self.items.append(line)
         
     def to_md(self):
+        if self.preferred_id is None:
+            preferred = '-'
+        else:
+            preferred = f'0x{self.id + self.preferred_id*16:03x}'
         r = self.fmt.format(
-            self.id, 
+            self.id,
+            preferred, 
             self.comment, 
             self.name,
             self.object_id_ver, 
@@ -102,41 +108,61 @@ class Datapoint():
         return r
 
 class DataObject():
-    fmt = "    {:<25}{:<45}\n"
+    fmt = "    {:<45}{:<35}\n"
 
     def __init__(self, content: dict):
+        # print(content)
         self.content = content
         self.name = content['name']
         self.name_ = content['name'].lower().replace(' ', '_')
         self.comment = content['comment']
         self.object_id = content['object_id']
+        self.preferred_id = content['preferred_id']
         self.datapoints = []
         for dp in content['datapoints']:
-            self.datapoints.append(Datapoint(dp))
+            self.datapoints.append(Datapoint(self.preferred_id, dp))
+
+    def add_datapoints(self, content):
+        for dp in content['datapoints']:
+            self.datapoints.append(Datapoint(self.preferred_id, dp))
 
     def to_md(self):
+        id = self.preferred_id
+        if id is None:
+            generic_range = 'see specific profile'
+            specific_range = 'not applicable'
+        else:
+            generic_range = f"0x{(0x400 + id*16):03x} - 0x{(0x40f + id*16):03x}"
+            specific_range = f"0x{(id*16):03x} - 0x{(0xf + id*16):03x}"
         r = self.name + '\n===\n\n'
         r += self.fmt.format('Name', self.name_)
         r += self.fmt.format('Object Id', self.object_id)
+        r += self.fmt.format('Preffered IDs for Specific Datapoints', specific_range)
+        r += self.fmt.format('Preffered IDs for Generic Datapoints', generic_range)
         r += self.fmt.format('Comment', self.comment)
         r += '\n'
         for dp in self.datapoints:
             r += dp.to_md()
         return r
 
-def generate(yaml_file):
+def generate(yaml_file, generics):
     print(f"processing '{yaml_file}'")
     with open(yaml_file, "r") as f:
         page = yaml.safe_load(f)
 
     do = DataObject(page)
+    if yaml_file not in ('arbitration.yaml', 'config.yaml'):
+        do.add_datapoints(generics)
+    
     page_str = do.to_md()
-
     md_file = yaml_file.replace('yaml', 'md')
     with open('../object_directory/' + md_file, 'w') as f:
         f.write(page_str)
 
+with open("generic.yaml", "r") as f:
+    generics = yaml.safe_load(f)
+
 for file in os.listdir('.'):
-    if os.path.isfile(file) and file.find('.yaml') > 0:
-        generate(file)
+    if os.path.isfile(file) and file.find('.yaml') > 0 and file != 'generic.yaml':
+        generate(file, generics)
 
