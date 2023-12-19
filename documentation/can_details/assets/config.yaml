@@ -1,5 +1,6 @@
 name: Virtual Config Device
 object_id: 1
+preferred_id: 63
 comment: Config and maintain system
 #
 datapoints:

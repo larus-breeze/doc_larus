@@ -13,21 +13,21 @@ The CAN bus ID range from 0x7f0 to 0x7ff is reserved for the startup process. A 
 
 The process is iterative:
 
-    a. Set the current CAN bus ID to 0x7ff
+    a. Set the current CAN bus ID to 0x01f
     b. Send an RTR on the current CAN bus ID
     c. Wait a random time in the range of 34..67 ms
     d. Check whether other participants have sent an RTR in the two places below. 
     e. If other participants were found, continue with b.
-    f. If the current CAN bus address == 0x7f2, end the loop and continue with the overall process
+    f. If the current CAN bus address == 0x012, end the loop and continue with the overall process
     g. If no other participants were found, reduce the current CAN bus address by 1 and continue with b.
 
 Below is the same process as pseudo code:
 ```python
 # Start her after initializing hardware and software. We are in unconfigured state. 
 
-current_can_id = 0x7ff
+current_can_id = 0x01f
 
-while current_can_id > 0x7f2:
+while current_can_id > 0x012:
     # send RTR
     can_send_rtr(current_can_id)
 
@@ -60,6 +60,12 @@ Remarks
 ---
 - The defined process initially leads to a dead time pause of around 800 ms. After this dead time, the virtual device numbers are assigned at intervals of approximately 100 ms. A fully equipped system with 62 subscribers can thus be safely put into operation in less than 10s.
 - Confirmation of the selected VDNs is used for safety. If everything always ran correctly, this step would not be necessary. It will be extremely rare for a VDN that has already been selected to have to be cancelled again.
-- The procedure has been given the lowest priority in order to prioritise heartbeats and ongoing data traffic.
+- The procedure has been given the highest priority in order to prioritise the start up phase.
 - The process works downwards with increasing priority. This means that in the event of conflicts between the IDs, the lower ones take priority, thus ensuring the separation process.
 - No UID is required to carry out this procedure, so no conflicts can arise between two identical UIDs (very unlikely case).
+- The process is designed to ensure that the devices involved react within 1 ms. This is easily feasible for real-time controller-based solutions. If a device has poorer real-time performance, more than two slots must be kept free:
+  - Real-time capability < 1 ms: Keep two slots free
+  - Real-time capability < 35 ms: Keep three slots free
+  - Real-time capability < 70 ms: Keep four slots free
+  - Real-time capability < 100 ms: Keep five slots free
+- It is possible to mix devices with variable base IDs and fixed IDs. The prerequisite for this is that these devices must not be connected to the bus more than once. A preferred ID range is provided for each profile. The devices with fixed addresses work in accordance to the defined scheme, creating a closed system with a uniform structure. Devices with fixed IDs can be identified on the heartbeat in exactly the same way as those with variable IDs.

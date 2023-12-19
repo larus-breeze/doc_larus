@@ -1,5 +1,6 @@
 name: GPS
 object_id: 3
+preferred_id: 34
 comment: Definition of CAN bus datagrams of a GPS Receiver
 datapoints:
 - name: date_time

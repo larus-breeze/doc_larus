@@ -1,0 +1,125 @@
+name: Arbitration Area
+object_id: 0
+preferred_id: 0
+comment: System organization
+#
+datapoints:
+- name: can_arbitration_0
+  type: Service
+  object_id_ver: 0
+  id: 0x0
+  interval: if required (on start-up)
+  comment: No data, RTR marker
+  data:
+- name: can_arbitration_1
+  type: Service
+  object_id_ver: 0
+  id: 0x1
+  interval: if required (on start-up)
+  comment: No data, RTR marker
+  data:
+- name: can_arbitration_2
+  type: Service
+  object_id_ver: 0
+  id: 0x2
+  interval: if required (on start-up)
+  comment: No data, RTR marker
+  data:
+- name: can_arbitration_3
+  type: Service
+  object_id_ver: 0
+  id: 0x3
+  interval: if required (on start-up)
+  comment: No data, RTR marker
+  data:
+- name: can_arbitration_4
+  type: Service
+  object_id_ver: 0
+  id: 0x4
+  interval: if required (on start-up)
+  comment: No data, RTR marker
+  data:
+- name: can_arbitration_5
+  type: Service
+  object_id_ver: 0
+  id: 0x5
+  interval: if required (on start-up)
+  comment: No data, RTR marker
+  data:
+- name: can_arbitration_6
+  type: Service
+  object_id_ver: 0
+  id: 0x6
+  interval: if required (on start-up)
+  comment: No data, RTR marker
+  data:
+- name: can_arbitration_7
+  type: Service
+  object_id_ver: 0
+  id: 0x7
+  interval: if required (on start-up)
+  comment: No data, RTR marker
+  data:
+- name: can_arbitration_8
+  type: Service
+  object_id_ver: 0
+  id: 0x8
+  interval: if required (on start-up)
+  comment: No data, RTR marker
+  data:
+- name: can_arbitration_9
+  type: Service
+  object_id_ver: 0
+  id: 0x9
+  interval: if required (on start-up)
+  comment: No data, RTR marker
+  data:
+- name: can_arbitration_10
+  type: Service
+  object_id_ver: 0
+  id: 0xa
+  interval: if required (on start-up)
+  comment: No data, RTR marker
+  data:
+- name: can_arbitration_11
+  type: Service
+  object_id_ver: 0
+  id: 0xb
+  interval: if required (on start-up)
+  comment: No data, RTR marker
+  data:
+- name: can_arbitration_12
+  type: Service
+  object_id_ver: 0
+  id: 0xc
+  interval: if required (on start-up)
+  comment: No data, RTR marker
+  data:
+- name: can_arbitration_13
+  type: Service
+  object_id_ver: 0
+  id: 0xd
+  interval: if required (on start-up)
+  comment: No data, RTR marker
+  data:
+- name: can_arbitration_14
+  type: Service
+  object_id_ver: 0
+  id: 0xe
+  interval: if required (on start-up)
+  comment: No data, RTR marker
+  data:
+- name: can_arbitration_15
+  type: Service
+  object_id_ver: 0
+  id: 0xf
+  interval: if required (on start-up)
+  comment: No data, RTR marker
+  data:
+- name: can_reset
+  type: Service
+  object_id_ver: 0
+  id: 0x401
+  interval: if required
+  comment: No data, RTR marker; request to reset all filters in all devices
+  data:

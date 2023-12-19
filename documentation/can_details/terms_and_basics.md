@@ -5,9 +5,9 @@ Device Object
 ---
 A device object is a collection of data points that is assigned to a specific functionality. For example, a GPS device object provides the current position, time and other information. It is important to note that these are virtual entities. A real device can combine several virtual device objects. For example, a Flarm device provides both the GPS device object and a device object with information on relative positions to other gliders. All device objects have a uniform size of 16 specific and 16 generic Ids.
 
-Master Device Object
+Arbitration Area
 ---
-The Mster device object is a special virtual device object that is used to organize the Can bus. In particular, this device object distributes the CAN ID areas during start-up. The master device object is assigned a high priority.
+The arbitration area is a special virtual device object that is used to organize the Can bus. In particular, this device object is important during start-up. The arbitration area is assigned a high priority.
 
 Configuration Device Object
 ---

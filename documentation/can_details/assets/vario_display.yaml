@@ -1,5 +1,6 @@
 name: Vario Displsay
 object_id: 4
+preferred_id: 40
 comment: Datagrams of a 57mm, 80mm Vario Display
 datapoints:
 - name: sound
