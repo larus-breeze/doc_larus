@@ -56,7 +56,7 @@ datapoints:
 - name: blob_upload
   type: Service
   object_id_ver: 0
-  id: 0x403
+  id: 0x03
   interval: if required
   comment: Transfer of Binary Data Blocks
   data:

@@ -147,14 +147,14 @@ Dynamic Id: Id(Heartbeat) + 0x02
                                            3: bugs:               u8[2] reserved, f32 unit factor
                                            4: qnh:                u8[2] reserved, f32 unit Pa
 
-ID 0xa23 Transfer of Binary Data Blocks
+ID 0x623 Transfer of Binary Data Blocks
 ---
 Name: blob_upload  
 Object-ID Version: 0  
 Type: Service  
 Interval: if required  
 Length: 8 Bytes  
-Dynamic Id: Id(Heartbeat) + 0x403
+Dynamic Id: Id(Heartbeat) + 0x03
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
