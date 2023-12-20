@@ -18,8 +18,7 @@ System description
 General Information
 ---
 [Data Types and other Definitions](can_details/definitions.md)  
-[Generic Data Objects and Services](can_details/object_directory/generic.md)  
-[Virtual Master Device](can_details/object_directory/master.md)  
+[Arbitration Services](can_details/object_directory/arbitration.md)  
 [Virtual Config Device](can_details/object_directory/config.md)  
 
 Object Directory

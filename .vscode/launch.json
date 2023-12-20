@@ -9,7 +9,7 @@
             "type": "python",
             "request": "launch",
             "program": "generate_md.py",
-            "cwd": "documentation/can_details/assets",
+            "cwd": "/media/winni/1p4/Werkstatt/fliegen/larus/doc_larus/documentation/can_details/assets",
             "console": "integratedTerminal",
             "justMyCode": true
         }

@@ -7,13 +7,14 @@ Vario Displsay
     Preffered IDs for Generic Datapoints         0x680 - 0x68f                      
     Comment                                      Datagrams of a 57mm, 80mm Vario Display
 
-ID 0x00 (0x280) Frequency, volume and duty-cycle for the sound output
+ID 0x280 Frequency, volume and duty-cycle for the sound output
 ---
 Name: sound  
 Object-ID Version: 0  
 Type: Data Object  
 Interval: 100 ms  
-Length: 6 Bytes
+Length: 6 Bytes  
+Dynamic Id: Id(Heartbeat) - 0x400 + 0x00
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
@@ -22,26 +23,28 @@ Length: 6 Bytes
     4   volume                   u8        db                                           
     5   continuous               bool      true, false                                  
 
-ID 0x01 (0x281) Recommended speed between updrafts and Mac Cready value
+ID 0x281 Recommended speed between updrafts and Mac Cready value
 ---
 Name: speed_to_fly  
 Object-ID Version: 0  
 Type: Data Object  
 Interval: 1000 ms  
-Length: 8 Bytes
+Length: 8 Bytes  
+Dynamic Id: Id(Heartbeat) - 0x400 + 0x01
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
     0   speed_to_fly             f32       m/s                                          
     4   mac_cready               f32       m/s                                          
 
-ID 0x400 (0x680) Heartbeat
+ID 0x680 Heartbeat
 ---
 Name: heartbeat  
 Object-ID Version: 0  
 Type: Data Object  
 Interval: 1000 ms  
-Length: 8 Bytes
+Length: 8 Bytes  
+Dynamic Id: Id(Heartbeat) + 0x00
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
@@ -49,26 +52,28 @@ Length: 8 Bytes
     2   object_id_generation     u16       Generation of Object Id                      
     4   dev_uid                  u8[4]     DevUid                                       
 
-ID 0x401 (0x681) Hardware and Firmware Version
+ID 0x681 Hardware and Firmware Version
 ---
 Name: version  
 Object-ID Version: 0  
 Type: Data Object  
 Interval: if required by Remote Frame  
-Length: 8 Bytes
+Length: 8 Bytes  
+Dynamic Id: Id(Heartbeat) + 0x01
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
     0   hw_version               HwVersion .                                            
     4   fw_version               FwVersion .                                            
 
-ID 0x402 (0x682) Set System Wide Config Item
+ID 0x682 Set System Wide Config Item
 ---
 Name: set_config  
 Object-ID Version: 0  
 Type: Service  
 Interval: if required  
-Length: 8 Bytes
+Length: 8 Bytes  
+Dynamic Id: Id(Heartbeat) + 0x02
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
@@ -85,13 +90,14 @@ Length: 8 Bytes
                                            3: bugs:               u8[2] reserved, f32 unit factor
                                            4: qnh:                u8[2] reserved, f32 unit Pa
 
-ID 0x403 (0x683) Transfer of Binary Data Blocks
+ID 0xa83 Transfer of Binary Data Blocks
 ---
 Name: blob_upload  
 Object-ID Version: 0  
 Type: Service  
 Interval: if required  
-Length: 8 Bytes
+Length: 8 Bytes  
+Dynamic Id: Id(Heartbeat) + 0x403
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------

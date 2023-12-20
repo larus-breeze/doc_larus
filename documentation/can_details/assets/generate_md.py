@@ -60,8 +60,9 @@ class Item():
         return md
 
 class Datapoint():
-    fmt = "ID 0x{:02x} ({}) {}\n---\nName: {}  \nObject-ID Version: {}  \nType: {}  \nInterval: {}  \nLength: {} Bytes\n\n"
-    def __init__(self, preferred_id, content: dict):
+    fmt = "ID {} {}\n---\nName: {}  \nObject-ID Version: {}  \nType: {}  \nInterval: {}  \nLength: {} Bytes  \nDynamic Id: {}\n\n"
+    def __init__(self, preferred_id, content: dict, generic = False):
+        self.generic = generic
         self.content = content
         self.items = []
         self.id = content['id']
@@ -90,16 +91,21 @@ class Datapoint():
         if self.preferred_id is None:
             preferred = '-'
         else:
-            preferred = f'0x{self.id + self.preferred_id*16:03x}'
-        r = self.fmt.format(
-            self.id,
-            preferred, 
+            if self.generic:
+                preferred = f'0x{self.id + 0x400 + self.preferred_id*16:03x}'
+                dyn_id = f"Id(Heartbeat) + 0x{self.id:02x}"
+            else:
+                preferred = f'0x{self.id + self.preferred_id*16:03x}'
+                dyn_id = f"Id(Heartbeat) - 0x400 + 0x{self.id:02x}"
+            r = self.fmt.format(
+            preferred,
             self.comment, 
             self.name,
             self.object_id_ver, 
             self.type, 
             self.interval, 
-            self.length
+            self.length,
+            dyn_id
         )
         r += Item.header()
         for item in self.items:
@@ -122,9 +128,9 @@ class DataObject():
         for dp in content['datapoints']:
             self.datapoints.append(Datapoint(self.preferred_id, dp))
 
-    def add_datapoints(self, content):
+    def add_generic_dps(self, content):
         for dp in content['datapoints']:
-            self.datapoints.append(Datapoint(self.preferred_id, dp))
+            self.datapoints.append(Datapoint(self.preferred_id, dp, generic=True))
 
     def to_md(self):
         id = self.preferred_id
@@ -152,7 +158,7 @@ def generate(yaml_file, generics):
 
     do = DataObject(page)
     if yaml_file not in ('arbitration.yaml', 'config.yaml'):
-        do.add_datapoints(generics)
+        do.add_generic_dps(generics)
     
     page_str = do.to_md()
     md_file = yaml_file.replace('yaml', 'md')

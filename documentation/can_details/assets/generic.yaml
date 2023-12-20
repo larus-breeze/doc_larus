@@ -2,7 +2,7 @@ datapoints:
 - name: heartbeat
   type: Data Object
   object_id_ver: 0
-  id: 0x400
+  id: 0x00
   interval: 1_000  # ms
   comment: Heartbeat
   data:
@@ -18,7 +18,7 @@ datapoints:
 - name: version
   type: Data Object
   object_id_ver: 0
-  id: 0x401
+  id: 0x01
   interval: if required by Remote Frame
   comment: Hardware and Firmware Version
   data:
@@ -31,7 +31,7 @@ datapoints:
 - name: set_config
   type: Service
   object_id_ver: 0
-  id: 0x402
+  id: 0x02
   interval: if required
   comment: Set System Wide Config Item
   data:
