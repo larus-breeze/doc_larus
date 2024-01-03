@@ -1,5 +1,5 @@
 # Overview
-Larus project and system documentation including helper scripts to process flight log data.
+Larus project and system documentation including helper scripts to process flight log data. Here is a system description [System description](documentation/Larus_Beschreibung.pdf)
 
 # System Components Overview
 ## Main Sensor
@@ -14,5 +14,4 @@ Larus project and system documentation including helper scripts to process fligh
 # Directories:
 - helper: scripts to monitor the live CAN-Bus data.
 - analysis: scripts to visualize and convert flight log data.
-[System description](documentation/Larus_Beschreibung.pdf) 
-[CAN Specificatin](documentation/can_spec.md) 
+- [CAN Specificatin](documentation/can_spec.md) 
