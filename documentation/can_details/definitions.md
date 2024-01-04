@@ -78,8 +78,7 @@ Manufacturer and Hardware Versions
 
     Manufacturer    Name of Device      HwVersion
     ---------------------------------------------
-    Larus           Sensorbox MK1       1.1.1.0
-    Larus           Sensorbox MK2       1.1.2.0
+    Larus           Sensorbox MK1, MK2  1.1.1.0
     Larus           Audiobox            1.2.1.0
     Larus           Frontend 57         1.3.1.0
     AirAvionics     AD57 v1             2.1.1.0
