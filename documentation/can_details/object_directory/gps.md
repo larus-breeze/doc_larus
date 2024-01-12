@@ -114,7 +114,7 @@ ID 0x621 Hardware and Firmware Version
 Name: version  
 Object-ID Version: 0  
 Type: Data Object  
-Interval: if required by Remote Frame  
+Interval: if required by remote frame request, check exact id  
 Length: 8 Bytes  
 Dynamic Id: Id(Heartbeat) + 0x01
 
@@ -140,12 +140,14 @@ Dynamic Id: Id(Heartbeat) + 0x02
                                            2: water_ballast                             
                                            3: bugs                                      
                                            4: qnh                                       
+                                           5: pilot_weight                              
     2   config_data              u8[6]     Specific to the item                         
                                            0: volume_vario:       u8 unit db, u8[5] reserved
                                            1: mac_cready:         u8[2] reserved, f32 unit m/s
                                            2: water_ballast:      u8[2] reserved, f32 unit kg
                                            3: bugs:               u8[2] reserved, f32 unit factor
                                            4: qnh:                u8[2] reserved, f32 unit Pa
+                                           5: pilot_weight:       u8[2] reserved, f32 unit kg
 
 ID 0x623 Transfer of Binary Data Blocks
 ---

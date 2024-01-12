@@ -19,7 +19,7 @@ datapoints:
   type: Data Object
   object_id_ver: 0
   id: 0x01
-  interval: if required by Remote Frame
+  interval: if required by remote frame request, check exact id
   comment: Hardware and Firmware Version
   data:
   - name: hw_version
@@ -44,6 +44,7 @@ datapoints:
       2: water_ballast
       3: bugs
       4: qnh
+      5: pilot_weight
   - name: config_data
     type: u8[6]
     unit: |
@@ -53,6 +54,7 @@ datapoints:
       2: water_ballast:      u8[2] reserved, f32 unit kg
       3: bugs:               u8[2] reserved, f32 unit factor
       4: qnh:                u8[2] reserved, f32 unit Pa
+      5: pilot_weight:       u8[2] reserved, f32 unit kg
 - name: blob_upload
   type: Service
   object_id_ver: 0
