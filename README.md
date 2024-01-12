@@ -1,23 +1,18 @@
-# Overview
-System documentation and helper scripts to process the flight log data.
+# Entry
+Larus project and system documentation including helper scripts to process flight log data. A system description can be found here: [System description](documentation/Larus_Beschreibung.pdf)
 
-# System Components Overview
-## Main Sensor
-- Processing of all sensor signals, computation of vario signals, computation of AHRS and wind
+# System Components
+## Sensor
+- Processing of all sensor signals, computation of vario signals, computation of AHRS and wind. 
 - https://github.com/larus-breeze/hw_sensor
 - https://github.com/larus-breeze/sw_sensor
+- The sensor can be connected to the XCSOAR Fork Opensoar which has a Larus device driver implemented: https://github.com/August2111/OpenSoar Binaries can be found here: https://opensoar.de/releases/
 
+## Frontend Display (comming soon)
+- A 3D printed 57mm enclosure with a 2" transflective display including sound generation, powered by RUST and a STM32H743.
+- Connected to the sensor via a CAN Bus.
 
-## Frontend Display
-- TODO: describe frontend display system
-
-
-## Utility Board 
-- Blue Pill or (optionally) F4 based utility module to generate the vario audio sound. Can additionally sense temperature and humidity. Can optionally and additionally handle a flap position sensor, micro switches to detect "gear down" , "brakes out", "flaps above neutral", and a little detached board carrying an array of LEDs to indicate the current and optimal flaps setting 
-- https://github.com/larus-breeze/hw_utility
-- https://github.com/larus-breeze/sw_utility
-
-# Documentation & Utility content here:
-- helper: Scripts e.g. to monitor the live CAN-Bus data.
-- documentation: system design and documentation files 
+# Directories
+- helper: scripts to monitor the live CAN-Bus data.
 - analysis: scripts to visualize and convert flight log data.
+- [CAN Specificatin](documentation/can_spec.md) 
