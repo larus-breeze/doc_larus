@@ -141,6 +141,7 @@ Dynamic Id: Id(Heartbeat) + 0x02
                                            3: bugs                                      
                                            4: qnh                                       
                                            5: pilot_weight                              
+                                           6: vario_mode_control                        
     2   config_data              u8[6]     Specific to the item                         
                                            0: volume_vario:       u8 unit db, u8[5] reserved
                                            1: mac_cready:         u8[2] reserved, f32 unit m/s
@@ -148,6 +149,7 @@ Dynamic Id: Id(Heartbeat) + 0x02
                                            3: bugs:               u8[2] reserved, f32 unit factor
                                            4: qnh:                u8[2] reserved, f32 unit Pa
                                            5: pilot_weight:       u8[2] reserved, f32 unit kg
+                                           6: vario_mode_control  0 Vario, 1 SpeedToFly, 2 Auto
 
 ID 0x623 Transfer of Binary Data Blocks
 ---
