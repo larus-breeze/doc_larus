@@ -15,4 +15,5 @@ Larus project and system documentation including helper scripts to process fligh
 # Directories
 - helper: scripts to monitor the live CAN-Bus data.
 - analysis: scripts to visualize and convert flight log data.
-- [CAN Specificatin](documentation/can_spec.md) 
+- [CAN Specification](documentation/can_spec.md)
+- [NMEA Specification](documentation/Larus_NMEA_Protocol.md)
