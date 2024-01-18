@@ -149,7 +149,7 @@ Dynamic Id: Id(Heartbeat) + 0x02
                                            3: bugs:               u8[2] reserved, f32 unit factor
                                            4: qnh:                u8[2] reserved, f32 unit Pa
                                            5: pilot_weight:       u8[2] reserved, f32 unit kg
-                                           6: vario_mode_control  0 Vario, 1 SpeedToFly, 2 Auto
+                                           6: vario_mode_control  u8: 0 Vario, 1 SpeedToFly, 2 Auto
 
 ID 0x623 Transfer of Binary Data Blocks
 ---
