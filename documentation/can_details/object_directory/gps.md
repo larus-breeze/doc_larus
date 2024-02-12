@@ -3,11 +3,11 @@ GPS
 
     Name                                         gps                                
     Object Id                                    3                                  
-    Preffered IDs for Specific Datapoints        0x220 - 0x22f                      
-    Preffered IDs for Generic Datapoints         0x620 - 0x62f                      
+    Preffered IDs for Specific Datapoints        0x140 - 0x14f                      
+    Preffered IDs for Generic Datapoints         0x540 - 0x54f                      
     Comment                                      Definition of CAN bus datagrams of a GPS Receiver
 
-ID 0x220 Date and Time
+ID 0x140 Date and Time
 ---
 Name: date_time  
 Object-ID Version: 0  
@@ -25,7 +25,7 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x00
     5   minute                   u8        min                                          
     6   second                   u8        s                                            
 
-ID 0x221 Latitude
+ID 0x141 Latitude
 ---
 Name: latitude  
 Object-ID Version: 0  
@@ -38,7 +38,7 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x01
     --------------------------------------------------------------------------------------------
     0   latitude                 f64       rad                                          
 
-ID 0x222 Longitude
+ID 0x142 Longitude
 ---
 Name: longitude  
 Object-ID Version: 0  
@@ -51,7 +51,7 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x02
     --------------------------------------------------------------------------------------------
     0   longitude                f64       rad                                          
 
-ID 0x223 MSL Altitude and Geo Separation
+ID 0x143 MSL Altitude and Geo Separation
 ---
 Name: altitude  
 Object-ID Version: 0  
@@ -65,7 +65,7 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x03
     0   altitude                 f32       m                                            
     4   geo_separation           f32       m                                            
 
-ID 0x224 Ground Track and Ground Speed
+ID 0x144 Ground Track and Ground Speed
 ---
 Name: track_speed  
 Object-ID Version: 0  
@@ -79,7 +79,7 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x04
     0   gnd_track                f32       rad                                          
     4   gnd_speed                f32       m/s                                          
 
-ID 0x225 Number of Sattelites, Fix valid and Heading valid
+ID 0x145 Number of Sattelites, Fix valid and Heading valid
 ---
 Name: satellites  
 Object-ID Version: 0  
@@ -94,7 +94,7 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x05
     1   sat_fix_valid            bool      .                                            
     2   sat_heading_valid        bool      .                                            
 
-ID 0x620 Heartbeat
+ID 0x540 Heartbeat
 ---
 Name: heartbeat  
 Object-ID Version: 0  
@@ -109,7 +109,7 @@ Dynamic Id: Id(Heartbeat) + 0x00
     2   object_id_generation     u16       Generation of Object Id                      
     4   dev_uid                  u8[4]     DevUid                                       
 
-ID 0x621 Hardware and Firmware Version
+ID 0x541 Hardware and Firmware Version
 ---
 Name: version  
 Object-ID Version: 0  
@@ -123,7 +123,7 @@ Dynamic Id: Id(Heartbeat) + 0x01
     0   hw_version               HwVersion .                                            
     4   fw_version               FwVersion .                                            
 
-ID 0x622 Set System Wide Config Item
+ID 0x542 Set System Wide Config Item
 ---
 Name: set_config  
 Object-ID Version: 0  
@@ -151,7 +151,7 @@ Dynamic Id: Id(Heartbeat) + 0x02
                                            5: pilot_weight:       u8[2] reserved, f32 unit kg
                                            6: vario_mode_control  u8: 0 Vario, 1 SpeedToFly, 2 Auto
 
-ID 0x623 Transfer of Binary Data Blocks
+ID 0x543 Transfer of Binary Data Blocks
 ---
 Name: blob_upload  
 Object-ID Version: 0  

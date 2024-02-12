@@ -1,6 +1,6 @@
 name: Larus Sensor Box
 object_id: 2
-preferred_id: 32
+preferred_id: 18
 comment: Definition of CAN bus datagrams of the Larus Sensor Box
 #
 datapoints:
