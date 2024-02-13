@@ -22,12 +22,12 @@ datapoints:
   object_id_ver: 0
   id: 0x01
   interval: 1_000  # ms
-  comment: Heading and Magnetic Declination
+  comment: Heading and Yaw Angle
   data:
-  - name: heading
+  - name: heading_yaw
     type: f32
     unit: rad
-  - name: magnetic_declination
+  - name: yaw
     type: f32
     unit: rad
 - name: airspeed

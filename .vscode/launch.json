@@ -6,10 +6,10 @@
     "configurations": [
         {
             "name": "generate_md.py",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "generate_md.py",
-            "cwd": "/media/winni/1p4/Werkstatt/fliegen/larus/doc_larus/documentation/can_details/assets",
+            "cwd": "/media/winni/1p4/Werkstatt/fliegen/larus/doc_larus/documentation/can_details/scripts",
             "console": "integratedTerminal",
             "justMyCode": true
         }

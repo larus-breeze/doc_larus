@@ -157,18 +157,19 @@ def generate(yaml_file, generics):
         page = yaml.safe_load(f)
 
     do = DataObject(page)
-    if yaml_file not in ('arbitration.yaml', 'config.yaml'):
+    if yaml_file not in ('../yaml/arbitration.yaml', '../yaml/config.yaml'):
         do.add_generic_dps(generics)
     
     page_str = do.to_md()
-    md_file = yaml_file.replace('yaml', 'md')
+    md_file = yaml_file.replace('../yaml/', '').replace('yaml', 'md')
     with open('../object_directory/' + md_file, 'w') as f:
         f.write(page_str)
 
-with open("generic.yaml", "r") as f:
+with open("../yaml/generic.yaml", "r") as f:
     generics = yaml.safe_load(f)
 
-for file in os.listdir('.'):
-    if os.path.isfile(file) and file.find('.yaml') > 0 and file != 'generic.yaml':
-        generate(file, generics)
+for file in os.listdir('../yaml'):
+    fname = '../yaml/' + file
+    if os.path.isfile(fname) and file.find('.yaml') > 0 and file !='generic.yaml':
+        generate(fname, generics)
 

@@ -105,15 +105,23 @@ Dynamic Id: Id(Heartbeat) + 0x03
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
-    0   upload_state             u3        0 length                                     
-                                           1 crc                                        
-                                           2 data                                       
-                                           3 last data                                  
-                                           4 request package                            
-    0.3 block_count              u5        Overflowing block counter                    
-    1   content                  u8[7]     upload_state 0: u8[3] reserved (=0), u32 blob_length
-                                           upload_state 1: u8[3] reserved (=0), u32 crc 
-                                           upload_state 2: u8[7] blob data              
+    0   upload_state             u3        0 type_of_transmission                       
+                                           1 length                                     
+                                           2 crc                                        
+                                           3 data                                       
+                                           4 last data                                  
+                                           5 ack_transmission                           
+    0.3 block_count              u5        block counter                                
+    1   content                  u8[7]     upload_state 1: u8[3] reserved (u8=0), u32 type_of_transmission
+                                           upload_state 1: u8[3] reserved (u8=0), u32 blob_length
+                                           upload_state 2: u8[3] reserved (u8=0), u32 crc
                                            upload_state 3: u8[7] blob data              
-                                           upload_state 4: u8[3] reserved (=0), u32 requested_block
+                                           upload_state 4: u8[7] blob data              
+                                           upload_state 5: u8[3] reserved (=0), u32 requested_block
+                                           _                                            
+                                           Type of transmission:                        
+                                           0 NMEA GPS data                              
+                                           1 NMEA Flarm data                            
+                                           2 Larus configuration data                   
+                                           3 Larus firmware image                       
 
