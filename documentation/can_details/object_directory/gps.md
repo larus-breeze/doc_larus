@@ -157,7 +157,7 @@ Dynamic Id: Id(Heartbeat) + 0x03
                                            4 last data                                  
                                            5 ack_transmission                           
     0.3 block_count              u5        block counter                                
-    1   content                  u8[7]     upload_state 1: u8[3] reserved (u8=0), u32 type_of_transmission
+    1   content                  u8[7]     upload_state 0: u8[3] reserved (u8=0), u32 type_of_transmission
                                            upload_state 1: u8[3] reserved (u8=0), u32 blob_length
                                            upload_state 2: u8[3] reserved (u8=0), u32 crc
                                            upload_state 3: u8[7] blob data              

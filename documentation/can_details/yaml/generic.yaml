@@ -79,7 +79,7 @@ datapoints:
   - name: content
     type: u8[7]
     unit: |
-      upload_state 1: u8[3] reserved (u8=0), u32 type_of_transmission
+      upload_state 0: u8[3] reserved (u8=0), u32 type_of_transmission
       upload_state 1: u8[3] reserved (u8=0), u32 blob_length
       upload_state 2: u8[3] reserved (u8=0), u32 crc
       upload_state 3: u8[7] blob data
