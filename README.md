@@ -8,7 +8,7 @@ Larus project and system documentation including helper scripts to process fligh
 - https://github.com/larus-breeze/sw_sensor
 - The sensor can be connected to the XCSOAR Fork Opensoar which has a Larus device driver implemented: https://github.com/August2111/OpenSoar Binaries can be found here: https://opensoar.de/releases/
 
-## Frontend Display (coming soon)
+## Frontend Display
 - A 3D printed 57mm enclosure with a 2" transflective display including sound generation, powered by RUST and a STM32H743.
 - Connected to the sensor via a CAN Bus.
 
