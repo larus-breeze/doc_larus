@@ -35,3 +35,16 @@ datapoints:
   - name: mac_cready
     type: f32
     unit: m/s
+- name: volt_temp
+  type: Data Object
+  object_id_ver: 0
+  id: 0x02
+  interval: 1_000  # ms
+  comment: Voltage measured by device an PCB temperature
+  data:
+  - name: voltage
+    type: f32
+    unit: V
+  - name: temperature
+    type: f32
+    unit: °C

@@ -37,6 +37,20 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x01
     0   speed_to_fly             f32       m/s                                          
     4   mac_cready               f32       m/s                                          
 
+ID 0x282 Voltage measured by device an PCB temperature
+---
+Name: volt_temp  
+Object-ID Version: 0  
+Type: Data Object  
+Interval: 1000 ms  
+Length: 8 Bytes  
+Dynamic Id: Id(Heartbeat) - 0x400 + 0x02
+
+    No  Datapoint                Type      Unit / Comment                               
+    --------------------------------------------------------------------------------------------
+    0   voltage                  f32       V                                            
+    4   temperature              f32       °C                                           
+
 ID 0x680 Heartbeat
 ---
 Name: heartbeat  
