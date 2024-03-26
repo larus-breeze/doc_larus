@@ -23,28 +23,14 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x00
     4   volume                   u8        db                                           
     5   continuous               bool      true, false                                  
 
-ID 0x281 Recommended speed between updrafts and Mac Cready value
----
-Name: speed_to_fly  
-Object-ID Version: 0  
-Type: Data Object  
-Interval: 1000 ms  
-Length: 8 Bytes  
-Dynamic Id: Id(Heartbeat) - 0x400 + 0x01
-
-    No  Datapoint                Type      Unit / Comment                               
-    --------------------------------------------------------------------------------------------
-    0   speed_to_fly             f32       m/s                                          
-    4   mac_cready               f32       m/s                                          
-
-ID 0x282 Voltage measured by device an PCB temperature
+ID 0x281 Voltage measured by device an PCB temperature
 ---
 Name: volt_temp  
 Object-ID Version: 0  
 Type: Data Object  
 Interval: 1000 ms  
 Length: 8 Bytes  
-Dynamic Id: Id(Heartbeat) - 0x400 + 0x02
+Dynamic Id: Id(Heartbeat) - 0x400 + 0x01
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------

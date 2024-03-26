@@ -22,23 +22,10 @@ datapoints:
   - name: continuous
     type: bool
     unit: true, false
-- name: speed_to_fly
-  type: Data Object
-  object_id_ver: 0
-  id: 0x01
-  interval: 1_000  # ms
-  comment: Recommended speed between updrafts and Mac Cready value
-  data:
-  - name: speed_to_fly
-    type: f32
-    unit: m/s
-  - name: mac_cready
-    type: f32
-    unit: m/s
 - name: volt_temp
   type: Data Object
   object_id_ver: 0
-  id: 0x02
+  id: 0x01
   interval: 1_000  # ms
   comment: Voltage measured by device an PCB temperature
   data:
