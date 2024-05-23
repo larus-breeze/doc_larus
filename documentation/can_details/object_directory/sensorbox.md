@@ -226,7 +226,7 @@ Dynamic Id: Id(Heartbeat) + 0x02
     2   config_data              u8[6]     Specific to the item                         
                                            0: volume_vario:       u8 unit db, u8[5] reserved
                                            1: mac_cready:         u8[2] reserved, f32 unit m/s
-                                           2: water_ballast:      u8[2] reserved, f32 unit kg
+                                           2: water_ballast:      u8[2] reserved, f32 unit fraction
                                            3: bugs:               u8[2] reserved, f32 unit factor
                                            4: qnh:                u8[2] reserved, f32 unit Pa
                                            5: pilot_weight:       u8[2] reserved, f32 unit kg
