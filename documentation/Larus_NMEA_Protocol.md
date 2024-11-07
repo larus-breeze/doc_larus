@@ -25,8 +25,7 @@ For the GNSS position, regular NMEA 0183 sentences are used
 
   1. $GPRMC Recommended Minimum Navigation Informatioin
   2. $GPGGA Global Positioning System Fix Data
-  3. $HCHDT True Heading
-
+     
 For the aircraft attitude, wind, and air density information, some supplementary data points were included. 
 The additions can be found in the protocol around the `$PLARx` NMEA sentences. 
 The `x` is 
@@ -97,21 +96,6 @@ Global Positioning System Fix Data, Time, Position and fix related data for a GP
      type 1 or 9 update, null field when DGPS is not used (empty)
   14) Differential reference station ID, 0000-1023 (empty)
   15) Checksum
-
-### $HCHDT True Heading
-
-           1    2  3
-           |    |  |
-    $HCHDT,xx.x,a,*hh<CR><LF>
-
-    Examples:
-    $HCHDT,69.2,T*14
-
-Report true heading:
-
-  1) Heading Degrees
-  2) T = True
-  3) Checksum
 
 ## Propietary Larus NMEA sentences
 
