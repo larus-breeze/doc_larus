@@ -80,6 +80,7 @@ Manufacturer and Hardware Versions
     ---------------------------------------------
     Larus           Sensorbox MK1, MK2  1.1.1.0
     Larus           Audiobox            1.2.1.0
-    Larus           Frontend 57         1.3.1.0
+    Larus           Frontend 57 V1      1.3.1.0
+    Larus           Frontend 57 V2      1.3.2.0
     AirAvionics     AD57 v1             2.1.1.0
     AirAvionics     Ad57 v2             2.1.2.0
