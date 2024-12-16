@@ -85,6 +85,8 @@ Dynamic Id: Id(Heartbeat) + 0x02
                                            4: qnh                                       
                                            5: pilot_weight                              
                                            6: vario_mode_control                        
+                                           7: tc_climb_rate                             
+                                           8: tc_speed_to_fly                           
     2   config_data              u8[6]     Specific to the item                         
                                            0: volume_vario:       u8 unit db, u8[5] reserved
                                            1: mac_cready:         u8[2] reserved, f32 unit m/s
@@ -93,6 +95,8 @@ Dynamic Id: Id(Heartbeat) + 0x02
                                            4: qnh:                u8[2] reserved, f32 unit Pa
                                            5: pilot_weight:       u8[2] reserved, f32 unit kg
                                            6: vario_mode_control  u8: 0 Vario, 1 SpeedToFly, 2 Auto
+                                           7: tc_climb_rate:      u8[2] reserved, f32 unit s
+                                           8: tc_speed_to_fly:    u8[2] reserved, f32 unit s
 
 ID 0x683 Transfer of Binary Data Blocks
 ---
