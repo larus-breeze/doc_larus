@@ -21,26 +21,25 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x00
     0   roll_angle               f32       rad                                          
     4   nick_angle               f32       rad                                          
 
-ID 0x121 Heading and Yaw Angle
+ID 0x121 Yaw Angle
 ---
 Name: heading  
 Object-ID Version: 0  
 Type: Data Object  
-Interval: 1000 ms  
-Length: 8 Bytes  
+Interval: 100 ms  
+Length: 4 Bytes  
 Dynamic Id: Id(Heartbeat) - 0x400 + 0x01
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
-    0   heading_yaw              f32       rad                                          
-    4   yaw                      f32       rad                                          
+    0   yaw                      f32       rad                                          
 
 ID 0x122 TAS (True Airspeed) and IAS (Indicated Airspeed)
 ---
 Name: airspeed  
 Object-ID Version: 0  
 Type: Data Object  
-Interval: 1000 ms  
+Interval: 100 ms  
 Length: 8 Bytes  
 Dynamic Id: Id(Heartbeat) - 0x400 + 0x02
 
@@ -68,7 +67,7 @@ ID 0x124 Wind Direction and Wind Speed
 Name: wind  
 Object-ID Version: 0  
 Type: Data Object  
-Interval: 1000 ms  
+Interval: 100 ms  
 Length: 8 Bytes  
 Dynamic Id: Id(Heartbeat) - 0x400 + 0x04
 
@@ -82,7 +81,7 @@ ID 0x125 Avarage Wind Direction and Avarage Wind Speed
 Name: avarage_wind  
 Object-ID Version: 0  
 Type: Data Object  
-Interval: 1000 ms  
+Interval: 100 ms  
 Length: 8 Bytes  
 Dynamic Id: Id(Heartbeat) - 0x400 + 0x05
 
@@ -96,7 +95,7 @@ ID 0x126 Ambient Pressure and Air Density
 Name: atmosphere  
 Object-ID Version: 0  
 Type: Data Object  
-Interval: 1000 ms  
+Interval: 100 ms  
 Length: 8 Bytes  
 Dynamic Id: Id(Heartbeat) - 0x400 + 0x06
 
@@ -105,7 +104,7 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x06
     0   ambient_pressure         f32       Pa                                           
     4   air_density              f32       kg/m^3                                       
 
-ID 0x127 Acceleration Angle Front and Angle Right
+ID 0x127 Acceleration Front and Right
 ---
 Name: acceleration  
 Object-ID Version: 0  
@@ -116,64 +115,52 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x07
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
-    0   acceleration_front       f32       rad                                          
-    4   acceleration_right       f32       rad                                          
+    0   acceleration_front       f32       m/s^2                                        
+    4   acceleration_right       f32       m/s^2                                        
 
-ID 0x128 Turnrate and State
+ID 0x128 Acceleration Down and Turn Rate
 ---
-Name: turn_rate  
+Name: acc2_and_turn_rate  
 Object-ID Version: 0  
 Type: Data Object  
-Interval: 1000 ms  
-Length: 5 Bytes  
+Interval: 100 ms  
+Length: 8 Bytes  
 Dynamic Id: Id(Heartbeat) - 0x400 + 0x08
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
-    0   turnrate_to_the_right    f32       rad/s                                        
-    4   state                    u8        0 STRAIGHT_FLIGHT                            
-                                           1 TRANSITION                                 
-                                           2 CIRCLING                                   
+    0   acceleration_down        f32       m/s^2                                        
+    4   turnrate_to_the_right    f32       rad/s                                        
 
-ID 0x129 Calculated trift angle
+ID 0x129 Calculated Slip Angle and Pitch Angle
 ---
-Name: trift_angle  
+Name: slip_and_pitch_angle  
 Object-ID Version: 0  
 Type: Data Object  
 Interval: 100 ms  
-Length: 4 Bytes  
+Length: 8 Bytes  
 Dynamic Id: Id(Heartbeat) - 0x400 + 0x09
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
-    0   trift_angle              f32       rad, positive if track right of heading      
+    0   slip_angle               f32       rad, positive if track right of heading      
+    4   pitch_angle              f32       rad                                          
 
-ID 0x12a Stystem State and GIT Tag Decimal
+ID 0x12a Circle Mode and Supply Voltage
 ---
-Name: system_state  
+Name: fly_state_and_supply_voltage  
 Object-ID Version: 0  
 Type: Data Object  
-Interval: 1000 ms  
+Interval: 100 ms  
 Length: 8 Bytes  
 Dynamic Id: Id(Heartbeat) - 0x400 + 0x0a
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
-    0   system_state             u32       status                                       
-    4   git_tag_dec              u32       git tag                                      
-
-ID 0x12b Supply Voltage
----
-Name: voltage  
-Object-ID Version: 0  
-Type: Data Object  
-Interval: 1000 ms  
-Length: 4 Bytes  
-Dynamic Id: Id(Heartbeat) - 0x400 + 0x0b
-
-    No  Datapoint                Type      Unit / Comment                               
-    --------------------------------------------------------------------------------------------
-    0   voltage                  f32       V                                            
+    0   circle_mode              u32       0 STRAIGHT_FLIGHT                            
+                                           1 TRANSITION                                 
+                                           2 CIRCLING                                   
+    4   voltage                  f32       V                                            
 
 ID 0x520 Heartbeat
 ---

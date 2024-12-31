@@ -7,12 +7,12 @@ datapoints:
   type: Data Object
   object_id_ver: 0
   id: 0x00
-  interval: 1_000  # ms
+  interval: 100  # ms
   comment: Date and Time
   data:
   - name: year
-    type: u8
-    unit: year -2000
+    type: u16
+    unit: year
   - name: month
     type: u8
     unit: month
@@ -32,7 +32,7 @@ datapoints:
   type: Data Object
   object_id_ver: 0
   id: 0x01
-  interval: 1_000  # ms
+  interval: 100  # ms
   comment: Latitude and Longitude
   data:
   - name: latitude
@@ -45,7 +45,7 @@ datapoints:
   type: Data Object
   object_id_ver: 0
   id: 0x02
-  interval: 1_000  # ms
+  interval: 100  # ms
   comment: MSL Altitude and Geo Separation
   data:
   - name: altitude
@@ -58,7 +58,7 @@ datapoints:
   type: Data Object
   object_id_ver: 0
   id: 0x03
-  interval: 1_000  # ms
+  interval: 100  # ms
   comment: Ground Track and Ground Speed
   data:
   - name: gnd_track
@@ -71,15 +71,12 @@ datapoints:
   type: Data Object
   object_id_ver: 0
   id: 0x04
-  interval: 1_000  # ms
-  comment: Number of Sattelites, Fix valid and Heading valid
+  interval: 100  # ms
+  comment: Number of Sattelites and Sat Fix Type
   data:
   - name: number_of_sats
     type: u8
     unit: .
-  - name: sat_fix_valid
-    type: bool
-    unit: .
-  - name: sat_heading_valid
-    type: bool
+  - name: sat_type
+    type: u8
     unit: .

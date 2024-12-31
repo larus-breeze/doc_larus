@@ -21,12 +21,9 @@ datapoints:
   type: Data Object
   object_id_ver: 0
   id: 0x01
-  interval: 1_000  # ms
-  comment: Heading and Yaw Angle
+  interval: 100  # ms
+  comment: Yaw Angle
   data:
-  - name: heading_yaw
-    type: f32
-    unit: rad
   - name: yaw
     type: f32
     unit: rad
@@ -34,7 +31,7 @@ datapoints:
   type: Data Object
   object_id_ver: 0
   id: 0x02
-  interval: 1_000  # ms
+  interval: 100  # ms
   comment: TAS (True Airspeed) and IAS (Indicated Airspeed)
   data:
   - name: tas
@@ -60,7 +57,7 @@ datapoints:
   type: Data Object
   object_id_ver: 0
   id: 0x04
-  interval: 1_000  # ms
+  interval: 100  # ms
   comment: Wind Direction and Wind Speed
   data:
   - name: wind_direction
@@ -73,7 +70,7 @@ datapoints:
   type: Data Object
   object_id_ver: 0
   id: 0x05
-  interval: 1_000  # ms
+  interval: 100  # ms
   comment: Avarage Wind Direction and Avarage Wind Speed
   data:
   - name: avarage_wind_direction
@@ -86,7 +83,7 @@ datapoints:
   type: Data Object
   object_id_ver: 0
   id: 0x06
-  interval: 1_000  # ms
+  interval: 100  # ms
   comment: Ambient Pressure and Air Density
   data:
   - name: ambient_pressure
@@ -100,60 +97,53 @@ datapoints:
   object_id_ver: 0
   id: 0x07
   interval: 100  # ms
-  comment: Acceleration Angle Front and Angle Right
+  comment: Acceleration Front and Right
   data:
   - name: acceleration_front
     type: f32
-    unit: rad
+    unit: m/s^2
   - name: acceleration_right
     type: f32
-    unit: rad
-- name: turn_rate
+    unit: m/s^2
+- name: acc2_and_turn_rate
   type: Data Object
   object_id_ver: 0
   id: 0x08
-  interval: 1_000  # ms
-  comment: Turnrate and State
+  interval: 100  # ms
+  comment: Acceleration Down and Turn Rate
   data:
+  - name: acceleration_down
+    type: f32
+    unit: m/s^2
   - name: turnrate_to_the_right
     type: f32
     unit: rad/s
-  - name: state
-    type: u8
-    unit: |
-      0 STRAIGHT_FLIGHT
-      1 TRANSITION
-      2 CIRCLING
-- name: trift_angle
+- name: slip_and_pitch_angle
   type: Data Object
   object_id_ver: 0
   id: 0x09
   interval: 100  # ms
-  comment: Calculated trift angle
+  comment: Calculated Slip Angle and Pitch Angle
   data:
-  - name: trift_angle
+  - name: slip_angle
     type: f32
     unit: rad, positive if track right of heading
-- name: system_state
+  - name: pitch_angle
+    type: f32
+    unit: rad
+- name: fly_state_and_supply_voltage
   type: Data Object
   object_id_ver: 0
   id: 0x0a
-  interval: 1_000  # ms
-  comment: Stystem State and GIT Tag Decimal
+  interval: 100  # ms
+  comment: Circle Mode and Supply Voltage
   data:
-  - name: system_state
+  - name: circle_mode
     type: u32
-    unit: status
-  - name: git_tag_dec
-    type: u32
-    unit: git tag
-- name: voltage
-  type: Data Object
-  object_id_ver: 0
-  id: 0x0b
-  interval: 1_000  # ms
-  comment: Supply Voltage
-  data:
+    unit: |
+      0 STRAIGHT_FLIGHT
+      1 TRANSITION
+      2 CIRCLING
   - name: voltage
     type: f32
     unit: V

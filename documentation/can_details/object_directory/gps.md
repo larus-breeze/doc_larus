@@ -12,25 +12,25 @@ ID 0x140 Date and Time
 Name: date_time  
 Object-ID Version: 0  
 Type: Data Object  
-Interval: 1000 ms  
-Length: 6 Bytes  
+Interval: 100 ms  
+Length: 7 Bytes  
 Dynamic Id: Id(Heartbeat) - 0x400 + 0x00
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
-    0   year                     u8        year -2000                                   
-    1   month                    u8        month                                        
-    2   day                      u8        day                                          
-    3   hour                     u8        h                                            
-    4   minute                   u8        min                                          
-    5   second                   u8        s                                            
+    0   year                     u16       year                                         
+    2   month                    u8        month                                        
+    3   day                      u8        day                                          
+    4   hour                     u8        h                                            
+    5   minute                   u8        min                                          
+    6   second                   u8        s                                            
 
 ID 0x141 Latitude and Longitude
 ---
 Name: latlon  
 Object-ID Version: 0  
 Type: Data Object  
-Interval: 1000 ms  
+Interval: 100 ms  
 Length: 8 Bytes  
 Dynamic Id: Id(Heartbeat) - 0x400 + 0x01
 
@@ -44,7 +44,7 @@ ID 0x142 MSL Altitude and Geo Separation
 Name: altitude  
 Object-ID Version: 0  
 Type: Data Object  
-Interval: 1000 ms  
+Interval: 100 ms  
 Length: 8 Bytes  
 Dynamic Id: Id(Heartbeat) - 0x400 + 0x02
 
@@ -58,7 +58,7 @@ ID 0x143 Ground Track and Ground Speed
 Name: track_speed  
 Object-ID Version: 0  
 Type: Data Object  
-Interval: 1000 ms  
+Interval: 100 ms  
 Length: 8 Bytes  
 Dynamic Id: Id(Heartbeat) - 0x400 + 0x03
 
@@ -67,20 +67,19 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x03
     0   gnd_track                f32       rad                                          
     4   gnd_speed                f32       m/s                                          
 
-ID 0x144 Number of Sattelites, Fix valid and Heading valid
+ID 0x144 Number of Sattelites and Sat Fix Type
 ---
 Name: satellites  
 Object-ID Version: 0  
 Type: Data Object  
-Interval: 1000 ms  
-Length: 3 Bytes  
+Interval: 100 ms  
+Length: 2 Bytes  
 Dynamic Id: Id(Heartbeat) - 0x400 + 0x04
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
     0   number_of_sats           u8        .                                            
-    1   sat_fix_valid            bool      .                                            
-    2   sat_heading_valid        bool      .                                            
+    1   sat_type                 u8        .                                            
 
 ID 0x540 Heartbeat
 ---
