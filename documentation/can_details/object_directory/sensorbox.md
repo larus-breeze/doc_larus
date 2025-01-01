@@ -21,18 +21,19 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x00
     0   roll_angle               f32       rad                                          
     4   nick_angle               f32       rad                                          
 
-ID 0x121 Yaw Angle
+ID 0x121 Yaw Angle and Turn Rate
 ---
-Name: heading  
+Name: yaw_turn_rate  
 Object-ID Version: 0  
 Type: Data Object  
 Interval: 100 ms  
-Length: 4 Bytes  
+Length: 8 Bytes  
 Dynamic Id: Id(Heartbeat) - 0x400 + 0x01
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
     0   yaw                      f32       rad                                          
+    4   turn_rate                f32       rad/s                                        
 
 ID 0x122 TAS (True Airspeed) and IAS (Indicated Airspeed)
 ---
@@ -104,9 +105,9 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x06
     0   ambient_pressure         f32       Pa                                           
     4   air_density              f32       kg/m^3                                       
 
-ID 0x127 Acceleration Front and Right
+ID 0x127 G Force and Vertical G Force
 ---
-Name: acceleration  
+Name: g_force  
 Object-ID Version: 0  
 Type: Data Object  
 Interval: 100 ms  
@@ -115,12 +116,12 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x07
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
-    0   acceleration_front       f32       m/s^2                                        
-    4   acceleration_right       f32       m/s^2                                        
+    0   g_force                  f32       m/s^2                                        
+    4   vertical_g_force         f32       m/s^2                                        
 
-ID 0x128 Acceleration Down and Turn Rate
+ID 0x128 Calculated Slip Angle and Pitch Angle
 ---
-Name: acc2_and_turn_rate  
+Name: slip_and_pitch_angle  
 Object-ID Version: 0  
 Type: Data Object  
 Interval: 100 ms  
@@ -129,12 +130,12 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x08
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
-    0   acceleration_down        f32       m/s^2                                        
-    4   turnrate_to_the_right    f32       rad/s                                        
+    0   slip_angle               f32       rad, positive if track right of heading      
+    4   pitch_angle              f32       rad                                          
 
-ID 0x129 Calculated Slip Angle and Pitch Angle
+ID 0x129 Circle Mode and Supply Voltage
 ---
-Name: slip_and_pitch_angle  
+Name: fly_state_and_supply_voltage  
 Object-ID Version: 0  
 Type: Data Object  
 Interval: 100 ms  
@@ -143,24 +144,10 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x09
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
-    0   slip_angle               f32       rad, positive if track right of heading      
-    4   pitch_angle              f32       rad                                          
-
-ID 0x12a Circle Mode and Supply Voltage
----
-Name: fly_state_and_supply_voltage  
-Object-ID Version: 0  
-Type: Data Object  
-Interval: 100 ms  
-Length: 8 Bytes  
-Dynamic Id: Id(Heartbeat) - 0x400 + 0x0a
-
-    No  Datapoint                Type      Unit / Comment                               
-    --------------------------------------------------------------------------------------------
     0   circle_mode              u32       0 STRAIGHT_FLIGHT                            
                                            1 TRANSITION                                 
                                            2 CIRCLING                                   
-    4   voltage                  f32       V                                            
+    4   supply_voltage           f32       V                                            
 
 ID 0x520 Heartbeat
 ---

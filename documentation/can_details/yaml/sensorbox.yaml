@@ -17,16 +17,19 @@ datapoints:
   - name: nick_angle
     type: f32
     unit: rad
-- name: heading
+- name: yaw_turn_rate
   type: Data Object
   object_id_ver: 0
   id: 0x01
   interval: 100  # ms
-  comment: Yaw Angle
+  comment: Yaw Angle and Turn Rate
   data:
   - name: yaw
     type: f32
     unit: rad
+  - name: turn_rate
+    type: f32
+    unit: rad/s
 - name: airspeed
   type: Data Object
   object_id_ver: 0
@@ -92,36 +95,23 @@ datapoints:
   - name: air_density
     type: f32
     unit: kg/m^3
-- name: acceleration
+- name: g_force
   type: Data Object
   object_id_ver: 0
   id: 0x07
   interval: 100  # ms
-  comment: Acceleration Front and Right
+  comment: G Force and Vertical G Force
   data:
-  - name: acceleration_front
+  - name: g_force
     type: f32
     unit: m/s^2
-  - name: acceleration_right
+  - name: vertical_g_force
     type: f32
     unit: m/s^2
-- name: acc2_and_turn_rate
-  type: Data Object
-  object_id_ver: 0
-  id: 0x08
-  interval: 100  # ms
-  comment: Acceleration Down and Turn Rate
-  data:
-  - name: acceleration_down
-    type: f32
-    unit: m/s^2
-  - name: turnrate_to_the_right
-    type: f32
-    unit: rad/s
 - name: slip_and_pitch_angle
   type: Data Object
   object_id_ver: 0
-  id: 0x09
+  id: 0x08
   interval: 100  # ms
   comment: Calculated Slip Angle and Pitch Angle
   data:
@@ -134,7 +124,7 @@ datapoints:
 - name: fly_state_and_supply_voltage
   type: Data Object
   object_id_ver: 0
-  id: 0x0a
+  id: 0x09
   interval: 100  # ms
   comment: Circle Mode and Supply Voltage
   data:
@@ -144,6 +134,6 @@ datapoints:
       0 STRAIGHT_FLIGHT
       1 TRANSITION
       2 CIRCLING
-  - name: voltage
+  - name: supply_voltage
     type: f32
     unit: V
