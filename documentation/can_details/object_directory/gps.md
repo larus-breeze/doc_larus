@@ -91,7 +91,10 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x05
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
     0   number_of_sats           u8        .                                            
-    1   sat_type                 u8        .                                            
+    1   fix_type                 u8        0 no_gps                                     
+                                           1 2d_fix                                     
+                                           2 3d_fix                                     
+                                           3 rtk                                        
 
 ID 0x540 Heartbeat
 ---

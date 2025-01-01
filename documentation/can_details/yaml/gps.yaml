@@ -84,6 +84,10 @@ datapoints:
   - name: number_of_sats
     type: u8
     unit: .
-  - name: sat_type
+  - name: fix_type
     type: u8
-    unit: .
+    unit: |
+      0 no_gps
+      1 2d_fix
+      2 3d_fix
+      3 rtk
