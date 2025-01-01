@@ -133,21 +133,21 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x08
     0   slip_angle               f32       rad, positive if track right of heading      
     4   pitch_angle              f32       rad                                          
 
-ID 0x129 Circle Mode and Supply Voltage
+ID 0x129 Supply Voltage and Circle Mode
 ---
 Name: fly_state_and_supply_voltage  
 Object-ID Version: 0  
 Type: Data Object  
 Interval: 100 ms  
-Length: 8 Bytes  
+Length: 5 Bytes  
 Dynamic Id: Id(Heartbeat) - 0x400 + 0x09
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
-    0   circle_mode              u32       0 STRAIGHT_FLIGHT                            
+    0   supply_voltage           f32       V                                            
+    4   circle_mode              u8        0 STRAIGHT_FLIGHT                            
                                            1 TRANSITION                                 
                                            2 CIRCLING                                   
-    4   supply_voltage           f32       V                                            
 
 ID 0x520 Heartbeat
 ---

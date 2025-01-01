@@ -126,14 +126,14 @@ datapoints:
   object_id_ver: 0
   id: 0x09
   interval: 100  # ms
-  comment: Circle Mode and Supply Voltage
+  comment: Supply Voltage and Circle Mode
   data:
+  - name: supply_voltage
+    type: f32
+    unit: V
   - name: circle_mode
-    type: u32
+    type: u8
     unit: |
       0 STRAIGHT_FLIGHT
       1 TRANSITION
       2 CIRCLING
-  - name: supply_voltage
-    type: f32
-    unit: V
