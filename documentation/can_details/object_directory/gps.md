@@ -25,37 +25,35 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x00
     5   minute                   u8        min                                          
     6   second                   u8        s                                            
 
-ID 0x141 Latitude and Longitude
+ID 0x141 Latitude
 ---
-Name: latlon  
+Name: latitude  
 Object-ID Version: 0  
 Type: Data Object  
 Interval: 100 ms  
-Length: 8 Bytes  
+Length: 4 Bytes  
 Dynamic Id: Id(Heartbeat) - 0x400 + 0x01
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
-    0   latitude                 f32       rad                                          
-    4   longitude                f32       rad                                          
+    0   latitude                 f64       rad                                          
 
-ID 0x142 MSL Altitude and Geo Separation
+ID 0x142 Longitude
 ---
-Name: altitude  
+Name: longitude  
 Object-ID Version: 0  
 Type: Data Object  
 Interval: 100 ms  
-Length: 8 Bytes  
+Length: 4 Bytes  
 Dynamic Id: Id(Heartbeat) - 0x400 + 0x02
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
-    0   altitude                 f32       m                                            
-    4   geo_separation           f32       m                                            
+    0   longitude                f64       rad                                          
 
-ID 0x143 Ground Track and Ground Speed
+ID 0x143 MSL Altitude and Geo Separation
 ---
-Name: track_speed  
+Name: altitude  
 Object-ID Version: 0  
 Type: Data Object  
 Interval: 100 ms  
@@ -64,17 +62,31 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x03
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
+    0   altitude                 f32       m                                            
+    4   geo_separation           f32       m                                            
+
+ID 0x144 Ground Track and Ground Speed
+---
+Name: track_speed  
+Object-ID Version: 0  
+Type: Data Object  
+Interval: 100 ms  
+Length: 8 Bytes  
+Dynamic Id: Id(Heartbeat) - 0x400 + 0x04
+
+    No  Datapoint                Type      Unit / Comment                               
+    --------------------------------------------------------------------------------------------
     0   gnd_track                f32       rad                                          
     4   gnd_speed                f32       m/s                                          
 
-ID 0x144 Number of Sattelites and Sat Fix Type
+ID 0x145 Number of Sattelites and Sat Fix Type
 ---
 Name: satellites  
 Object-ID Version: 0  
 Type: Data Object  
 Interval: 100 ms  
 Length: 2 Bytes  
-Dynamic Id: Id(Heartbeat) - 0x400 + 0x04
+Dynamic Id: Id(Heartbeat) - 0x400 + 0x05
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
