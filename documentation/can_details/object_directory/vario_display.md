@@ -37,6 +37,20 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x01
     0   voltage                  f32       V                                            
     4   temperature              f32       °C                                           
 
+ID 0x282 avg climb rate and thermal climb rate only sent when virtual master
+---
+Name: avg_climb_rates  
+Object-ID Version: 0  
+Type: Data Object  
+Interval: 100 ms  
+Length: 8 Bytes  
+Dynamic Id: Id(Heartbeat) - 0x400 + 0x02
+
+    No  Datapoint                Type      Unit / Comment                               
+    --------------------------------------------------------------------------------------------
+    0   avg_climb_rate           f32       m/s                                          
+    4   thermal_climb_rate       f32       m/s                                          
+
 ID 0x680 Heartbeat
 ---
 Name: heartbeat  

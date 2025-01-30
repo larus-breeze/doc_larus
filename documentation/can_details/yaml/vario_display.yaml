@@ -35,3 +35,16 @@ datapoints:
   - name: temperature
     type: f32
     unit: °C
+- name: avg_climb_rates
+  type: Data Object
+  object_id_ver: 0
+  id: 0x02
+  interval: 100  # ms
+  comment: avg climb rate and thermal climb rate only sent when virtual master
+  data:
+  - name: avg_climb_rate
+    type: f32
+    unit: m/s
+  - name: thermal_climb_rate
+    type: f32
+    unit: m/s
