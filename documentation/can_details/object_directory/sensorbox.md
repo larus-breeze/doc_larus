@@ -7,9 +7,9 @@ Larus Sensor Box
     Preffered IDs for Generic Datapoints         0x520 - 0x52f                      
     Comment                                      Definition of CAN bus datagrams of the Larus Sensor Box
 
-ID 0x120 Roll Angle and Nick Angle (Front-Right-Down System)
+ID 0x120 Roll Angle and Pitch Angle (Front-Right-Down System)
 ---
-Name: roll_nick  
+Name: roll_pitch  
 Object-ID Version: 0  
 Type: Data Object  
 Interval: 100 ms  
@@ -19,7 +19,7 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x00
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
     0   roll_angle               f32       rad                                          
-    4   nick_angle               f32       rad                                          
+    4   pitch_angle               f32       rad                                          
 
 ID 0x121 Yaw Angle and Turn Rate
 ---
@@ -32,8 +32,8 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x01
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
-    0   yaw                      f32       rad                                          
-    4   turn_rate                f32       rad/s                                        
+    0   yaw                      f32       rad   equals true heading                                       
+    4   turn_rate                f32       rad/s projected on a horizontal plane in NED system                                       
 
 ID 0x122 TAS (True Airspeed) and IAS (Indicated Airspeed)
 ---
@@ -119,7 +119,7 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x07
     0   g_force                  f32       m/s^2                                        
     4   vertical_g_force         f32       m/s^2                                        
 
-ID 0x128 Calculated Slip Angle and Pitch Angle
+ID 0x128 Apperent vertical angles, Roll and Pitch
 ---
 Name: slip_and_pitch_angle  
 Object-ID Version: 0  
@@ -130,8 +130,8 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x08
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
-    0   slip_angle               f32       rad, positive if track right of heading      
-    4   pitch_angle              f32       rad                                          
+    0   slip_angle               f32       rad, apperent roll, filtered      
+    4   pitch_angle              f32       rad, apperent pitch, filtered                                          
 
 ID 0x129 Supply Voltage and Circle Mode
 ---
