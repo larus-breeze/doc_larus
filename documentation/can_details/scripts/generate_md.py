@@ -13,6 +13,7 @@ SIZES = {   # Bit-Sizes
     'f64': 32,
     'bool': 8,
 
+    'u2': 2,
     'u3': 3,
     'u4': 4,
     'u5': 5,
@@ -24,6 +25,7 @@ SIZES = {   # Bit-Sizes
 
     'HwVersion': 32,
     'FwVersion': 32,
+    'f32, u32': 32,
 }
 
 
