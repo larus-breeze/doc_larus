@@ -162,18 +162,18 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x0f
     --------------------------------------------------------------------------------------------
     0   config_id                u32       .                                            
     4   config_value             f32, u32  Specific to the config_id                    
-                                           0x2000: pitot_offset        f32 unit Pa      
-                                           0x2001: pitot_span          f32 unit -       
-                                           0x2002: qnh_delta           f32 unit Pa      
-                                           0x2003: mag_auto_calib      u32 0 false 1 true 
-                                           0x2004: vario_tc            f32 unit s       
-                                           0x2005: vario_int_tc        f32 unit s       
-                                           0x2006: wind_tc             f32 unit s       
-                                           0x2007: mean_wind_tc        f32 unit s       
-                                           0x2008: sens_tilt_roll      f32 unit rad     
-                                           0x2009: sens_tilt_pitch     f32 unit rad     
-                                           0x200a: sens_tilt_yaw       f32 unit rad     
-                                           0x200b: gnss_config         ú32 0 SGNSS 1 DGNSS
+                                           0x2000: sens_tilt_roll      f32 unit rad     
+                                           0x2001: sens_tilt_pitch     f32 unit rad     
+                                           0x2002: sens_tilt_yaw       f32 unit rad     
+                                           0x2003: pitot_offset        f32 unit Pa      
+                                           0x2004: pitot_span          f32 unit -       
+                                           0x2005: qnh_delta           f32 unit Pa      
+                                           0x2006: mag_auto_calib      f32 0 false 1 true 
+                                           0x2007: vario_tc            f32 unit s       
+                                           0x2008: vario_int_tc        f32 unit s       
+                                           0x2009: wind_tc             f32 unit s       
+                                           0x200a: mean_wind_tc        f32 unit s       
+                                           0x200b: gnss_config         f32 0 SGNSS 1 DGNSS
                                            0x200c: ant_baselen         f32 unit m       
                                            0x200d: ant_slave_down      f32 unit m       
                                            0x200e: ant_slave_right     f32 unit m       
@@ -232,17 +232,17 @@ Dynamic Id: Id(Heartbeat) + 0x02
                                            <Generic Command>                            
                                            .                                            
                                            <Specific Config Data>                       
-                                           0x2000: pitot_offset (Sensor Box)            
-                                           0x2001: pitot_span (Sensor Box)              
-                                           0x2002: qnh_delta (Sensor Box)               
-                                           0x2003: mag_auto_calib (Sensor Box)          
-                                           0x2004: vario_tc (Sensor Box)                
-                                           0x2005: vario_int_tc (Sensor Box)            
-                                           0x2006: wind_tc (Sensor Box)                 
-                                           0x2007: mean_wind_tc (Sensor Box)            
-                                           0x2008: sens_tilt_roll (Sensor Box)          
-                                           0x2009: sens_tilt_pitch (Sensor Box)         
-                                           0x200a: sens_tilt_yaw (Sensor Box)           
+                                           0x2000: sens_tilt_roll (Sensor Box)          
+                                           0x2001: sens_tilt_pitch (Sensor Box)         
+                                           0x2002: sens_tilt_yaw (Sensor Box)           
+                                           0x2003: pitot_offset (Sensor Box)            
+                                           0x2004: pitot_span (Sensor Box)              
+                                           0x2005: qnh_delta (Sensor Box)               
+                                           0x2006: mag_auto_calib (Sensor Box)          
+                                           0x2007: vario_tc (Sensor Box)                
+                                           0x2008: vario_int_tc (Sensor Box)            
+                                           0x2009: wind_tc (Sensor Box)                 
+                                           0x200a: mean_wind_tc (Sensor Box)            
                                            0x200b: gnss_config (Sensor Box)             
                                            0x200c: ant_baselen (Sensor Box)             
                                            0x200d: ant_slave_down (Sensor Box)          
@@ -269,18 +269,18 @@ Dynamic Id: Id(Heartbeat) + 0x02
                                            <Generic Command>                            
                                            .                                            
                                            <Specific Config Data>                       
-                                           0x2000: pitot_offset        u8 0 get 1 set, u[3] reserved, f32 unit Pa
-                                           0x2001: pitot_span          u8 0 get 1 set, u[3] reserved, f32 unit -
-                                           0x2002: qnh_delta           u8 0 get 1 set, u[3] reserved, f32 unit Pa
-                                           0x2003: mag_auto_calib      u8 0 get 1 set, u[3] reserved, u32 0 false 1 true 
-                                           0x2004: vario_tc            u8 0 get 1 set, u[3] reserved, f32 unit s
-                                           0x2005: vario_int_tc        u8 0 get 1 set, u[3] reserved, f32 unit s
-                                           0x2006: wind_tc             u8 0 get 1 set, u[3] reserved, f32 unit s
-                                           0x2007: mean_wind_tc        u8 0 get 1 set, u[3] reserved, f32 unit s
-                                           0x2008: sens_tilt_roll      u8 0 get 1 set, u[3] reserved, f32 unit rad
-                                           0x2009: sens_tilt_pitch     u8 0 get 1 set, u[3] reserved, f32 unit rad
-                                           0x200a: sens_tilt_yaw       u8 0 get 1 set, u[3] reserved, f32 unit rad
-                                           0x200b: gnss_config         u8 0 get 1 set, u[3] reserved, ú32 0 SGNSS 1 DGNSS
+                                           0x2000: sens_tilt_roll      u8 0 get 1 set, u[3] reserved, f32 unit rad
+                                           0x2001: sens_tilt_pitch     u8 0 get 1 set, u[3] reserved, f32 unit rad
+                                           0x2002: sens_tilt_yaw       u8 0 get 1 set, u[3] reserved, f32 unit rad
+                                           0x2003: pitot_offset        u8 0 get 1 set, u[3] reserved, f32 unit Pa
+                                           0x2004: pitot_span          u8 0 get 1 set, u[3] reserved, f32 unit -
+                                           0x2005: qnh_delta           u8 0 get 1 set, u[3] reserved, f32 unit Pa
+                                           0x2006: mag_auto_calib      u8 0 get 1 set, u[3] reserved, f32 0, 1 
+                                           0x2007: vario_tc            u8 0 get 1 set, u[3] reserved, f32 unit s
+                                           0x2008: vario_int_tc        u8 0 get 1 set, u[3] reserved, f32 unit s
+                                           0x2009: wind_tc             u8 0 get 1 set, u[3] reserved, f32 unit s
+                                           0x200a: mean_wind_tc        u8 0 get 1 set, u[3] reserved, f32 unit s
+                                           0x200b: gnss_config         u8 0 get 1 set, u[3] reserved, f32 0, 1
                                            0x200c: ant_baselen         u8 0 get 1 set, u[3] reserved, f32 unit m
                                            0x200d: ant_slave_down      u8 0 get 1 set, u[3] reserved, f32 unit m
                                            0x200e: ant_slave_right     u8 0 get 1 set, u[3] reserved, f32 unit m
