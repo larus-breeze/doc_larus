@@ -4,17 +4,17 @@ preferred_id: 18
 comment: Definition of CAN bus datagrams of the Larus Sensor Box
 #
 datapoints:
-- name: roll_nick
+- name: roll_pitch
   type: Data Object
   object_id_ver: 0
   id: 0x00
   interval: 100  # ms
-  comment: Roll Angle and Nick Angle (Front-Right-Down System)
+  comment: Roll Angle and Pitch Angle (Front-Right-Down System)
   data:
   - name: roll_angle
     type: f32
     unit: rad
-  - name: nick_angle
+  - name: pitch_angle
     type: f32
     unit: rad
 - name: yaw_turn_rate
@@ -26,10 +26,10 @@ datapoints:
   data:
   - name: yaw
     type: f32
-    unit: rad
+    unit: rad   equals true heading
   - name: turn_rate
     type: f32
-    unit: rad/s
+    unit: rad/s projected on a horizontal plane in NED system    
 - name: airspeed
   type: Data Object
   object_id_ver: 0
@@ -108,19 +108,19 @@ datapoints:
   - name: vertical_g_force
     type: f32
     unit: m/s^2
-- name: slip_and_pitch_angle
+- name: apperent_roll_and_pitch
   type: Data Object
   object_id_ver: 0
   id: 0x08
   interval: 100  # ms
-  comment: Calculated Slip Angle and Pitch Angle
+  comment: Apperent vertical angles, Roll and Pitch
   data:
-  - name: slip_angle
+  - name: roll_angle
     type: f32
-    unit: rad, positive if track right of heading
+    unit: rad, apperent roll, filtered
   - name: pitch_angle
     type: f32
-    unit: rad
+    unit: rad, apperent pitch, filtered
 - name: fly_state_and_supply_voltage
   type: Data Object
   object_id_ver: 0

@@ -19,7 +19,7 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x00
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
     0   roll_angle               f32       rad                                          
-    4   pitch_angle               f32       rad                                          
+    4   pitch_angle              f32       rad                                          
 
 ID 0x121 Yaw Angle and Turn Rate
 ---
@@ -32,8 +32,8 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x01
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
-    0   yaw                      f32       rad   equals true heading                                       
-    4   turn_rate                f32       rad/s projected on a horizontal plane in NED system                                       
+    0   yaw                      f32       rad   equals true heading                    
+    4   turn_rate                f32       rad/s projected on a horizontal plane in NED system
 
 ID 0x122 TAS (True Airspeed) and IAS (Indicated Airspeed)
 ---
@@ -121,7 +121,7 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x07
 
 ID 0x128 Apperent vertical angles, Roll and Pitch
 ---
-Name: slip_and_pitch_angle  
+Name: apperent_roll_and_pitch  
 Object-ID Version: 0  
 Type: Data Object  
 Interval: 100 ms  
@@ -130,8 +130,8 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x08
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
-    0   slip_angle               f32       rad, apperent roll, filtered      
-    4   pitch_angle              f32       rad, apperent pitch, filtered                                          
+    0   roll_angle               f32       rad, apperent roll, filtered                 
+    4   pitch_angle              f32       rad, apperent pitch, filtered                
 
 ID 0x129 Supply Voltage and Circle Mode
 ---
@@ -269,21 +269,21 @@ Dynamic Id: Id(Heartbeat) + 0x02
                                            <Generic Command>                            
                                            .                                            
                                            <Specific Config Data>                       
-                                           0x2000: sens_tilt_roll      u8 0 get 1 set, u[3] reserved, f32 unit rad
-                                           0x2001: sens_tilt_pitch     u8 0 get 1 set, u[3] reserved, f32 unit rad
-                                           0x2002: sens_tilt_yaw       u8 0 get 1 set, u[3] reserved, f32 unit rad
-                                           0x2003: pitot_offset        u8 0 get 1 set, u[3] reserved, f32 unit Pa
-                                           0x2004: pitot_span          u8 0 get 1 set, u[3] reserved, f32 unit -
-                                           0x2005: qnh_delta           u8 0 get 1 set, u[3] reserved, f32 unit Pa
-                                           0x2006: mag_auto_calib      u8 0 get 1 set, u[3] reserved, f32 0, 1 
-                                           0x2007: vario_tc            u8 0 get 1 set, u[3] reserved, f32 unit s
-                                           0x2008: vario_int_tc        u8 0 get 1 set, u[3] reserved, f32 unit s
-                                           0x2009: wind_tc             u8 0 get 1 set, u[3] reserved, f32 unit s
-                                           0x200a: mean_wind_tc        u8 0 get 1 set, u[3] reserved, f32 unit s
-                                           0x200b: gnss_config         u8 0 get 1 set, u[3] reserved, f32 0, 1
-                                           0x200c: ant_baselen         u8 0 get 1 set, u[3] reserved, f32 unit m
-                                           0x200d: ant_slave_down      u8 0 get 1 set, u[3] reserved, f32 unit m
-                                           0x200e: ant_slave_right     u8 0 get 1 set, u[3] reserved, f32 unit m
+                                           0x2000: sens_tilt_roll      u8 0 get 1 set, u8 reserved, f32 unit rad
+                                           0x2001: sens_tilt_pitch     u8 0 get 1 set, u8 reserved, f32 unit rad
+                                           0x2002: sens_tilt_yaw       u8 0 get 1 set, u8 reserved, f32 unit rad
+                                           0x2003: pitot_offset        u8 0 get 1 set, u8 reserved, f32 unit Pa
+                                           0x2004: pitot_span          u8 0 get 1 set, u8 reserved, f32 unit -
+                                           0x2005: qnh_delta           u8 0 get 1 set, u8 reserved, f32 unit Pa
+                                           0x2006: mag_auto_calib      u8 0 get 1 set, u8 reserved, f32 0, 1 
+                                           0x2007: vario_tc            u8 0 get 1 set, u8 reserved, f32 unit s
+                                           0x2008: vario_int_tc        u8 0 get 1 set, u8 reserved, f32 unit s
+                                           0x2009: wind_tc             u8 0 get 1 set, u8 reserved, f32 unit s
+                                           0x200a: mean_wind_tc        u8 0 get 1 set, u8 reserved, f32 unit s
+                                           0x200b: gnss_config         u8 0 get 1 set, u8 reserved, f32 0, 1
+                                           0x200c: ant_baselen         u8 0 get 1 set, u8 reserved, f32 unit m
+                                           0x200d: ant_slave_down      u8 0 get 1 set, u8 reserved, f32 unit m
+                                           0x200e: ant_slave_right     u8 0 get 1 set, u8 reserved, f32 unit m
                                            .                                            
                                            <Specific Command>                           
                                            0x3000: cmd_measure_pos_1             u8[6] reserved
