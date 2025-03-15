@@ -26,3 +26,4 @@ Object Directory
 [Larus Sensorbox](can_details/object_directory/sensorbox.md)  
 [Generic GPS Device](can_details/object_directory/gps.md)  
 [Vario Display](can_details/object_directory/vario_display.md)    
+[Generic Data](can_details/object_directory/generic.md)    

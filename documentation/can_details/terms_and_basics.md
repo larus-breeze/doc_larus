@@ -25,4 +25,4 @@ The IDs from 0x400 to 0x7ff are reserved for generic data points, the IDs 0x010 
 
 This division makes it very easy to assign a received message as to whether it is a specific or a generic message. The hardware-based filters available in Can bus peripherals can be used to filter out the desired CAN bus datagrams.
 
-![CAN-ID_Ranges](https://github.com/larus-breeze/doc_larus/blob/master/documentation/can_details/scripts/id_ranges.png)
+![CAN-ID_Ranges](./id_ranges.png)

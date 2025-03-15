@@ -5,7 +5,7 @@ Services can consist of a single datagram or a sequence of datagrams that belong
 
 System wide Config Items
 ---
-This [service](object_directory/generic.md#id-0x01-set-system-wide-config-item) allows each device to accept or make system-wide settings. All available data points are listed here.
+This [service](object_directory/generic.md) allows each device to accept or make system-wide settings. All available data points are listed here.
 
 An example: In a two-seater, the rear pilot resets the MacCready value. The display device forwards this new value to the connected 7" display via NMEA. It also makes this data available on the CAN bus. The front display instrument adopts this date and forwards the information to the front 7" display.
 
@@ -15,7 +15,7 @@ This procedure has already been described in the [start up CAN bus](./start_up.m
 
 Transfer of Binary Data Blocks
 ---
-This service makes it possible to [transfer binary data](object_directory/generic.md#id-0x03-transfer-of-binary-data-blocks) of theoretically up to 4 GB. As it is not specified which data is transferred, this service can only be used as part of a higher-level service. For example, it can be used for a firmware update or for transferring a configuration.
+This service makes it possible to [transfer binary data](object_directory/generic.md) of theoretically up to 4 GB. As it is not specified which data is transferred, this service can only be used as part of a higher-level service. For example, it can be used for a firmware update or for transferring a configuration.
 
 The following example demonstrates the process. The package 'This is a test to show that everything works' is to be transferred.
 
@@ -38,10 +38,10 @@ A virtual configuration device can offer a new firmware image. If the configurat
 It is not part of this specification to make statements about what a firmware image should look like. Specific solutions are possible here, which only need to be known to the device itself and the configuration tool. However, these images should at least contain information on compatibility, versioning and integrity.
 
 The procedure is as follows:
-- [Offer firmware update](object_directory/config.md#id-0x01-offer-firmware-image))
+- [Offer firmware update](object_directory/config.md))
 - Wait 100 ms. During this time, the interested devices confirm with an RTR without data that they are ready to download a firmware image. All other bus participants can block the data trafer can IDs
-- [Service to transfer binary data](https://github.com/larus-breeze/doc_larus/edit/master/documentation/can_details/services.md#transfer-of-binary-data-blocks) is triggered
-- After completion, the [can_reset](object_directory/master.md#id-0x02-no-data-marker-request-to-reset-all-filters) marker of the master is triggered by RTR without data. This is a signal for all bus participants to reset their CAN filter settings to the default.
+- [Service to transfer binary data](./services.md) is triggered
+- After completion, the can_reset marker of the master is triggered by RTR without data. This is a signal for all bus participants to reset their CAN filter settings to the default.
 
 The service [offers the image] with a datagram and then uses the .
 
@@ -53,7 +53,7 @@ It is not part of this specification to make statements about what a configurati
 
 The procedure is as follows:
 
-- [Offer the configuration data](object_directory/config.md#id-0x02-offer-configuration-data)
+- [Offer the configuration data](object_directory/config.md)
 - Wait 100 ms. During this time, the interested devices confirm with an RTR without data that they are ready to download the configuration data. All other bus participants can block the data trafer can IDs
-- [Service to transfer binary data](https://github.com/larus-breeze/doc_larus/edit/master/documentation/can_details/services.md#transfer-of-binary-data-blocks) is triggered
-- After completion, the [can_reset](object_directory/master.md#id-0x02-no-data-marker-request-to-reset-all-filters) marker of the master is triggered by RTR without data. This is a signal for all bus participants to reset their CAN filter settings to the default.
+- [Service to transfer binary data](./can_details/services.md) is triggered
+- After completion, the can_reset marker of the master is triggered by RTR without data. This is a signal for all bus participants to reset their CAN filter settings to the default.
