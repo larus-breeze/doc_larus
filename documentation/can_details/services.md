@@ -55,5 +55,5 @@ The procedure is as follows:
 
 - [Offer the configuration data](object_directory/config.md)
 - Wait 100 ms. During this time, the interested devices confirm with an RTR without data that they are ready to download the configuration data. All other bus participants can block the data trafer can IDs
-- [Service to transfer binary data](./can_details/services.md) is triggered
+- [Service to transfer binary data](./services.md) is triggered
 - After completion, the can_reset marker of the master is triggered by RTR without data. This is a signal for all bus participants to reset their CAN filter settings to the default.
