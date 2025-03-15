@@ -9,7 +9,7 @@ Vario Displsay
 
 The vario display shows the values of the Larus sensor box. It also offers additional information such as speed to fly or a thermal assistant. The values are shown on an LCD display or output acoustically via a loudspeaker. The device can function as a vario display, also as a display of the artificial horizon or flarm display.
 
-Several such devices can be installed. The ID assignment is carried out according to the procedure described in the specification. The first GPS device works with the specific IDs 0x280...0x28f and the generic IDs 0x680..0x68f.
+Several such devices can be installed. The ID assignment is carried out according to the procedure described in the specification.
 
 ID 0x280 Frequency, volume and duty-cycle for the sound output
 ---
