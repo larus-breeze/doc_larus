@@ -1,4 +1,4 @@
-# LARUS Protocol **Version 0.1.3**
+# LARUS Protocol **Version 0.1.4**
 
 This document describes the LARUS serial port protocol, as realized in [sw_sensor_algorithm 2023-08-18](https://github.com/larus-breeze/sw_sensor_algorithms/blob/17e8b49139d2c820dce6f02208cf5205ff22e62a/Output_Formatter/NMEA_format.cpp).
 
@@ -148,28 +148,31 @@ This sentence gives information about the instant air density at the current alt
   2) a = (M)easured or (E)stimated
   3) Checksum
 
-### $PLARB Battery Voltage
+### $PLARB Battery Voltage and Outside Temperature
 
-           1     2
-           |     |  
-    $PLARB,xx.xx*hh<CR><LF>
+           1     2     3
+           |     |     |
+    $PLARB,xx.xx,xxx.x*hh<CR><LF>
     
-    Example:
-    $PLARB,12.33*4C
+    Examples:
+    $PLARB,12.33*4C (before v0.1.4)
+    $PLARB,12.33,-23.8*5A
 
 This block gives the measured voltage:
 
   1) Volatage in volts
-  2) Checksum
+  2) Outside Temperature in Celsius (optional, new in v0.1.4)
+  3) Checksum
 
-### $PLARV Climb Rate (Vario), Pressure Altitude and True Air Speed (TAS)
+### $PLARV Climb Rate (Vario), Pressure Altitude, True Air Speed (TAS) and GLoad
 
-           1    2    3    4  5
-           |    |    |    |  |
-    $PLARV,x.xx,x.xx,xxxx,xx*hh<CR><LF>
+           1    2    3    4  5      6
+           |    |    |    |  |      |
+    $PLARV,x.xx,x.xx,xxxx,xx,xxx.xx*hh<CR><LF>
     
-    Example:
-    $PLARV,1.46,2.98,2608,90*5C
+    Examples:
+    $PLARV,1.46,2.98,2608,90*5C (before v.0.1.4)
+    $PLARV,1.46,2.98,2608,90,002.23*6D
 
 This sentence fives climb rate (vario), pressure altitude and true air speed (TAS):
 
@@ -177,7 +180,8 @@ This sentence fives climb rate (vario), pressure altitude and true air speed (TA
   2) Averaged climb rate (avg vario) in m/s
   3) Pressure altitude in m
   4) TAS in kph
-  5) Checksum
+  5) GLoad (new in v0.1.4)
+  6) Checksum
 
 ### $PLARS Settings parameters bidirectional
 
@@ -190,11 +194,13 @@ This sentence fives climb rate (vario), pressure altitude and true air speed (TA
     $PLARS,L,BAL,0.752*6B
     $PLARS,L,BUGS,15*3B
     $PLARS,L,QNH,1013.2*74
+    $PLARS,L,CIR,1*55
 
     $PLARS,H,MC,2.1*1B
     $PLARS,H,BAL,1.000*68
     $PLARS,H,BUGS,0*0B
     $PLARS,H,QNH,1031.4*76
+    $PLARS,H,CIR,0*50
 
 
 The $PLARS record is intended for exchanging setting values between Larus and a host system such as XCSoar. The record can be used in both directions: from host to Larus or from Larus to host.
@@ -207,5 +213,6 @@ These records should not be sent cyclically, but only when needed during initial
      - BAL Ballast (fraction of water ballast 0.000 - 1.000)
      - BUGS Bugs in % (0 - 50)
      - QNH QNH in hPa
+     - CIR CIR (Circling 1, Cruise 0. XCSoar supports only reception. New in v0.1.4)
   3) Value (format depends on settings parameter, see examples)
   4) Checksum
