@@ -33,9 +33,9 @@ The `x` is
   1) `W` when wind information is being sent
   2) `A` when attitude information is sent
   3) `D` for the instant air density
-  4) `B` for battery voltage
-  5) `V` for climb rate (vario), pressure altitude and true air speed (TAS)
-  6) `S` For settings such as MacCready, water ballast, bugs and QNH
+  4) `B` for battery voltage and outside temperature
+  5) `V` for climb rate (vario), pressure altitude, true air speed (TAS) and GLoad
+  6) `S` settings parameters bidirectional
 
 ## Regular NMEA 0183 Sentences
 
