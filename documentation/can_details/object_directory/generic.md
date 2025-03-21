@@ -5,7 +5,7 @@ The generic IDs are defined in the same way for all devices. The underlying func
 
 The ID range for the generic data is 0x400 to 0x7ff. Up to 16 data points are available for each device. All devices can use their generic functions without having to take other devices into account. 
 
-The data can be easily evaluated by a receiver. If the CAN Id of a datagram is > 0x400, it is a datagram that is known system-wide. The exact content can be determined by rounding the ID with 0x00f. The ID of the generic datagram is obtained in the range from 0x00 to 0x0f.
+The data can be easily evaluated by a receiver. If the CAN Id of a datagram is > 0x400, it is a generic datagram that is known system-wide. The exact content can be determined by logical and ID with 0x00f. The ID of the generic datagram is obtained in the range from 0x00 to 0x0f.
 
 Generic ID 0x00 Heartbeat
 ---

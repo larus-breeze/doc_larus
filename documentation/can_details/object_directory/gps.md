@@ -7,7 +7,7 @@ GPS
     Preffered IDs for Generic Datapoints         0x540 - 0x54f                      
     Comment                                      Definition of CAN bus datagrams of a GPS Receiver
 
-A GPS device provides data for navigation. Several GPS devices can exist in a CAN bus system. The ID assignment is carried out according to the procedure described in the specification. The first GPS device works with the specific IDs 0x140...0x14f and the generic IDs 0x540..0x54f.
+A GPS device provides data for navigation. Several GPS devices can exist in a CAN bus system. The ID assignment is carried out according to the procedure described in the specification.
 
 ID 0x140 Date and Time
 ---
