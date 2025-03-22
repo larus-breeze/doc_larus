@@ -1,4 +1,4 @@
-# LARUS Protocol **Version 0.1.4**
+# LARUS Protocol **Version 0.1.5**
 
 This document describes the LARUS serial port protocol, as realized in [sw_sensor_algorithm 2023-08-18](https://github.com/larus-breeze/sw_sensor_algorithms/blob/17e8b49139d2c820dce6f02208cf5205ff22e62a/Output_Formatter/NMEA_format.cpp).
 
@@ -36,6 +36,8 @@ The `x` is
   4) `B` for battery voltage and outside temperature
   5) `V` for climb rate (vario), pressure altitude, true air speed (TAS) and GLoad
   6) `S` settings parameters bidirectional
+
+To enable operation of the Larus front end via the NMEA interface, a few `$g*` additional commands have been defined.
 
 ## Regular NMEA 0183 Sentences
 
@@ -216,3 +218,34 @@ These records should not be sent cyclically, but only when needed during initial
      - CIR CIR (Circling 1, Cruise 0. XCSoar supports only reception. New in v0.1.4)
   3) Value (format depends on settings parameter, see examples)
   4) Checksum
+
+## Commands for Remote Control
+
+These commands are only received and processed by the frontend. XCSoar, for example, can be used as a source to allow operation of the frontend.
+
+### $g Remote Control
+
+New in v0.1.5
+
+       1  2
+       |  |
+    $g,xx*hh<CR><LF>
+
+    Examples:
+    $g,s0*08
+    $g,s1*09
+    $g,rp*49
+    $g,rl*55
+    $g,ru*4C
+    $g,rd*5D
+
+Command to the front end
+
+  1) Command
+     - g,s1 Mode Speed To Fly
+     - g,s0 Mode Vario
+     - g,rp press button short
+     - g,rl press button long
+     - g,ru rotary left
+     - g,rd rotary right
+   2) Checksum
