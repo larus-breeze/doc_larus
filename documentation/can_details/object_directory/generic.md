@@ -89,6 +89,8 @@ Dynamic Id: Id(Heartbeat) + 0x02
                                            0x3002: cmd_measure_pos_3 (Sensor Box)       
                                            0x3003: cmd_calc_sensor_orientation (Sensor Box)
                                            0x3004: cmd_fine_tune_calibration (Sensor Box)
+                                           0x3005: cmd_reset_cold_start (Sensor Box)
+
     2   config_data              u8[6]     Specific to the config_id                    
                                            <Generic Config Data>                        
                                            0x0000: volume_vario:       u8 unit db, u8[5] reserved
@@ -126,6 +128,7 @@ Dynamic Id: Id(Heartbeat) + 0x02
                                            0x3002: cmd_measure_pos_3             u8[6] reserved
                                            0x3003: cmd_calc_sensor_orientation   u8[6] reserved
                                            0x3004: cmd_fine_tune_calibration     u8[6] reserved
+                                           0x3005: cmd_reset_cold_start          u8[6] reserved
 
 Generic ID 0x03 Transfer of Binary Data Blocks
 ---
