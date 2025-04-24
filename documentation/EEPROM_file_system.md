@@ -36,14 +36,14 @@ For the Larus project the following **data types** are used:
  2. Pitot offset float32_t (Pa)
  3. Pitot span (1.0)
  4. QNH offset (Pa)
- 5. Magnetic automatic calibration type: enum uint32_t none, auto1d, auto3d, auto3d+soft-iron-correction
+ 5. Magnetic automatic calibration type: enum within descriptor (16bit) {none, auto1d, auto3d, auto3d+soft-iron-correction}
  6. Magnetic calibration information:  float32_t: 3 * (offset, span), std deviation
  7. Soft iron correction parameters: 22 * float32_t
  8. Vario TC (s)
  9. vario integrator TC (s)
  10. Wind TC (s)
  11. Average wind TC (s)
- 12. GNSS configuration: uint32_t GNSS type
+ 12. GNSS configuration: enum within descriptor (16bit): M9N, F9P+F9P, F9P+F9H, ...
  13. GNSS antennas base-lenght
  14. GNSS antennas down parameter
  15. GNSS antennas right parameter
