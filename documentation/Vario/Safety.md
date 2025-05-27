@@ -2,7 +2,7 @@
 
 |       |                                     |
 |-------|-------------------------------------|
-| <img width="96" alt="Documentation" src="https://github.com/user-attachments/assets/592d3114-900e-4de7-a740-c0e7c98bc6d5" />| **Duty to inform**<br> Each person involved in the installation or operation of LARUS must read and observe the safety-related parts of these operating instructions. |
+| <img width="96" alt="Documentation" src="Images/blueHandbook-m.png" />| **Duty to inform**<br> Each person involved in the installation or operation of LARUS must read and observe the safety-related parts of these operating instructions. |
 
 # Proper Use
 LARUS Vario Display visualises data which are measured and calculated by the LARUS sensor box. LARUS was designed to calculate direction and strength of thermals and wind quickly and reliably. Therefore, the sensor unit combines data from high-precision sensors and GNSS receivers in sophisticated algorithms. 

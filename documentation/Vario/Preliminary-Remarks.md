@@ -11,7 +11,7 @@ The safety instructions in SteFly operating manuals are the result of risk evalu
 
 | Symbol | Importance |
 |---------|-----------------------------------------------------------------------------------------------------------|
-| ![Warning](https://github.com/user-attachments/assets/d4d53fa4-362f-43d1-a31f-d700677334a2) | Pay special attention to critical notes marked with a yellow caution symbol, because non-observance may result in damage or any other critical situation. |
-![RedCaution](https://github.com/user-attachments/assets/dbb8a408-9f9d-458d-a264-9feea949df0b)| A red caution symbol signalizes that non-observance may result in injuries. |
-<img width="96" alt="dutyCommand" src="https://github.com/user-attachments/assets/af0bbfa4-a1d5-49df-89b0-6b0c82f23452" /> | Command to perform an action or task associated with a source of danger, the disregarding of which may result in serious accidents. |
-![BlueCloud](https://github.com/user-attachments/assets/1b6318f4-a56a-4fb2-bf98-abb970205a1d) | A blue cloud indicates useful information or tips. |
+| ![Warning](Images/yellowWarning.svg) | Pay special attention to critical notes marked with a yellow caution symbol, because non-observance may result in damage or any other critical situation. |
+![RedCaution](Images/redCaution.svg)| A red caution symbol signalizes that non-observance may result in injuries. |
+<img width="96" alt="dutyCommand" src="Images/blueExclamationmark-m.png" /> | Command to perform an action or task associated with a source of danger, the disregarding of which may result in serious accidents. |
+![BlueCloud](Images/blueCloud.svg) | A blue cloud indicates useful information or tips. |
