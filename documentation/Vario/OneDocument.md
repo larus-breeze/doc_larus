@@ -1,12 +1,27 @@
 
-# Important Notices
+[ create a pdf-file from this markdown file: ]::
+[ Install vsCode Extension Markdown PDF ]::
+[ press Ctrl-Shift-p and enter Markdown PDF: export (pdf) ]::
+
+# Contents
+  [1.   Preliminary Remarks](#pr)\
+  [1.1  Important Notices](#1.1)\
+  [1.2  Limited Warranty](#1.2)\
+  [1.3  Conventions and Pictograph Definitions](#1.3)\
+  [2.  Safety](#2)\
+  [2.1 Safety Precautions](#2.1)\
+  [2.2 Proper Use](#2.2)
+
+# 1. Preliminary Remarks <a id="pr">
+
+## 1.1 Important Notices <a id = '1.1'/>
 Before using any part of the system, please read and understand this manual. All information in this document is subject to change without notice. The latest version can be downloaded from www.stefly.aero.
 CoTexx GmbH does not accept responsibility for damages which are the result of installation and operation of the device.
 
-# Limited Warranty
+## 1.2 Limited Warranty <a id='1.2'>
 The LARUS Vario Display as well as its accessories are warranted to be free from defects in materials or workmanship for two years from the date of purchase. Within this period, CoTexx will, at its sole discretion, repair or replace any components that fail in normal use. Such repairs or replacement will be made at no charge to the customer for parts and labour, provided that the customer shall be responsible for any transportation cost. This warranty does not cover failures due to abuse, misuse, accident, or unauthorised alterations or repairs.
 
-# Conventions and Pictograph Definitions
+## 1.3 Conventions and Pictograph Definitions <a id='1.3'>
 The safety instructions in SteFly operating manuals are the result of risk evaluations and hazard analyses. In this document, the following hazard levels and information are considered:
 
 | Symbol | Importance |
@@ -15,20 +30,22 @@ The safety instructions in SteFly operating manuals are the result of risk evalu
 ![RedCaution](Images/redCaution.svg)| A red caution symbol signalizes that non-observance may result in injuries. |
 <img width="96" alt="dutyCommand" src="Images/blueExclamationmark-m.png" /> | Command to perform an action or task associated with a source of danger, the disregarding of which may result in serious accidents. |
 ![BlueCloud](Images/blueCloud.svg) | A blue cloud indicates useful information or tips. |
-# Safety Precautions
+
+# 2. Safety <a id='2'>
+## 2.1 Safety Precautions <a id='2.1'>
 
 |       |                                     |
 |-------|-------------------------------------|
 | <img width="96" alt="Documentation" src="Images/blueHandbook-m.png" />| **Duty to inform**<br> Each person involved in the installation or operation of LARUS must read and observe the safety-related parts of these operating instructions. |
 
-# Proper Use
+## 2.2 Proper Use <a id='2.2'>
 LARUS Vario Display visualises data which are measured and calculated by the LARUS sensor box. LARUS was designed to calculate direction and strength of thermals and wind quickly and reliably. Therefore, the sensor unit combines data from high-precision sensors and GNSS receivers in sophisticated algorithms. 
 
 LARUS Vario Display shall be installed in the instrument panel.
 
 LARUS gliding sensor unit is an additional feature to supply glider pilots with accurate information about wind, vertical air movement as well as additional attitude of the aircraft. Its use is limited to day VFR conditions. Security decisions must be made regardless of having installed LARUS.
 
-# Improper Use
+## 2.3 Improper Use <a id='2.3'></a>
 
 Improper use will cause all claims for liability and guarantees to be forfeited. Improper use is deemed to be all use for purposes deviating from those mentioned above, especially:
 * Using LARUS data in non-VFR conditions or during night is forbidden. LARUS is not certified. Although LARUS provides AHRS data to XCSoar you must not rely on the artificial horizon display.
