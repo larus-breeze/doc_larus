@@ -1,7 +1,8 @@
 # Installation
+
 | | |
 |-----|-|
-<img width="300" alt="Warning" src="Images/yellowWarning.svg" />|Usually, LARUS Vario Display is powered by LARUS via patch cable between the CAN ports. LARUS needs to be protected by an external fuse (500 mA to max. 3A) like it is common practice for all electric devices in aviation. If LARUS gets its energy from another main instrument (e.g. SteFly NAV via D-Sub connector) please make sure that the main instrument is protected by an external fuse. |
+<img width="300" alt="Warning" src="Images/yellowWarning.svg" />| Usually, LARUS Vario Display is powered by LARUS via patch cable between the CAN ports. LARUS needs to be protected by an external fuse (500 mA to max. 3A) like it is common practice for all electric devices in aviation. If LARUS gets its energy from another main instrument (e.g. SteFly NAV via D-Sub connector) please make sure that the main instrument is protected by an external fuse. |
 
 ## Installation Location
 
@@ -16,9 +17,10 @@ For installation it is required to remove the two rotary knobs with a HEX 1,5mm 
 <img width="300" alt="Larus unmounted" src="Images/LarusVarioScrews.png" />
 
 ## Installation Orientation
+
 | | |
 |-----|-|
-<img width="300" alt="Warning" src="Images/yellowWarning.svg" /> | If you are replacing an existing instrument with the Larus Vario display, you should check the installation position before drilling the 7.3 mm hole for the rotary encoder due to the asymmetrical housing to the display! |
+<img width="200" alt="Warning" src="Images/yellowWarning.svg" /> | If you want to replace an existing instrument with the Larus Vario Display, checck the desired installation position before drilling the 7.3 mm hole for the rotary encoder due to the asymmetrical housing to the display |
 
 The display can be mounted in the orientations 0° / 90° / 180° / 270°. 
 
