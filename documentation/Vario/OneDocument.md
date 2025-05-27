@@ -10,18 +10,34 @@
   [1.3  Conventions and Pictograph Definitions](#1.3)\
   [2.  Safety](#2)\
   [2.1 Safety Precautions](#2.1)\
-  [2.2 Proper Use](#2.2)
+  [2.2 Proper Use](#2.2)\
+  [2.3 Improper Use](#2.3)\
+  [3. LARUS Vario Display Quick Installation Instructions](#3.)\
+  [4. Product Description](#4.)\
+  [4.1 Scope of Delivery](#4.1)\
+  [4.2 Design and Function](#4.2)\
+  [4.3 Connectors](#4.3)\
+  [4.3.1 Overview of the Connectors](#4.3.1)\
+  [4.3.2 CAN and RS232 Ports](#4..3.2)\
+  [4.3.3 GPIO / D-SUB 9](#4.3.3)\
+  [4.3.4 AUDIO](#4.3.4)\
+  [4.3.5 SD-Card](#4.3.5)\
+  [4.4. CAN Termination](#4.4)\
+  [5. Installation](#5.)\
+  [5.1 Installation Location](#5.1)\
+  [5.2 Installation Orientation](#5.2)\
+  [5.3 Installation Orientation](#5.3)
+# 1. Preliminary Remarks <a id="pr"> </a>
 
-# 1. Preliminary Remarks <a id="pr">
+## 1.1 Important Notices <a id = '1.1'> </a>
 
-## 1.1 Important Notices <a id = '1.1'/>
 Before using any part of the system, please read and understand this manual. All information in this document is subject to change without notice. The latest version can be downloaded from www.stefly.aero.
 CoTexx GmbH does not accept responsibility for damages which are the result of installation and operation of the device.
 
-## 1.2 Limited Warranty <a id='1.2'>
+## 1.2 Limited Warranty <a id='1.2'> </a>
 The LARUS Vario Display as well as its accessories are warranted to be free from defects in materials or workmanship for two years from the date of purchase. Within this period, CoTexx will, at its sole discretion, repair or replace any components that fail in normal use. Such repairs or replacement will be made at no charge to the customer for parts and labour, provided that the customer shall be responsible for any transportation cost. This warranty does not cover failures due to abuse, misuse, accident, or unauthorised alterations or repairs.
 
-## 1.3 Conventions and Pictograph Definitions <a id='1.3'>
+## 1.3 Conventions and Pictograph Definitions <a id='1.3'> </a>
 The safety instructions in SteFly operating manuals are the result of risk evaluations and hazard analyses. In this document, the following hazard levels and information are considered:
 
 | Symbol | Importance |
@@ -31,15 +47,19 @@ The safety instructions in SteFly operating manuals are the result of risk evalu
 <img width="96" alt="dutyCommand" src="Images/blueExclamationmark-m.png" /> | Command to perform an action or task associated with a source of danger, the disregarding of which may result in serious accidents. |
 ![BlueCloud](Images/blueCloud.svg) | A blue cloud indicates useful information or tips. |
 
-# 2. Safety <a id='2'>
-## 2.1 Safety Precautions <a id='2.1'>
+# 2. Safety <a id='2'> </a>
+
+## 2.1 Safety Precautions <a id='2.1'> </a>
 
 |       |                                     |
 |-------|-------------------------------------|
 | <img width="96" alt="Documentation" src="Images/blueHandbook-m.png" />| **Duty to inform**<br> Each person involved in the installation or operation of LARUS must read and observe the safety-related parts of these operating instructions. |
 
-## 2.2 Proper Use <a id='2.2'>
-LARUS Vario Display visualises data which are measured and calculated by the LARUS sensor box. LARUS was designed to calculate direction and strength of thermals and wind quickly and reliably. Therefore, the sensor unit combines data from high-precision sensors and GNSS receivers in sophisticated algorithms. 
+## 2.2 Proper Use <a id='2.2'></a>
+
+LARUS Vario Display visualises data which are measured and calculated by the LARUS sensor box. 
+
+LARUS was designed to calculate direction and strength of thermals and wind quickly and reliably. Therefore, the sensor unit combines data from high-precision sensors and GNSS receivers in sophisticated algorithms. 
 
 LARUS Vario Display shall be installed in the instrument panel.
 
@@ -52,13 +72,23 @@ Improper use will cause all claims for liability and guarantees to be forfeited.
 
 * Using LARUS data during aerobatics or during flight conditions with high angle of attack (stall) or high g-forces. The algorithm was optimized for normal flight conditions.  
 
-* Operating LARUS Vario Display outside the operation conditions defined in technical data section, e.g. input voltage, temperature and humidity.1. Disassemble both rotary knobs with a 1,5 mm HEX key (scope of delivery)
+* Operating LARUS Vario Display outside the operation conditions defined in technical data section, e.g. input voltage, temperature and humidity.
+
+## 3. LARUS Vario Display Quick Installation Instructions <a id='3.'> </a>
+
+LARUS Vario Display may be operated out of the box. Simply perform the following actions:
+
+1. Disassemble both rotary knobs with a 1,5 mm HEX key (scope of delivery)
 1. Mount LARUS Vario Display in a 57 mm cutout of the instrument panel with 3 screws. It may be mounted in all four directions. 
 1. Assemble both rotary knobs
 1. Connect the CAN port of LARUS Vario Display and LARUS Sensor Box with a 1:1 patch cable included in scope of delivery. 
 1. Power on LARUS 
 1. Check that the satellite symbol on the screen is yellow or green and the current heading is shown.  
-1. Your LARUS Vario Display is ready to fly!# Scope of Delivery
+1. Your LARUS Vario Display is ready to fly!
+
+# 4. Product Description <a id='4.'></a>
+## 4.1 Scope of Delivery <a id='4.1'></a>
+
 The scope of delivery contains the following:
 * LARUS Vario Display
 * Mounting screws
@@ -67,7 +97,7 @@ The scope of delivery contains the following:
 * D-Sub-9 solder connector and housing
 * 1,5 mm HEX key for mounting the rotary knobs
 
-# Design and Function
+## 4.2 Design and Function <a id='4.2'> </a>
 LARUS Vario Display shows the data measured and calculated by LARUS. LARUS is an advanced variometer with real time wind measurement capabilities. It incorporates state of the art pressure sensors, an advanced IMU and GNSS receivers to gather precise flight information data. 
 Key features of the display are: 
 * Round display for 57 mm standard instrument panel cutouts
@@ -87,15 +117,16 @@ The system architecture of LARUS in **double seater configuration**:
 ![Double Seater Configuration](./Images/DoubleSeaterConfigWhite.png)
 
 
-# Connectors
+## 4.3 Connectors <a id='4.3'> </a>
 
-## Overview of the Connectors
+### 4.3.1 Overview of the Connectors <a id='4.3.1'> </a>
 
-![Back View](./Images/LarusVarioBack.png)
+<img alt='Larus Vario Connectors' width='300' src='Images/LarusVarioBack.png'>
 
-## CAN and RS232 Ports
+### 4.3.2 CAN and RS232 Ports <a id='4.3.2'> </a>
 
-![RJ Connectors](./Images/LarusVarioRJ45Connectors.svg)
+<img alt='Larus Vario Connectors' width='300' src='Images/LarusVarioRJ45Connectors.svg'>
+<br>
 
 |Pin	|CAN | RS232|
 |---|------|----------------|
@@ -108,6 +139,9 @@ The system architecture of LARUS in **double seater configuration**:
 |7|	VCC [9-28V DC] (internally connected)|	VCC [9-28V DC] (internally connected)|
 |8|		|
 
+
+<br>
+
 If a serial connection (RS232) is established between SteFly NAV and LARUS Vario Display, the MC value settings, for example, can be synchronized / transferred between the devices. In addition, the LARUS Vario Display processes inputs from a Speed to Fly / Vario switch that is connected directly to the SteFly Remote Control Stick PCB (for necessary settings see chapter 6). 
 
 The following steps are required: 
@@ -117,13 +151,14 @@ The following steps are required:
 * Adjust settings in XCSoar / OpenSoar:
   * If the Vario Display is connected directly to the SteFly NAV, select the corresponding ttyS port: Config -> Devices -> select a free line and enter the port, Baud rate 38400, Driver Larus, Sync. to device on
 
-## GPIO / D-SUB 9
+### 4.3.3 GPIO / D-SUB 9 <a id='4.3.3'> </a>
 
 Several other switches, sensors and devices can be connected via the d-sub connector. Please note that not all functions have been implemented at date of release of this manual. 
 
 The following sketch shows the view into the male connector of the LARUS Vario Display. 
 
 <img width="150" alt="SUB-D9" src="Images/LarusVarioSUBD9-m.png" />
+
 
 |Pin number|	Pin name |	I/O|
 |----|--------|---------|
@@ -138,23 +173,23 @@ The following sketch shows the view into the male connector of the LARUS Vario D
 |9	|DO1 | SteFly Canopy Flasher- Output|
 
 For easier pin identification these numbers are also molded into the female connector (scope of delivery). 
-After wiring, settings must be made in the LARUS Vario Display, see chapter 6.
+After wiring, settings must be made in the LARUS Vario Display, see chapter 6.4.3.4 AUDIO
 
-| test |test|
-|------|-----|
-| 1 | 2 |
-
-## AUDIO
+### 4.3.4 AUDIO <a id='4.3.4'> </a>
 An audio socket is available for connecting a loudspeaker with a 3.5 mm jack plug.  The internal resistance of the speaker must be between 4-8 Ω (max. output of 3 W @ 8 Ω).
 
-## SD-Card
+| |  |
+|------------------------|-------------------------------------------------------------------------------------------|
+<img width="96" alt="dutyCommand" src="Images/redCaution.svg" /> | Speakers must not be connected to more than one device.|
+
+### 4.3.5 SD-Card <a id='4.3.5'> </a>
 The device has an SD card slot for firmware updates.  
 
 | |  |
 |------------------------|-------------------------------------------------------------------------------------------|
 <img width="96" alt="dutyCommand" src="Images/redCaution.svg" /> |As SD card extensions can damage the Vario Display, we do not accept any liability for damage resulting from their use.|
 
-# CAN Termination 
+## 4.4 CAN Termination <a id='4.4'> </a> 
 
 LARUS Vario Display and LARUS Sensor Box are connected via CAN. CAN bus networks require termination resistors at each end of the network. Therefore, all units have integrated a switch to activate the resistor:
 
@@ -170,17 +205,17 @@ The following table gives examples of how to set the CAN termination switches:
 
 Please note: All LARUS Sensor Boxes delivered before March 2025 have no CAN termination switch.  CAN termination is always on from default.
 
-# Installation
+# 5. Installation <a id='5.'> </a>
 
 | | |
 |-----|-|
 <img width="300" alt="Warning" src="Images/yellowWarning.svg" />| Usually, LARUS Vario Display is powered by LARUS via patch cable between the CAN ports. LARUS needs to be protected by an external fuse (500 mA to max. 3A) like it is common practice for all electric devices in aviation. If LARUS gets its energy from another main instrument (e.g. SteFly NAV via D-Sub connector) please make sure that the main instrument is protected by an external fuse. |
 
-## Installation Location
+## 5.1 Installation Location <a id='5.1'> </a>
 
 The following picture shows a typical installation situation of LARUS Vario Display in the instrument panel of a glider. 
 
-<img width="400" alt="Larus mounted" src="Images/LarusVarioDirection.png" />
+<img width="400" alt="Larus mounted" src="Images/LarusVarioDirection.png"/>
 
 The display fits in a standard 57 mm cutout and is fastened by 3 M3 screws.
 
@@ -188,7 +223,7 @@ For installation it is required to remove the two rotary knobs with a HEX 1,5mm 
 
 <img width="300" alt="Larus unmounted" src="Images/LarusVarioScrews.png" />
 
-## Installation Orientation
+## 5.2 Installation Orientation <a id='5.2'> </a>
 
 | | |
 |-----|-|
@@ -198,7 +233,8 @@ The display can be mounted in the orientations 0° / 90° / 180° / 270°.
 
 After mounting the display, its´ orientation needs to be configured in the menu. Long click on the button -> Views -> Display Rotation
 
-## Initial Operation and Function Test 
+# 6. Operation
+## 6.1 Initial Operation and Function Test 
 
 For initial operation please follow these steps: 
 1. Check that the LARUS Vario Display is connected to LARUS Sensor Box or CAN Splitter according to the drawings in chapter 4.2 
