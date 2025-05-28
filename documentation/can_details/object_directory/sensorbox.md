@@ -172,7 +172,7 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x0a
 	                                       0x0000_0040 L3GD20_SENSOR_AVAILABLE
 	                                       0x0000_0080 MS5611_STATIC_AVAILABLE
 	
-                                               0x0000_0200 PITOT_SENSOR_AVAILABLE
+                                           0x0000_0200 PITOT_SENSOR_AVAILABLE
 	                                       0x0000_0400 AIR_SENSOR_AVAILABLE
 	                                       0x0000_0800 USART_1_OUTPUT_ACTIVE
 
@@ -194,7 +194,9 @@ Interval: 100 ms
 Length: 4 Bytes
 Dynamic Id: Id(Heartbeat) - 0x400 + 0x0b
 
-0   magnetic_disturbance             f32       Magnetic disturbance 0..2 (lower is better)                                           
+    No  Datapoint                Type      Unit / Comment
+    --------------------------------------------------------------------------------------------
+    0   magnetic_disturbance     f32       Magnetic disturbance 0..2 (lower is better)
 
 ID 0x12f Send config value on request
 ---
