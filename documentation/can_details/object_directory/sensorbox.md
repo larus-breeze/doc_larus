@@ -150,6 +150,7 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x09
     4   circle_mode              u8        0 STRAIGHT_FLIGHT                            
                                            1 TRANSITION                                 
                                            2 CIRCLING                                   
+                                           3 ON GROUND                                   
 
 ID 0x12a System State and Git Tag
 ---
@@ -183,6 +184,17 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x0a
 					       0x0001_0000 HORIZON_AVAILABLE from AHRS   
 	    
     4   git_tag                  u32       tag                            
+
+ID 0x12b Sensor Health Information
+---
+Name: sensor_health
+Object-ID Version: 0  
+Type: Data Object  
+Interval: 100 ms  
+Length: 4 Bytes
+Dynamic Id: Id(Heartbeat) - 0x400 + 0x0b
+
+0   magnetic_disturbance             f32       Magnetic disturbance 0..2 (lower is better)                                           
 
 ID 0x12f Send config value on request
 ---
