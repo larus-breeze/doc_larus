@@ -17,9 +17,9 @@
   [4.2 Design and Function](#4.2)\
   [4.3 Connectors](#4.3)\
   [4.3.1 Overview of the Connectors](#4.3.1)\
-  [4.3.2 CAN and RS232 Ports](#4..3.2)\
+  [4.3.2 CAN and RS232 Ports](#4.3.2)\
   [4.3.3 GPIO / D-SUB 9](#4.3.3)\
-  [4.3.4 AUDIO](#4.3.4)\
+  [4.3.4 Audio](#4.3.4)\
   [4.3.5 SD-Card](#4.3.5)\
   [4.4. CAN Termination](#4.4)\
   [5. Installation](#5.)\
@@ -185,12 +185,12 @@ The following sketch shows the view into the male connector of the LARUS Vario D
 For easier pin identification these numbers are also molded into the female connector (scope of delivery). 
 After wiring, settings must be made in the LARUS Vario Display, see [chapter 6.](#DIO-Doc)
 
-### 4.3.4 AUDIO <a id='4.3.4'> </a>
+### 4.3.4 Audio <a id='4.3.4'> </a>
 An audio socket is available for connecting a loudspeaker with a 3.5 mm jack plug.  The internal resistance of the speaker must be between 4-8 Ω (max. output of 3 W @ 8 Ω).
 
 |  |  |
-|------------------------|-------------------------------------------------------------------------------------------|
-<img width="96" alt="Speaker Warning" src="Images/redCaution.svg" /> | A single loudspeaker must not be connected to more than one device.|
+|----|--------|
+<img width='96' alt="Speaker Warning" src="Images/redCaution.svg" /> | A single loudspeaker must not be connected to more than one device.|
 
  <div style="page-break-after: always;"></div>
 
@@ -198,8 +198,8 @@ An audio socket is available for connecting a loudspeaker with a 3.5 mm jack plu
 The device has an SD card slot for firmware updates.  
 
 |  |  |
-|------------------------|-------------------------------------------------------------------------------------------|
-<img width="96" alt="SD Card Warning" src="Images/redCaution.svg" /> | As SD card extensions can damage the Vario Display, we do not accept any liability for damage resulting from their use. |
+|----|--------|
+<img width='96' alt="SD Card Warning" src="Images/redCaution.svg" /> | As SD card extensions can damage the Vario Display, we do not accept any liability for damage resulting from their use.|
 
 ## 4.4 CAN Termination <a id='4.4'> </a> 
 
@@ -268,19 +268,19 @@ Requirements for the SD card: min. 4 GB SDHC, FAT32 format (not GPT) The device 
 # 6. Operation <a id='6.'> </a>
 
 The knobs and the button are assigned as follows: 
-* Turn the small/upper rotary knob: Volume control.<br>
+* **Turn the small/upper rotary knob**: Volume control.<br>
 When entering values: change values in small steps (1 unit).
-* Turn the large/lower rotary knob: Set the MacCready value<br>
+* **Turn the large/lower rotary knob**: Set the MacCready value<br>
 When entering values: change value in large steps (10 units)
-* Short press on the rotary knob: Menu for common settings
-* Long press on the rotary knob: Menu for special settings and calibration of LARUS
+* **Short press on the rotary knob**: Menu for common settings
+* **Long press on the rotary knob**: Menu for special settings and calibration of LARUS
 
 ## 6.1 Variometer Display
 ### 6.1.1 ***Variometer Mode*** Display
 
 <p align="center">
 <img alt='Variometer Mode Display' width='300' src='Images/
-LarusDisplayCircelingSpider.png'> </p>
+LarusDisplayCircelingSpider.png'></p>
 
 ### 6.1.2 ***Speed To Fly Mode*** Display
 
