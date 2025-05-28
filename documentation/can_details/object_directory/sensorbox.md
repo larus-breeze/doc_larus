@@ -171,7 +171,7 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x0a
 	                                       0x0000_0040 L3GD20_SENSOR_AVAILABLE
 	                                       0x0000_0080 MS5611_STATIC_AVAILABLE
 	
-                                           0x0000_0200 PITOT_SENSOR_AVAILABLE
+                                               0x0000_0200 PITOT_SENSOR_AVAILABLE
 	                                       0x0000_0400 AIR_SENSOR_AVAILABLE
 	                                       0x0000_0800 USART_1_OUTPUT_ACTIVE
 
@@ -179,6 +179,9 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x0a
 	                                       0x0000_2000 BLUEZ_OUTPUT_ACTIVE
 	                                       0x0000_4000 CAN_OUTPUT_ACTIVE
 	                                       0x0000_8000 USART_2_OUTPUT_ACTIVE   
+
+					       0x0001_0000 HORIZON_AVAILABLE from AHRS   
+	    
     4   git_tag                  u32       tag                            
 
 ID 0x12f Send config value on request
