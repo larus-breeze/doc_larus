@@ -90,6 +90,8 @@ LARUS Vario Display may be operated out of the box. Simply perform the following
 1. Check that the satellite symbol on the screen is yellow or green and the current heading is shown.  
 1. Your LARUS Vario Display is ready to fly!
 
+ <div style="page-break-after: always;"></div>
+
 # 4. Product Description <a id='4.'></a>
 ## 4.1 Scope of Delivery <a id='4.1'></a>
 
@@ -115,6 +117,7 @@ The system architecture of LARUS in **single seater configuration**:
 
 ![Single Seater Configuration](./Images/SingleSeaterConfig.png)
 
+<div style="page-break-after: always;"></div>
 
 The system architecture of LARUS in **double seater configuration**: 
 
@@ -125,11 +128,13 @@ The system architecture of LARUS in **double seater configuration**:
 
 ### 4.3.1 Overview of the Connectors <a id='4.3.1'> </a>
 
-<img alt='Larus Vario Connectors' width='300' src='Images/LarusVarioBack.png'>
+<p align='center'> <img alt='Larus Vario Connectors' width='300' src='Images/LarusVarioBack.png'></p>
+
+ <div style="page-break-after: always;"></div>
 
 ### 4.3.2 CAN and RS232 Ports <a id='4.3.2'> </a>
 
-<img alt='Larus Vario Connectors' width='300' src='Images/LarusVarioRJ45Connectors.svg'>
+<p align='center'><img alt='Larus Vario Connectors' width='300' src='Images/LarusVarioRJ45Connectors.svg'></p>
 <br>
 
 |Pin	|CAN | RS232|
@@ -151,12 +156,14 @@ The following steps are required:
 * Connect devices with cable: 
  * Option 1: between Vario Display RS232 port and SteFly NAV ttySx port with patch cable RX/TX crossed
  * Option 2: between Vario Display RS232 port und LARUS Sensor Box with 1:1 patch cable
-* Adjust settings in XCSoar / OpenSoar:
-  * If the Vario Display is connected directly to the SteFly NAV, select the corresponding ttyS port: Config -> Devices -> select a free line and enter the port, Baud rate 38400, Driver Larus, Sync. to device on
+* Adjust settings in XCSoar (7.44 or higher) / OpenSoar (7.43 or higher):
+  * If the Vario Display is connected directly to SteFly NAV, select the corresponding ttyS port: Config -> Devices -> select a free line and enter the port, Baud rate: 38400, Driver Larus, Sync. to device on
+
+ <div style="page-break-after: always;"></div>
 
 ### 4.3.3 GPIO / D-SUB 9 <a id='4.3.3'> </a>
 
-Several other switches, sensors and devices can be connected via the d-sub connector. Please note that not all functions have been implemented at date of release of this manual. 
+Several other switches, sensors and devices can be connected via the D-Sub connector. Please note that not all functions have been implemented at date of release of this manual. 
 
 The following sketch shows the view into the male connector of the LARUS Vario Display. 
 
@@ -176,7 +183,7 @@ The following sketch shows the view into the male connector of the LARUS Vario D
 |9	|DO1 | SteFly Canopy Flasher- Output|
 
 For easier pin identification these numbers are also molded into the female connector (scope of delivery). 
-After wiring, settings must be made in the LARUS Vario Display, see chapter 6.4.3.4 AUDIO
+After wiring, settings must be made in the LARUS Vario Display, see [chapter 6.](#DIO-Doc)
 
 ### 4.3.4 AUDIO <a id='4.3.4'> </a>
 An audio socket is available for connecting a loudspeaker with a 3.5 mm jack plug.  The internal resistance of the speaker must be between 4-8 Ω (max. output of 3 W @ 8 Ω).
@@ -184,6 +191,8 @@ An audio socket is available for connecting a loudspeaker with a 3.5 mm jack plu
 |  |  |
 |------------------------|-------------------------------------------------------------------------------------------|
 <img width="96" alt="Speaker Warning" src="Images/redCaution.svg" /> | A single loudspeaker must not be connected to more than one device.|
+
+ <div style="page-break-after: always;"></div>
 
 ### 4.3.5 SD-Card <a id='4.3.5'> </a>
 The device has an SD card slot for firmware updates.  
@@ -208,6 +217,8 @@ The following table gives examples of how to set the CAN termination switches:
 
 Please note: All LARUS Sensor Boxes delivered before March 2025 have no CAN termination switch.  CAN termination is always on from default.
 
+<div style="page-break-after: always;"></div>
+
 # 5. Installation <a id='5.'> </a>
 
 | | |
@@ -218,23 +229,24 @@ Please note: All LARUS Sensor Boxes delivered before March 2025 have no CAN term
 
 The following picture shows a typical installation situation of LARUS Vario Display in the instrument panel of a glider. 
 
-<img width="400" alt="Larus mounted" src="Images/LarusVarioDirection.png"/>
+<p align='center'>
+<img width="400" alt="Larus mounted" src="Images/LarusVarioDirection.png"/></p>
 
 The display fits in a standard 57 mm cutout and is fastened by 3 M3 screws.
 
 For installation it is required to remove the two rotary knobs with a HEX 1,5mm key. 
 
-<img width="300" alt="Larus unmounted" src="Images/LarusVarioScrews.png" />
+<p align='center'> <img width="300" alt="Larus unmounted" src="Images/LarusVarioScrews.png" /></p>
 
 ## 5.2 Installation Orientation <a id='5.2'> </a>
 
 | | |
 |-----|-|
-<img width="200" alt="Warning" src="Images/yellowWarning.svg" /> | If you want to replace an existing instrument with the Larus Vario Display, checck the desired installation position before drilling the 7.3 mm hole for the rotary encoder due to the asymmetrical housing to the display |
+<img width="200" alt="Warning" src="Images/yellowWarning.svg" /> | If you want to replace an existing instrument with the Larus Vario Display, check the desired installation position before drilling the 7.3 mm hole for the rotary encoder due to the asymmetrical housing to the display |
 
 The display can be mounted in the orientations 0° / 90° / 180° / 270°. 
 
-After mounting the display, it's orientation needs to be configured in the menu. Long click on the button -> Views -> Display Rotation
+After mounting the display, it's orientation needs to be configured in the menu [Display Rotation](#DisplayRotation)
 
 ## 5.3 Initial Operation and Function Test <a id='5.3'> </a> 
 
@@ -266,11 +278,14 @@ When entering values: change value in large steps (10 units)
 ## 6.1 Variometer Display
 ### 6.1.1 ***Variometer Mode*** Display
 
-<img alt='Variometer Mode Display' width='300' src='Images/LarusDisplayCircelingSpider.png'>
+<p align="center">
+<img alt='Variometer Mode Display' width='300' src='Images/
+LarusDisplayCircelingSpider.png'> </p>
 
 ### 6.1.2 ***Speed To Fly Mode*** Display
 
-<img alt='Speed to Fly Display' width='300' src='Images/LarusDisplaySTFSingle.png'>
+<p align='center'>
+<img alt='Speed to Fly Display' width='300' src='Images/LarusDisplaySTFSingle.png'></p>
 
 ## 6.1 Menu Structure <a id='6.1'> </a>
 ### 6.1.1 Short press Menu Structure: <a id='6.1.1'> </a>
@@ -283,6 +298,10 @@ When entering values: change value in large steps (10 units)
     Enter the pilots weight in kg for the area load calculation.
 * Display<br>
     Use this option to change between Vario and AHRS display.
+
+| | |
+|----|------|
+<img alt="AHRS Warning" width='100' src='Images/redCaution.svg'> | The purpose of the Varios AHRS Display is providing information for validating the Larus Sensorbox Data (Magnetic Heading Course and spatial position of the Sensor/Airplane). AHRS must not be used as an flight instrument. |
 
 ### 6.1.2 Long press Menu Structure: <a id='6.1.2'> </a>
 * Views
@@ -304,7 +323,8 @@ When entering values: change value in large steps (10 units)
   * Center Straight
     * Single Arrow
     * Double Arrow
-  * Display Rotation
+  * <a id='DisplayRotation'></a> 
+    Display Rotation
     * Rotate 0°/90°/180°/270°
   * Glider Symbol 
     * On / Off
@@ -321,7 +341,8 @@ When entering values: change value in large steps (10 units)
         Select the voltage value below which the battery symbol gets yellow
     * Battery Bad<br>
         Select the voltage value below which the battery symbol gets red
-    * Flash Control <br>
+    * <a id='DIO-Doc'> </a> 
+      Flash Control <br> 
       * Not connected
       * Active: open
       * Active: close
