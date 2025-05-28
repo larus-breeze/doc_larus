@@ -183,14 +183,14 @@ An audio socket is available for connecting a loudspeaker with a 3.5 mm jack plu
 
 |  |  |
 |------------------------|-------------------------------------------------------------------------------------------|
-<img width="96" alt="dutyCommand" src="Images/redCaution.svg" /> | Speakers must not be connected to more than one device.|
+<img width="96" alt="Speaker Warning" src="Images/redCaution.svg" /> | A single loudspeaker must not be connected to more than one device.|
 
 ### 4.3.5 SD-Card <a id='4.3.5'> </a>
 The device has an SD card slot for firmware updates.  
 
 |  |  |
 |------------------------|-------------------------------------------------------------------------------------------|
-<img width="96" alt="dutyCommand" src="Images/redCaution.svg" /> | As SD card extensions can damage the Vario Display, we do not accept any liability for damage resulting from their use. |
+<img width="96" alt="SD Card Warning" src="Images/redCaution.svg" /> | As SD card extensions can damage the Vario Display, we do not accept any liability for damage resulting from their use. |
 
 ## 4.4 CAN Termination <a id='4.4'> </a> 
 
