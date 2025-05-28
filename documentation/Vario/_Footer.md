@@ -1,1 +1,0 @@
-Larus Vario Frontend

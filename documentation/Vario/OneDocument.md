@@ -1,4 +1,3 @@
-
 [ create a pdf-file from this markdown file: ]::
 [ Install vsCode Extension Markdown PDF ]::
 [ press Ctrl-Shift-p and enter Markdown PDF: export (pdf) ]::
@@ -26,7 +25,10 @@
   [5. Installation](#5.)\
   [5.1 Installation Location](#5.1)\
   [5.2 Installation Orientation](#5.2)\
-  [5.3 Installation Orientation](#5.3)
+  [5.3 Initial Operation and Function Test](#5.3)\
+  [5.4 Firmware Updates](#5.4)\
+  [6. Operation](#6.)
+
 # 1. Preliminary Remarks <a id="pr"> </a>
 
 ## 1.1 Important Notices <a id = '1.1'> </a>
@@ -35,9 +37,11 @@ Before using any part of the system, please read and understand this manual. All
 CoTexx GmbH does not accept responsibility for damages which are the result of installation and operation of the device.
 
 ## 1.2 Limited Warranty <a id='1.2'> </a>
+
 The LARUS Vario Display as well as its accessories are warranted to be free from defects in materials or workmanship for two years from the date of purchase. Within this period, CoTexx will, at its sole discretion, repair or replace any components that fail in normal use. Such repairs or replacement will be made at no charge to the customer for parts and labour, provided that the customer shall be responsible for any transportation cost. This warranty does not cover failures due to abuse, misuse, accident, or unauthorised alterations or repairs.
 
 ## 1.3 Conventions and Pictograph Definitions <a id='1.3'> </a>
+
 The safety instructions in SteFly operating manuals are the result of risk evaluations and hazard analyses. In this document, the following hazard levels and information are considered:
 
 | Symbol | Importance |
@@ -130,15 +134,14 @@ The system architecture of LARUS in **double seater configuration**:
 
 |Pin	|CAN | RS232|
 |---|------|----------------|
-|1|	GND| (internally connected)	GND (internally connected)|
-|2|		
+|1|	GND| GND |
+|2|	GND (internally connected to 1) | GND (internally connected to 1) | 	
 |3|	NC|	RS232_1_RX|
 |4|	CAN Low|	RS232_1_TX|
-|5|	CAN High|	RS232_2_RX|
-|6|	NC|	RS232_2_TX|
-|7|	VCC [9-28V DC] (internally connected)|	VCC [9-28V DC] (internally connected)|
-|8|		|
-
+|5|	CAN High|	NC|
+|6|	NC|	NC|
+|7|	VCC [9-28V DC] |	VCC [9-28V DC] |
+|8|	VCC (internally connected to 7)	| VCC (internally connected to 7)|
 
 <br>
 
@@ -178,22 +181,22 @@ After wiring, settings must be made in the LARUS Vario Display, see chapter 6.4.
 ### 4.3.4 AUDIO <a id='4.3.4'> </a>
 An audio socket is available for connecting a loudspeaker with a 3.5 mm jack plug.  The internal resistance of the speaker must be between 4-8 Ω (max. output of 3 W @ 8 Ω).
 
-| |  |
+|  |  |
 |------------------------|-------------------------------------------------------------------------------------------|
 <img width="96" alt="dutyCommand" src="Images/redCaution.svg" /> | Speakers must not be connected to more than one device.|
 
 ### 4.3.5 SD-Card <a id='4.3.5'> </a>
 The device has an SD card slot for firmware updates.  
 
-| |  |
+|  |  |
 |------------------------|-------------------------------------------------------------------------------------------|
-<img width="96" alt="dutyCommand" src="Images/redCaution.svg" /> |As SD card extensions can damage the Vario Display, we do not accept any liability for damage resulting from their use.|
+<img width="96" alt="dutyCommand" src="Images/redCaution.svg" /> | As SD card extensions can damage the Vario Display, we do not accept any liability for damage resulting from their use. |
 
 ## 4.4 CAN Termination <a id='4.4'> </a> 
 
 LARUS Vario Display and LARUS Sensor Box are connected via CAN. CAN bus networks require termination resistors at each end of the network. Therefore, all units have integrated a switch to activate the resistor:
 
-<img width="500" alt="dutyCommand" src="Images/LarusVarioCANTerm-m.png" /> 
+<img width="600" alt="dutyCommand" src="Images/LarusVarioCANTerm-m.png" /> 
 
 The following table gives examples of how to set the CAN termination switches: 
 
@@ -231,17 +234,16 @@ For installation it is required to remove the two rotary knobs with a HEX 1,5mm 
 
 The display can be mounted in the orientations 0° / 90° / 180° / 270°. 
 
-After mounting the display, its´ orientation needs to be configured in the menu. Long click on the button -> Views -> Display Rotation
+After mounting the display, it's orientation needs to be configured in the menu. Long click on the button -> Views -> Display Rotation
 
-# 6. Operation
-## 6.1 Initial Operation and Function Test 
+## 5.3 Initial Operation and Function Test <a id='5.3'> </a> 
 
 For initial operation please follow these steps: 
 1. Check that the LARUS Vario Display is connected to LARUS Sensor Box or CAN Splitter according to the drawings in chapter 4.2 
 1. Power on LARUS
 1. Check that LARUS Vario Displays boots and a yellow or green satellite pictogram appears. The vario pointers should perform slight movements around zero position.
 
-## Firmware Updates
+## 5.4 Firmware Updates <a id='5.4'> </a>
 
 The LARUS team is continuously improving the software and releasing updates e.g. on LARUS Vario Display web page. 
 
@@ -251,13 +253,28 @@ If the update is not initialized when the SD card was inserted, please do a “f
 
 Requirements for the SD card: min. 4 GB SDHC, FAT32 format (not GPT) The device has 2 rotary knobs and a push button that can be used to make various settings. 
 
-By default, the knobs and the button are assigned as follows: 
-* Turn the small/upper rotary knob: Volume control
-* Turn the large/lower rotary knob: Set the MacCready value
+# 6. Operation <a id='6.'> </a>
+
+The knobs and the button are assigned as follows: 
+* Turn the small/upper rotary knob: Volume control.<br>
+When entering values: change values in small steps (1 unit).
+* Turn the large/lower rotary knob: Set the MacCready value<br>
+When entering values: change value in large steps (10 units)
 * Short press on the rotary knob: Menu for common settings
 * Long press on the rotary knob: Menu for special settings and calibration of LARUS
 
-Short press menu structure:
+## 6.1 Variometer Display
+### 6.1.1 ***Variometer Mode*** Display
+
+<img alt='Variometer Mode Display' width='300' src='Images/LarusDisplayCircelingSpider.png'>
+
+### 6.1.2 ***Speed To Fly Mode*** Display
+
+<img alt='Speed to Fly Display' width='300' src='Images/LarusDisplaySTFSingle.png'>
+
+## 6.1 Menu Structure <a id='6.1'> </a>
+### 6.1.1 Short press Menu Structure: <a id='6.1.1'> </a>
+
 * Water Balast<br>
     Enter the current value for the amount of water balast. The entered value is propagated to XCSoar/OpenSoar.
 * Bugs<br>
@@ -267,7 +284,7 @@ Short press menu structure:
 * Display<br>
     Use this option to change between Vario and AHRS display.
 
-Long press menu structure:
+### 6.1.2 Long press Menu Structure: <a id='6.1.2'> </a>
 * Views
   * Info 1 Content
     * None
