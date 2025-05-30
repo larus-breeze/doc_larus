@@ -181,7 +181,7 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x0a
 	                                       0x0000_4000 CAN_OUTPUT_ACTIVE
 	                                       0x0000_8000 USART_2_OUTPUT_ACTIVE   
 
-					       0x0001_0000 HORIZON_AVAILABLE from AHRS   
+					       0x0001_0000 HORIZON_NOT_AVAILABLE from AHRS   
 	    
     4   git_tag                  u32       tag                            
 
