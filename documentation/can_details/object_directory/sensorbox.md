@@ -191,12 +191,13 @@ Name: sensor_health
 Object-ID Version: 0  
 Type: Data Object  
 Interval: 100 ms  
-Length: 4 Bytes
+Length: 8 Bytes
 Dynamic Id: Id(Heartbeat) - 0x400 + 0x0b
 
     No  Datapoint                Type      Unit / Comment
     --------------------------------------------------------------------------------------------
     0   magnetic_disturbance     f32       Magnetic disturbance 0..2 (lower is better)
+    1   speed_accuracy           f32       Speed accuracy as reported by GNSS receiver 0..inf. (lower is better)
 
 ID 0x12f Send config value on request
 ---
