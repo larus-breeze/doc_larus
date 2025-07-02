@@ -227,6 +227,7 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x0f
                                            0x200c: ant_baselen         f32 unit m       
                                            0x200d: ant_slave_down      f32 unit m       
                                            0x200e: ant_slave_right     f32 unit m       
+                                           0x200f: vario_press_tc      f32 unit s       
 
 ID 0x520 Heartbeat and other generic data points are defined in [this specification](generic.md).
 ---
