@@ -60,9 +60,10 @@ Dynamic Id: Id(Heartbeat) + 0x02
                                            0x0003: bugs                                 
                                            0x0004: qnh                                  
                                            0x0005: pilot_weight                         
-                                           0x0006: vario_mode_control                   
+                                           0x0006: reserved
                                            0x0007: tc_climb_rate                        
-                                           0x0008: tc_speed_to_fly                      
+                                           0x0008: tc_speed_to_fly
+                                           0x0009: vario_mode
                                            .                                            
                                            <Generic Command>                            
                                            .                                            
@@ -99,11 +100,12 @@ Dynamic Id: Id(Heartbeat) + 0x02
                                            0x0003: bugs:               u8[2] reserved, f32 unit factor
                                            0x0004: qnh:                u8[2] reserved, f32 unit Pa
                                            0x0005: pilot_weight:       u8[2] reserved, f32 unit kg
-                                           0x0006: vario_mode_control  u8: 0 Vario, 1 SpeedToFly, 2 Auto
+                                           0x0006: reserved
                                            0x0007: tc_climb_rate:      u8[2] reserved, f32 unit s
                                            0x0008: tc_speed_to_fly:    u8[2] reserved, f32 unit s
-                                           .                                            
-                                           <Generic Command>                            
+                                           0x0009: vario_mode:         u8: 0 Vario, 1 SpeedToFly
+                                           .
+                                           <Generic Command>
                                            .                                            
                                            <Specific Config Data>                       
                                            0x2000: sens_tilt_roll      u8 0 get 1 set, u8 reserved, f32 unit rad
