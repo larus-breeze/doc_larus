@@ -1,4 +1,4 @@
-Gneric Data
+Generic Data
 ===
 
 The generic IDs are defined in the same way for all devices. The underlying functions are available regardless of the device. For example, this enables the firmware update of the device or the general option of setting genral parameters such as vario volume. 
