@@ -167,8 +167,8 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x0a
                                            0x0000_0001 GNSS_AVAILABLE
                                            0x0000_0002 D_GNSS_AVAILABLE
 
-                                           0x0000_0004 GNSS_DISTRUBANCE (speed accuracy low)
-                                           0x0000_0008 MAGNETIC_DISTURBANCE (no valid calibration)
+                                           0x0000_0004 GNSS_DISTURBANCE (low speed accuracy)
+                                           0x0000_0008 MAGNETIC_DISTURBANCE (invalid calibration)
 
                                            0x0000_0010 MTI_SENSOR_AVAILABE
                                            0x0000_0080 MS5611_STATIC_AVAILABLE
