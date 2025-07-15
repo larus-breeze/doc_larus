@@ -167,10 +167,12 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x0a
                                            0x0000_0001 GNSS_AVAILABLE
                                            0x0000_0002 D_GNSS_AVAILABLE
 
+                                           0x0000_0004 GNSS_DISTRUBANCE (speed accuracy low)
+                                           0x0000_0008 MAGNETIC_DISTURBANCE (no valid calibration)
+
                                            0x0000_0010 MTI_SENSOR_AVAILABE
                                            0x0000_0080 MS5611_STATIC_AVAILABLE
                                            0x0000_0200 PITOT_SENSOR_AVAILABLE
-
                                            0x0000_0400 AIR_SENSOR_AVAILABLE
 
                                            0x0001_0000 HORIZON_NOT_AVAILABLE from AHRS
@@ -190,22 +192,7 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x0b
     --------------------------------------------------------------------------------------------
     0   magnetic_disturbance     f32       Magnetic disturbance 0..2 (lower is better)
     1   speed_accuracy           f32       Speed accuracy as reported by GNSS receiver 0..inf. (lower is better)
-
-ID 0x12c Sensor Health Status
----
-Name: sensor_health_status
-Object-ID Version: 0
-Type: Data Object
-Interval: 100 ms
-Length: 8 Bytes
-Dynamic Id: Id(Heartbeat) - 0x400 + 0x0c
-
-    No  Datapoint                Type      Unit / Comment
-    --------------------------------------------------------------------------------------------
-    0   magnetic_status          u8        0 UNCLIBRATED / DISTURBED
-                                           1 CALIBRATED (magnetic disturbance is low)
-    1   gnss_status              u8        0 WEAK
-                                           1 GOOD (sufficient speed accuracy and rtk heading if applicable)
+´
 
 ID 0x12f Send config value on request
 ---
