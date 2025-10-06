@@ -10,7 +10,7 @@ NMEA specification in short form [see also NMEA Revealed](https://gpsd.gitlab.io
 
 Data is transmitted in serial async, 1 start-bit, 8 data-bits, 1 stop-bit, no parity. Data-bits are in least-significant-bit order. An NMEA sentence consists of a start delimiter, followed by a comma-separated sequence of fields, followed by the character '*', the checksum and an end-of-line marker <CR><LF>. The checksum is the representation of two hexadecimal characters of an XOR of all characters in the sentence between – but not including – the $ and the * character.
 
-The start delimiter is normally '$'. The first field of a sentence is called the "tag" and normally consists of a two-letter talker ID followed by a three-letter type code. Sentences are terminated by a <CR><LF> sequence. Maximum sentence length, including the $ and <CR><LF> is 82 bytes.
+The start delimiter is normally "$". The first field of a sentence is called the "tag" and normally consists of a two-letter talker ID followed by a three-letter type code. Sentences are terminated by a \<CR>\<LF> sequence. Maximum sentence length, including the $ and \<CR>\<LF> is 82 bytes.
 
 The Larus Flight Information Sensor System for Gliders provides essential information for glider navigation like
 
