@@ -56,7 +56,7 @@ Dynamic Id: Id(Heartbeat) + 0x02
     0   config_id                u16       <Generic Config Data>                        
                                            0x0000: volume_vario                         
                                            0x0001: mac_cready                           
-                                           0x0002: water_ballast                        
+                                           0x0002: water_ballast_kg                        
                                            0x0003: bugs                                 
                                            0x0004: qnh                                  
                                            0x0005: pilot_weight                         
@@ -64,6 +64,7 @@ Dynamic Id: Id(Heartbeat) + 0x02
                                            0x0007: tc_climb_rate                        
                                            0x0008: tc_speed_to_fly
                                            0x0009: vario_mode
+                                           0x000a: water_ballast_fraction
                                            .                                            
                                            <Generic Command>                            
                                            .                                            
@@ -94,16 +95,17 @@ Dynamic Id: Id(Heartbeat) + 0x02
 
     2   config_data              u8[6]     Specific to the config_id                    
                                            <Generic Config Data>                        
-                                           0x0000: volume_vario:       u8 unit db, u8[5] reserved
-                                           0x0001: mac_cready:         u8[2] reserved, f32 unit m/s
-                                           0x0002: water_ballast:      u8[2] reserved, f32 unit fraction
-                                           0x0003: bugs:               u8[2] reserved, f32 unit factor
-                                           0x0004: qnh:                u8[2] reserved, f32 unit Pa
-                                           0x0005: pilot_weight:       u8[2] reserved, f32 unit kg
+                                           0x0000: volume_vario:          u8 unit db, u8[5] reserved
+                                           0x0001: mac_cready:            u8[2] reserved, f32 unit m/s
+                                           0x0002: water_ballast_kg:      u8[2] reserved, f32 unit kg
+                                           0x0003: bugs:                  u8[2] reserved, f32 unit factor
+                                           0x0004: qnh:                   u8[2] reserved, f32 unit Pa
+                                           0x0005: pilot_weight:          u8[2] reserved, f32 unit kg
                                            0x0006: reserved
-                                           0x0007: tc_climb_rate:      u8[2] reserved, f32 unit s
-                                           0x0008: tc_speed_to_fly:    u8[2] reserved, f32 unit s
-                                           0x0009: vario_mode:         u8: 0 Vario, 1 SpeedToFly
+                                           0x0007: tc_climb_rate:         u8[2] reserved, f32 unit s
+                                           0x0008: tc_speed_to_fly:       u8[2] reserved, f32 unit s
+                                           0x0009: vario_mode:            u8: 0 Vario, 1 SpeedToFly
+                                           0x000a: water_ballast_fraction u8[2] reserved, f32 unit fraction
                                            .
                                            <Generic Command>
                                            .                                            
