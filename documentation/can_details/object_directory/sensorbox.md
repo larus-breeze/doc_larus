@@ -173,13 +173,16 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x0a
                                            0x0000_0010 MTI_SENSOR_AVAILABE
                                            0x0000_0080 MS5611_STATIC_AVAILABLE
                                            0x0000_0200 PITOT_SENSOR_AVAILABLE
-                                           0x0000_0400 AIR_SENSOR_AVAILABLE
+                                           0x0000_0400 AMBIENT_AIR_SENSOR_AVAILABLE
+                                           0x0000_0800 EXTERNAL_MAGNETOMETER_AVAILABLE
 
-                                           0x0001_0000 HORIZON_NOT_AVAILABLE from AHRS
+                                           0x0001_0000 HORIZON_NOT_AVAILABLE
+                                           0x0002_0000 BAD_MAGNETIC_DISTURBANCE_VALUE
+                                           0x0004_0000 BAD_GNSS_VELOCITY_VARIANCE
 
     4   git_tag                  u32       tag                            
 
-ID 0x12b Sensor Health Information
+ID 0x12b GNSS and AHRS Data Quality
 ---
 Name: sensor_health
 Object-ID Version: 0  
@@ -213,7 +216,7 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x0f
                                            0x2003: pitot_offset        f32 unit Pa      
                                            0x2004: pitot_span          f32 unit -       
                                            0x2005: qnh_delta           f32 unit Pa      
-                                           0x2006: mag_auto_calib      f32 0 false 1 true 
+                                           0x2006: mag_auto_calib      f32 0 OFF 1 ON 2 WITH_SOFT_IRON_COMPENSATION
                                            0x2007: vario_tc            f32 unit s       
                                            0x2008: vario_int_tc        f32 unit s       
                                            0x2009: wind_tc             f32 unit s       
