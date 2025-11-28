@@ -1,4 +1,4 @@
-Vario Displsay
+Vario Display
 ===
 
     Name                                         vario_displsay                     
