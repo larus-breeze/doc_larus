@@ -7,7 +7,7 @@ Ambient Sensor
     Preffered IDs for Generic Datapoints         0x6d0 - 0x6df
     Comment                                      sensor for temperature and humidity
 
-A ambient sensor provides data for temperature and humidity. Only one ambient sensor can exist in a CAN bus system. 
+A ambient sensor provides data for temperature and humidity. The ID assignment shall be carried out according to the procedure described even if there is only one ambient sensor in the system. This is to ensure specification (object) extentions without the risk for address conflicts.
 
 ID 0x2d0 temperature and humidity
 ---
