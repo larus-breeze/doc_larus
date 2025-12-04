@@ -3,13 +3,13 @@ Ambient Sensor
 
     Name                                         ambient_sensor                     
     Object Id                                    5                                  
-    Preffered IDs for Specific Datapoints        0x290 - 0x29f                      
-    Preffered IDs for Generic Datapoints         0x690 - 0x69f                      
+    Preffered IDs for Specific Datapoints        0x2d0 - 0x2df
+    Preffered IDs for Generic Datapoints         0x6d0 - 0x6df
     Comment                                      sensor for temperature and humidity
 
 A ambient sensor provides data for temperature and humidity. Only one ambient sensor can exist in a CAN bus system. 
 
-ID 0x290 temperature and humidity
+ID 0x2d0 temperature and humidity
 ---
 Name: temperature_humidity  
 Object-ID Version: 0  
@@ -23,5 +23,5 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x00
     0   temperature              f32       °C                                        
     4   humidity                 f32       %                                                                    
 
-ID 0x690 Heartbeat and other generic data points are defined in [this specification](generic.md).
+ID 0x6d0 Heartbeat and other generic data points are defined in [this specification](generic.md).
 ---
