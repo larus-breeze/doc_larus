@@ -165,7 +165,7 @@ This block gives the measured voltage:
 
   1) Supply voltage in volts
   2) Outside Temperature in Celsius (optional, new in v0.1.4)
-  3) Outside Humidity in % 0 - 100.0 (optional, new in v0.1.6)
+  3) Outside relative Humidity in % 0 - 100.0 (optional, new in v0.1.6)
   4) Checksum
 
 ### $PLARV Climb Rate (Vario), Pressure Altitude, True Air Speed (TAS) and GLoad
