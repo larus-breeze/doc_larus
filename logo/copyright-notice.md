@@ -1,0 +1,1 @@
+The image of the Goéland brun (larus fuscus) used in the logo was provided by Ludovic Péron and is licensed under Cc-by-sa-3.0,2.5,2.0,1.0, GFDL, [see here](https://commons.wikimedia.org/wiki/File:Go%C3%A9land_brun_\(larus_fuscus\)_cropped.jpg).
