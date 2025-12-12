@@ -167,8 +167,8 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x0a
                                            0x0000_0001 GNSS_AVAILABLE
                                            0x0000_0002 D_GNSS_AVAILABLE
 
-                                           0x0000_0004 GNSS_DISTURBANCE (low speed accuracy)
-                                           0x0000_0008 MAGNETIC_DISTURBANCE (invalid calibration)
+                                           0x0000_0004 GNSS_VELOCITY_ACCURACY_BAD
+                                           0x0000_0008 MAGNETIC_DISTURBANCE_BAD
 
                                            0x0000_0010 MTI_SENSOR_AVAILABE
                                            0x0000_0080 MS5611_STATIC_AVAILABLE
@@ -177,8 +177,6 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x0a
                                            0x0000_0800 EXTERNAL_MAGNETOMETER_AVAILABLE
 
                                            0x0001_0000 HORIZON_NOT_AVAILABLE
-                                           0x0002_0000 BAD_MAGNETIC_DISTURBANCE_VALUE
-                                           0x0004_0000 BAD_GNSS_VELOCITY_VARIANCE
 
     4   git_tag                  u32       tag                            
 
