@@ -1,4 +1,4 @@
-# LARUS Protocol **Version 0.1.5**
+# LARUS Protocol **Version 0.1.6**
 
 This document describes the LARUS serial port protocol, as realized in [sw_sensor_algorithm 2023-08-18](https://github.com/larus-breeze/sw_sensor_algorithms/blob/17e8b49139d2c820dce6f02208cf5205ff22e62a/Output_Formatter/NMEA_format.cpp).
 
@@ -159,12 +159,14 @@ This sentence gives information about the instant air density at the current alt
     Examples:
     $PLARB,12.33*4C (before v0.1.4)
     $PLARB,12.33,-23.8*5A
+    $PLARB,12.33,-23.8,75.0*6A
 
 This block gives the measured voltage:
 
-  1) Volatage in volts
+  1) Supply voltage in volts
   2) Outside Temperature in Celsius (optional, new in v0.1.4)
-  3) Checksum
+  3) Outside relative Humidity in % 0 - 100.0 (optional, new in v0.1.6)
+  4) Checksum
 
 ### $PLARV Climb Rate (Vario), Pressure Altitude, True Air Speed (TAS) and GLoad
 
