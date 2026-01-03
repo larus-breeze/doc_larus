@@ -1,4 +1,4 @@
-Ambient Sensor
+Magnetic Sensor
 ===
 
     Name                                         magnetic_sensor
