@@ -9,46 +9,34 @@ Magnetic Sensor
 
 A magnetic sensor provides 3 axis magnetic data with 100Hz. This data is used from the sensor instead of the internal magnetic data.  data for temperature and humidity.
 
-ID 0x070 magnetic data x axis  
+ID 0x070 magnetic gain factor 
 ---
-Name: magnetic data x axis  
+Name: magnetic data gain factor 
 Object-ID Version: 0  
 Type: Data Object  
-Interval: 10 ms  
+Interval: 1000 ms  
 Length: 4 Bytes  
 Dynamic Id: Id(Heartbeat) - 0x400 + 0x00
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
-    0   x                        f32       Tesla    
+    0   gain                     f32       LSB/μT     
 
 
-ID 0x071 magnetic data y axis  
+ID 0x071 magnetic data  
 ---
-Name: magnetic data y axis  
+Name: magnetic data  
 Object-ID Version: 0  
 Type: Data Object  
 Interval: 10 ms  
-Length: 4 Bytes  
-Dynamic Id: Id(Heartbeat) - 0x400 + 0x00
+Length: 6 Bytes  
+Dynamic Id: Id(Heartbeat) - 0x400 + 0x01
 
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
-    0   y                        f32       Tesla    
-
-
-ID 0x072 magnetic data z axis  
----
-Name: magnetic data z axis  
-Object-ID Version: 0  
-Type: Data Object  
-Interval: 10 ms  
-Length: 4 Bytes  
-Dynamic Id: Id(Heartbeat) - 0x400 + 0x00
-
-    No  Datapoint                Type      Unit / Comment                               
-    --------------------------------------------------------------------------------------------
-    0   z                        f32       Tesla    
+    0   x                        i16       gain via magnetic gain factor  
+    1   y                        i16       gain via magnetic gain factor    
+    2   z                        i16       gain via magnetic gain factor    
 
 
 ID 0x470 Heartbeat and other generic data points are defined in [this specification](generic.md).
