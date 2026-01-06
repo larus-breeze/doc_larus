@@ -27,6 +27,7 @@ Object Directory
 [Generic GPS Device](can_details/object_directory/gps.md)  
 [Vario Display](can_details/object_directory/vario_display.md)  
 [Ambient Sensor](can_details/object_directory/ambient_sensor.md)  
+[Magnetic Sensor](can_details/object_directory/magnetic_sensor.md)  
 [Generic Data](can_details/object_directory/generic.md)  
 
 
