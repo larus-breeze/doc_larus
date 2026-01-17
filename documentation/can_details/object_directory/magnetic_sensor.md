@@ -7,7 +7,7 @@ Magnetic Sensor
     Preffered IDs for Generic Datapoints         0x470 - 0x47f
     Comment                                      external sensor for 3 axix magnetic raw data
 
-A magnetic sensor provides 3 axis magnetic data with 100Hz. This data is used from the sensor instead of the internal magnetic data.  data for temperature and humidity.
+A magnetic sensor provides 3 axis magnetic induction data with 100Hz. The data are used within the sensor replacing the internal magnetic data.
 
 ID 0x070 magnetic data  
 ---
