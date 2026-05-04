@@ -4,4 +4,5 @@ The Larus team has developed a sensor module to acquire data from Global Navigat
 The Larus sensor can log its inputs to a micro-SD storage card. The micro-SD is written approximately two times per second. If required the logged data can be used to investigate the flight history in general and especially the details of an accident. 
 
 The writing of the micro-SD will very probably be interrupted when a crash occurs due to a power failure. It would be possible to add a FRAM memory module to record the sensor data at 100Hz. 
-With this extra memory the Larus sensor could basically log the information up to the last 10ms in case of a crash. 
+With this extra memory the Larus sensor could basically log the information up to the last 10ms in case of a crash.
+In case of a detected crash, further logging into the FRAM must be disabled to prevent the sensor from overwriting the recorded crash data.
