@@ -214,16 +214,18 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x0f
                                            0x2003: pitot_offset        f32 unit Pa      
                                            0x2004: pitot_span          f32 unit -       
                                            0x2005: qnh_delta           f32 unit Pa      
-                                           0x2006: mag_auto_calib      f32 0 OFF 1 ON 2 WITH_SOFT_IRON_COMPENSATION
+                                           0x2006: mag_auto_calib      f32 reserved for future use
                                            0x2007: vario_tc            f32 unit s       
                                            0x2008: vario_int_tc        f32 unit s       
                                            0x2009: wind_tc             f32 unit s       
                                            0x200a: mean_wind_tc        f32 unit s       
-                                           0x200b: gnss_config         f32 0 SGNSS 1 DGNSS
+                                           0x200b: gnss_config         f32 0 SGNSS 1 UbloxF9p+F9p 2 UbloxF9p+F9h
                                            0x200c: ant_baselen         f32 unit m       
                                            0x200d: ant_slave_down      f32 unit m       
                                            0x200e: ant_slave_right     f32 unit m       
-                                           0x200f: vario_press_tc      f32 unit s       
+                                           0x200f: vario_press_tc      f32 unit s     
+                                           0x2010: horizon_date        u16 day + (month << 5) + ((year -1980) << 9)
+  
 
 ID 0x520 Heartbeat and other generic data points are defined in [this specification](generic.md).
 ---
