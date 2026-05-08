@@ -84,7 +84,9 @@ Dynamic Id: Id(Heartbeat) + 0x02
                                            0x200c: ant_baselen (Sensor Box)             
                                            0x200d: ant_slave_down (Sensor Box)          
                                            0x200e: ant_slave_right (Sensor Box)         
-                                           .                                            
+                                           0x200f: vario_press_TC (Sensor Box)          
+                                           0x2010: horizon_date (Sensor Box)            
+
                                            <Specific Command>                           
                                            0x3000: cmd_measure_pos_1 (Sensor Box)       
                                            0x3001: cmd_measure_pos_2 (Sensor Box)       
