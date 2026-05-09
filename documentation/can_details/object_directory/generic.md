@@ -128,6 +128,9 @@ Dynamic Id: Id(Heartbeat) + 0x02
                                            0x200c: ant_baselen         u8 0 get 1 set, u8 reserved, f32 unit m
                                            0x200d: ant_slave_down      u8 0 get 1 set, u8 reserved, f32 unit m
                                            0x200e: ant_slave_right     u8 0 get 1 set, u8 reserved, f32 unit m
+                                           0x200f: vario_press_TC      u8 0 get 1 set, u8 reserved, f32 unit s
+                                           0x2010: horizon_date        u8 0 get 1 set, u8 reserved, Date32    
+
                                            .                                            
                                            <Specific Command>                           
                                            0x3000: cmd_measure_pos_1             u8[6] reserved

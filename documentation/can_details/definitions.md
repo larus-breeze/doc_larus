@@ -16,9 +16,10 @@ The following data types are used as far as possible.
     Floating Point Numbers  f32, f64            f32::NAN [0, 0, 0xc0, 0x7f]
                                                 f64::NAN [0, 0, 0, 0, 0, 0, 0xf8, 0x7f]
     Byte Arrays             u8[N]
-
+    
 Defined Data Types
 ---
+    Date32: year << 16 | month << 8 | day
 
     HwVersion:
         Manufacturer    u8[0]  Enumeration
