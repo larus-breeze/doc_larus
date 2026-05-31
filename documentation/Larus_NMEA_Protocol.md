@@ -36,6 +36,7 @@ The `x` is
   4) `B` for battery voltage and outside temperature
   5) `V` for climb rate (vario), pressure altitude, true air speed (TAS) and GLoad
   6) `S` settings parameters bidirectional
+  7) `F` send the current firmware version of Larus sensor
 
 To enable operation of the Larus front end via the NMEA interface, a few `$g*` additional commands have been defined.
 
@@ -220,6 +221,20 @@ These records should not be sent cyclically, but only when needed during initial
      - CIR CIR (Circling 1, Cruise 0. XCSoar supports only reception. New in v0.1.4)
   3) Value (format depends on settings parameter, see examples)
   4) Checksum
+
+### $PLARF send the current firmware version of Larus sensor
+
+           1   2
+           |   |
+    $PLARF,xxx*hh<CR><LF>
+    
+    Examples:
+    $PLARS,0.7.4,*56
+    
+    This sentence sends the current firmware version of Larus sensor:
+
+  1) firmware version of Larus sensor
+  2) Checksum
 
 ## Commands for Remote Control
 
