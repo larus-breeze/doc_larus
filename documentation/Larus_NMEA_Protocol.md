@@ -36,6 +36,7 @@ The `x` is
   4) `B` for battery voltage and outside temperature
   5) `V` for climb rate (vario), pressure altitude, true air speed (TAS) and GLoad
   6) `S` settings parameters bidirectional
+  7) 'F' Firmware version output
 
 To enable operation of the Larus front end via the NMEA interface, a few `$g*` additional commands have been defined.
 
@@ -220,6 +221,13 @@ These records should not be sent cyclically, but only when needed during initial
      - CIR CIR (Circling 1, Cruise 0. XCSoar supports only reception. New in v0.1.4)
   3) Value (format depends on settings parameter, see examples)
   4) Checksum
+
+### $PLARF Firmware version output
+
+    $PLARF,firmware-string*hh<CR><LF>
+    
+    Example:
+    $PLARF,0.7.4-9-g3181cd5*ff
 
 ## Commands for Remote Control
 
