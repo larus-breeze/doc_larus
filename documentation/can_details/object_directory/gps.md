@@ -93,10 +93,65 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x05
     No  Datapoint                Type      Unit / Comment                               
     --------------------------------------------------------------------------------------------
     0   number_of_sats           u8        .                                            
-    1   fix_type                 u8        0 no_gps                                     
-                                           1 2d_fix                                     
-                                           2 3d_fix                                     
-                                           3 rtk                                        
+    1   fix_type                 u8        bit 0: GNSS fix available
+                                           bit 1: D-GNSS heading available
+
+D-GNSS heading and relative position data are transmitted when `fix_type` bit 1 is set.
+
+ID 0x146 D-GNSS Accuracy
+---
+Name: dgnss_accuracy
+Object-ID Version: 0
+Type: Data Object
+Interval: 100 ms
+Length: 8 Bytes
+Dynamic Id: Id(Heartbeat) - 0x400 + 0x06
+
+    No  Datapoint                Type      Unit / Comment
+    --------------------------------------------------------------------------------------------
+    0   relpos_length_acc        f32       m
+    4   relpos_heading_acc       f32       rad
+
+ID 0x147 D-GNSS Heading
+---
+Name: dgnss_heading
+Object-ID Version: 0
+Type: Data Object
+Interval: 100 ms
+Length: 4 Bytes
+Dynamic Id: Id(Heartbeat) - 0x400 + 0x07
+
+    No  Datapoint                Type      Unit / Comment
+    --------------------------------------------------------------------------------------------
+    0   heading                  f32       rad
+
+ID 0x148 D-GNSS Relative Position North and East
+---
+Name: dgnss_relpos_ne
+Object-ID Version: 0
+Type: Data Object
+Interval: 100 ms
+Length: 8 Bytes
+Dynamic Id: Id(Heartbeat) - 0x400 + 0x08
+
+    No  Datapoint                Type      Unit / Comment
+    --------------------------------------------------------------------------------------------
+    0   relpos_n                 f32       m
+    4   relpos_e                 f32       m
+
+ID 0x149 D-GNSS Relative Position Down and Length
+---
+Name: dgnss_relpos_d_length
+Object-ID Version: 0
+Type: Data Object
+Interval: 100 ms
+Length: 8 Bytes
+Dynamic Id: Id(Heartbeat) - 0x400 + 0x09
+
+    No  Datapoint                Type      Unit / Comment
+    --------------------------------------------------------------------------------------------
+    0   relpos_d                 f32       m
+    4   relpos_length            f32       m
 
 ID 0x540 Heartbeat and other generic data points are defined in [this specification](generic.md).
 ---
