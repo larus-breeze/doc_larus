@@ -177,6 +177,7 @@ Dynamic Id: Id(Heartbeat) - 0x400 + 0x0a
                                            0x0000_0800 EXTERNAL_MAGNETOMETER_AVAILABLE
 
                                            0x0001_0000 HORIZON_NOT_AVAILABLE
+                                           0x0002_0000 SYSTEM_ERROR
 
     4   git_tag                  u32       tag                            
 
