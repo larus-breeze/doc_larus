@@ -49,6 +49,27 @@ unsigned or signed 32bit objects, 32bit float objects and longer structures like
 |30 | 13 |     **GNSS data** position, velocity, time, sat number etc |
 31  | 17|     **D-GNSS data**, adding relative position and relative heading |
 
+<u> Microphone data recorded with 4 Hz (sensors with a microphone only): </u>
+
+
+| **ID**|**Length**|**Description**                                  |
+|-------|----------|-------------------------------------------------|
+| 35 | 27 |      **Microphone data**: IGC ENL, noise levels and third-octave spectrum |
+
+**Microphone data (ID 35).** Levels are 250 ms RMS values in dBFS,
+0 dBFS = sine with full-scale peak (ICS-43434: 94 dB SPL = -26 dBFS).
+The record time is given by its position between the 100 Hz records.
+
+| **Word**|**Type**|**Content**                                    |
+|---------|--------|-----------------------------------------------|
+| 0     | uint32 | record counter, +1 per record since power-on (shows gaps) |
+| 1     | uint32 | ENL 0..999 (IGC), 1 s window, 10 = no noise, 0 = unserviceable |
+| 2     | uint32 | status: bit 0 no signal (constant samples: microphone missing or faulty), bits 16..31 number of 16 ms sample blocks lost (not processed in time) since power-on, saturating at 65535 |
+| 3     | float  | level after the ENL band-pass, see firmware documentation |
+| 4     | float  | broadband level: RMS of the full band |
+| 5     | float  | peak sample level: largest absolute raw sample, 0 = full scale (clipping) |
+| 6..26 | float  | third-octave bands, centers 1000 Hz * 2^(k/3), k = -16..4 (nominal 25, 31.5, 40 ... 2000, 2500 Hz) |
+
 <u> Reserved for future crash dump or debugging files: </u>
 
 
