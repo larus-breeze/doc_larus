@@ -143,34 +143,48 @@ Dynamic Id: Id(Heartbeat) + 0x02
                                            0x3006: cmd_test_function   u8 0..9 (param) u8[5] reserved
                                            0x3007: cmd_calibrate_IAS_offset      u8[6] reserved
 
-Generic ID 0x03 Transfer of Binary Data Blocks
+Generic ID 0x03 Transfer Binary Data (Transmitting Device)
 ---
-Name: blob_upload  
+Name: blob_upload_transmitter  
 Object-ID Version: 0  
 Type: Service  
 Interval: if required  
-Length: 8 Bytes  
+Length: 1..8 Bytes  
 Dynamic Id: Id(Heartbeat) + 0x03
 
-    No  Datapoint                Type      Unit / Comment                               
+    No  Datapoint               Type            Unit / Comment                               
     --------------------------------------------------------------------------------------------
-    0   upload_state             u3        0 type_of_transmission                       
-                                           1 length                                     
-                                           2 crc                                        
-                                           3 data                                       
-                                           4 last data                                  
-                                           5 ack_transmission                           
-    0.3 block_count              u5        block counter                                
-    1   content                  u8[7]     upload_state 0: u8[3] reserved (u8=0), u32 type_of_transmission
-                                           upload_state 1: u8[3] reserved (u8=0), u32 blob_length
-                                           upload_state 2: u8[3] reserved (u8=0), u32 crc
-                                           upload_state 3: u8[7] blob data              
-                                           upload_state 4: u8[7] blob data              
-                                           upload_state 5: u8[3] reserved (=0), u32 requested_block
-                                           _                                            
-                                           Type of transmission:                        
-                                           0 NMEA GPS data                              
-                                           1 NMEA Flarm data                            
-                                           2 Larus configuration data                   
-                                           3 Larus firmware image                       
+    1   Command                 u8              1 TD.1 software upload init                       
+                                                2 TD.2 block request                                     
+                                                3 TD.3 block transfer                                        
+                                                4 TD.4 block transfer (last)                                       
+                                                5 TD.5 upload complete                                  
+
+    ... depends on command
+        Command 1   u24 binary data length,     u32 UUID of receiving device
+        Command 2   u24 block number,           u32 CRC of 512 byte block
+        Command 3   7 x u8 block data
+        Command 4   1..7 x u8 block data
+        Command 5   u24 reserved,               u32 CRC all data
+
+Generic ID 0x04 Transfer Binary Data (Receiving Device)
+---
+Name: blob_upload_receiver
+Object-ID Version: 0  
+Type: Service  
+Interval: if required  
+Length: 1..8 Bytes  
+Dynamic Id: Id(Heartbeat) + 0x04
+
+    No  Datapoint               Type            Unit / Comment                               
+    --------------------------------------------------------------------------------------------
+    1   Status                  u8              1 RD.1 ack readiness                       
+                                                2 RD.2 ack block readiness                                    
+                                                3 RD.3 ack block transfer                                        
+                                                4 RD.4 nack block transfer                                       
+                                                5 RD.5 ack upload complete
+                                                6 RD.6 nack upload complete
+    2   Reserved                u24
+    3   UUID                    u32                                                             
+
 

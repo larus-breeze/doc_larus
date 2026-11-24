@@ -14,6 +14,7 @@ System description
 [Start up](can_details/start_up.md)  
 [Normal Operation](can_details/normal_operation.md)  
 [Services](can_details/services.md)
+[Software Update](can_details/sw_upload.md)
 
 General Information
 ---
