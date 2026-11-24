@@ -169,7 +169,7 @@ Dynamic Id: Id(Heartbeat) + 0x03
 
 Generic ID 0x04 Transfer Binary Data (Receiving Device)
 ---
-Name: blob_upload_receiver
+Name: blob_upload_receiver  
 Object-ID Version: 0  
 Type: Service  
 Interval: if required  
